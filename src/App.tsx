@@ -1,7 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+const logo: string = require('./logo.svg').default;
+
+export const App = () => {
   return (
     <div className="App">
       <header className="App-header">
@@ -21,5 +22,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
