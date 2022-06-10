@@ -2,9 +2,17 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "*": ["*", "*"]
+      "*": ["*"]
     },
     "jsx": "react-jsx",
-    "esModuleInterop": true
-  }
+    "esModuleInterop": true,
+    "strict": true,
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    ".git",
+    "node_modules"
+  ]
 }
