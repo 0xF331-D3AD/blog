@@ -2,7 +2,7 @@
   "name": "blog",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://0xf331-d3ad.github.com/",
+  "homepage": "https://0xf331-d3ad.github.com/blog/",
   "dependencies": {
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
