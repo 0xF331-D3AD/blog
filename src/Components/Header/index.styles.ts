@@ -2,7 +2,9 @@ import styled from "styled-components";
 import {Theme} from "../../SharedStyles/theme";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Media} from "../../SharedStyles/media";
-import {ReactComponent as Anonymous} from "../../Assets/icons/anonymous-cyber-crime-criminal-hack-hacker-svgrepo-com.svg";
+import {
+    ReactComponent as Anonymous
+} from "../../Assets/icons/anonymous-cyber-crime-criminal-hack-hacker-svgrepo-com.svg";
 import {SharedStyles} from "../../SharedStyles";
 
 export const headerHeight = 72;
@@ -11,7 +13,7 @@ export const HeaderContent = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 64px;
+    gap: 32px;
     
     flex: 1;
     height: ${headerHeight}px;
@@ -21,8 +23,9 @@ export const HeaderContent = styled.div`
     
     background-color: ${Theme.darkBackground};
     
-    ${Media.tablet`
-        padding-right: 32px;
+    ${Media.phoneLg`
+        padding: 0 16px;
+        gap: 16px;
     `}
     
     ${SharedStyles.unselectableText}
@@ -45,6 +48,11 @@ export const MenuIcon = styled(FontAwesomeIcon)`
     ${Media.desktop`
         display: block;
     `}
+    
+    ${Media.phoneLg`
+        width: 24px;
+        height: 24px;
+    `}
 `;
 
 export const AnonymousAvatar = styled(Anonymous)`
@@ -58,6 +66,11 @@ export const AnonymousAvatar = styled(Anonymous)`
     
     border: 2px solid ${Theme.lightForegroundColor};
     border-radius: 50%;
+    
+    ${Media.phoneLg`
+        width: 28px;
+        height: 28px;
+    `}
 `;
 
 export const Avatar = styled.div`
@@ -66,7 +79,7 @@ export const Avatar = styled.div`
     
     border-radius: 50%;
     
-    background: url(${({ avatarUrl }: { avatarUrl: string }) => avatarUrl});
+    background: url(${({avatarUrl}: { avatarUrl: string }) => avatarUrl});
     background-repeat: no-repeat;
     background-size: 100% 100%;
 `;
@@ -81,6 +94,23 @@ export const Username = styled.div`
     ${SharedStyles.ellipsisOverflow}
 `;
 
+export const LogoAndAvatarHolder = styled.div`
+    margin-left: auto;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    
+    ${Media.tabletLg`
+        width: 90%;
+    `}
+    
+    ${Media.tablet`
+        width: 100%;
+    `}
+`;
+
 export const AvatarInfo = styled.div`
     display: flex;
     align-items: center;
@@ -89,4 +119,8 @@ export const AvatarInfo = styled.div`
     :hover {
         cursor: pointer;
     }
+    
+    ${Media.phoneLg`
+        margin-left: auto;
+    `}
 `;

@@ -1,6 +1,15 @@
-import {AnonymousAvatar, Avatar, AvatarInfo, HeaderContent, MenuIcon, Username} from "./index.styles";
+import {
+    AnonymousAvatar,
+    Avatar,
+    AvatarInfo,
+    HeaderContent,
+    LogoAndAvatarHolder,
+    MenuIcon,
+    Username
+} from "./index.styles";
 import {faBars} from '@fortawesome/fontawesome-free-solid'
 import {UserAvatarInfo} from "../../Types/UserTypes";
+import {Logo} from "../Logo";
 
 type Props = {
     onMenuClick: () => void,
@@ -11,21 +20,24 @@ export const Header = ({
                            onMenuClick = () => {
                            },
                            userInfo = {
-                               username: 'Anonymous',
+                               username: 'AnonymousAnonymousAnonymousAnonymousAnonymous',
                            }
                        }: Props) => {
     return (
         <HeaderContent>
             {/* @ts-ignore */}
             <MenuIcon icon={faBars} onClick={onMenuClick}/>
-            <AvatarInfo>
-                <Username>{userInfo.username}</Username>
-                {
-                    userInfo.avatarUrl
-                        ? (<Avatar avatarUrl={userInfo.avatarUrl} />)
-                        : (<AnonymousAvatar />)
-                }
-            </AvatarInfo>
+            <LogoAndAvatarHolder>
+                <Logo/>
+                <AvatarInfo>
+                    <Username>{userInfo.username}</Username>
+                    {
+                        userInfo.avatarUrl
+                            ? (<Avatar avatarUrl={userInfo.avatarUrl}/>)
+                            : (<AnonymousAvatar/>)
+                    }
+                </AvatarInfo>
+            </LogoAndAvatarHolder>
         </HeaderContent>
     );
 }

@@ -8,6 +8,7 @@ import {ReactComponent as Cat} from "../../Assets/icons/domestic-cat-shape-svgre
 import {ReactComponent as Monkey} from "../../Assets/icons/monkey-mammal-face-outline-front-svgrepo-com.svg";
 import {ReactComponent as Book} from "../../Assets/icons/instruction-manual-manual-instructions-svgrepo-com.svg";
 import {headerHeight} from "../Header/index.styles";
+import {Media} from "../../SharedStyles/media";
 
 export const sideBarSize = 300;
 
@@ -50,6 +51,12 @@ export const SideBarItem = styled.div`
         background-color: ${Theme.mediumForegroundColor};
         cursor: pointer;
     }
+    
+    ${Media.phoneMd`
+        font-size: 16px;
+        line-height: 18px;
+        padding: 12px 24px;
+    `}
 `;
 
 const iconCss = css`
@@ -59,6 +66,11 @@ const iconCss = css`
     & path {
         fill: ${Theme.lightForegroundColor} !important;
     }
+    
+    ${Media.phoneMd`
+        width: 24px;
+        height: 24px;
+    `}
 `;
 
 export const ArticlesIconSVG = styled(Laptop)`
