@@ -2,7 +2,7 @@ import {InfiniteScrollWrapper} from "./index.styles";
 import React from "react";
 
 type InfiniteScrollProps = {
-    children: React.ReactNode[],
+    children: React.ReactNode | React.ReactNode[],
     horizontal?: boolean,
     gap?: number,
 }

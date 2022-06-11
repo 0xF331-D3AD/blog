@@ -12,12 +12,12 @@ export const HeaderContent = styled.div`
     height: ${headerHeight}px;
     min-height: ${headerHeight}px;
     
-    padding: 0 64px 0 24px;
+    padding: 0 64px 0 32px;
     
     background-color: ${Theme.darkBackground};
 `;
 
-export const SidebarIcon = styled(FontAwesomeIcon)`
+export const MenuIcon = styled(FontAwesomeIcon)`
     display: none;
     width: 32px;
     height: 32px;

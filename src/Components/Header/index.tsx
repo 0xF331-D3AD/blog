@@ -1,4 +1,4 @@
-import {HeaderContent, SidebarIcon} from "./index.styles";
+import {HeaderContent, MenuIcon} from "./index.styles";
 import {faBars} from '@fortawesome/fontawesome-free-solid'
 
 type Props = {
@@ -12,7 +12,7 @@ export const Header = ({
     return (
         <HeaderContent>
             {/* @ts-ignore */}
-            <SidebarIcon icon={faBars} onClick={onMenuClick}/>
+            <MenuIcon icon={faBars} onClick={onMenuClick}/>
         </HeaderContent>
     );
 }
