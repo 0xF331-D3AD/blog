@@ -11,6 +11,13 @@ export const SiteContent = styled.div`
     min-height: 100vh;
 `;
 
+export const SidebarAndContentWrapper = styled.div`
+    display: flex;
+    height: 100%;
+    
+    background-color: green;
+`;
+
 export const ContentPane = styled.div`
     display: flex;
     flex-direction: column;
