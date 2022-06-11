@@ -5,17 +5,18 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 export const HeaderContent = styled.div`
     display: flex;
     align-items: center;
-    width: 100%;
+    flex: 1;
     height: 72px;
+    min-height: 72px;
     
-    padding: 0 64px 0 18px;
+    padding: 0 64px 0 24px;
     
     background-color: ${Theme.darkBackground};
 `;
 
 export const SidebarIcon = styled(FontAwesomeIcon)`
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     
     & path {
         fill: ${Theme.lightForeGroundColor} !important;
