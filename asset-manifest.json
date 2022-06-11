@@ -1,14 +1,20 @@
 {
   "files": {
-    "main.css": "/blog/static/css/main.073c9b0a.css",
-    "main.js": "/blog/static/js/main.9601d661.js",
-    "static/media/logo.svg": "/blog/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "main.css": "/blog/static/css/main.e6c13ad2.css",
+    "main.js": "/blog/static/js/main.0786e853.js",
+    "static/media/background.jpg": "/blog/static/media/background.539613298a1a00d10068.jpg",
+    "static/media/monkey-mammal-face-outline-front-svgrepo-com.svg": "/blog/static/media/monkey-mammal-face-outline-front-svgrepo-com.43bb19700482a9dd2014a0667e652242.svg",
+    "static/media/domestic-cat-shape-svgrepo-com.svg": "/blog/static/media/domestic-cat-shape-svgrepo-com.13d220f42e6667445a672032693eca4d.svg",
+    "static/media/laptop-svgrepo-com.svg": "/blog/static/media/laptop-svgrepo-com.51db04ae0e24dc421d1708720f3debdf.svg",
+    "static/media/cloud-svgrepo-com.svg": "/blog/static/media/cloud-svgrepo-com.87516559105224e0cbdf4111982e1fb7.svg",
+    "static/media/instruction-manual-manual-instructions-svgrepo-com.svg": "/blog/static/media/instruction-manual-manual-instructions-svgrepo-com.98a85203c8e819262aa64cc0c414cd6f.svg",
+    "static/media/cube-svgrepo-com.svg": "/blog/static/media/cube-svgrepo-com.31c171cd42c4facc918ef934aa7f79b7.svg",
     "index.html": "/blog/index.html",
-    "main.073c9b0a.css.map": "/blog/static/css/main.073c9b0a.css.map",
-    "main.9601d661.js.map": "/blog/static/js/main.9601d661.js.map"
+    "main.e6c13ad2.css.map": "/blog/static/css/main.e6c13ad2.css.map",
+    "main.0786e853.js.map": "/blog/static/js/main.0786e853.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.9601d661.js"
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.0786e853.js"
   ]
 }
