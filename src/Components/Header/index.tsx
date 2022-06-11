@@ -20,7 +20,7 @@ export const Header = ({
                            onMenuClick = () => {
                            },
                            userInfo = {
-                               username: 'AnonymousAnonymousAnonymousAnonymousAnonymous',
+                               username: 'Anonymous Guest',
                            }
                        }: Props) => {
     return (

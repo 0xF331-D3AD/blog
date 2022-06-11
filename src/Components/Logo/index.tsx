@@ -61,7 +61,6 @@ export const Logo = () => {
     }, [size]);
 
     React.useEffect(() => {
-        console.log(`${displayedCommand}    ${currentCommand}`)
         if (displayedCommand === currentCommand) {
             setTimeout(() => {
                 displayedCommandLength.current = 0;
