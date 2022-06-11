@@ -11,7 +11,6 @@ export const App = () => {
 
     React.useEffect(() => {
         const isVisibleBySize = size.width >= devices.desktop;
-        console.log(`Size.width = ${size.width}, Desktop = ${devices.desktop}`)
         setIsMenuOpened(isVisibleBySize);
     }, [size]);
 
