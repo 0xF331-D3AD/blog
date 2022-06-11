@@ -2,6 +2,8 @@ import styled from "styled-components";
 import {Theme} from "../../SharedStyles/theme";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Media} from "../../SharedStyles/media";
+import {ReactComponent as Anonymous} from "../../Assets/icons/anonymous-cyber-crime-criminal-hack-hacker-svgrepo-com.svg";
+import {SharedStyles} from "../../SharedStyles";
 
 export const headerHeight = 72;
 
@@ -15,13 +17,15 @@ export const HeaderContent = styled.div`
     height: ${headerHeight}px;
     min-height: ${headerHeight}px;
     
-    padding: 0 64px 0 32px;
+    padding: 0 32px;
     
     background-color: ${Theme.darkBackground};
     
     ${Media.tablet`
         padding-right: 32px;
     `}
+    
+    ${SharedStyles.unselectableText}
 `;
 
 export const MenuIcon = styled(FontAwesomeIcon)`
@@ -43,6 +47,46 @@ export const MenuIcon = styled(FontAwesomeIcon)`
     `}
 `;
 
-export const AvatarInfo = styled.div`
+export const AnonymousAvatar = styled(Anonymous)`
+    width: 36px;
+    height: 36px;
+    padding: 4px;
     
+    & path {
+        fill: ${Theme.lightForegroundColor} !important;
+    }
+    
+    border: 2px solid ${Theme.lightForegroundColor};
+    border-radius: 50%;
+`;
+
+export const Avatar = styled.div`
+    width: 48px;
+    height: 48px;
+    
+    border-radius: 50%;
+    
+    background: url(${({ avatarUrl }: { avatarUrl: string }) => avatarUrl});
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+`;
+
+export const Username = styled.div`
+    color: ${Theme.lightForegroundColor};
+    text-decoration: underline;
+    font-size: 16px;
+    line-height: 18px;
+    max-width: 200px;
+    
+    ${SharedStyles.ellipsisOverflow}
+`;
+
+export const AvatarInfo = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    
+    :hover {
+        cursor: pointer;
+    }
 `;

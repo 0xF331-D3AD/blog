@@ -16,7 +16,9 @@ export const App = () => {
 
     return (
         <SiteContent>
-            <Header onMenuClick={() => setIsMenuOpened(!isMenuOpened)}/>
+            <Header
+                onMenuClick={() => setIsMenuOpened(!isMenuOpened)}
+            />
             <SidebarAndContentWrapper>
                 <SideBar isOpened={isMenuOpened}/>
                 <ContentPane/>
