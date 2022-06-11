@@ -1,6 +1,5 @@
 import styled, {css} from "styled-components";
 import {Theme} from "../../SharedStyles/theme";
-import {Media} from "../../SharedStyles/media";
 import {SharedStyles} from "../../SharedStyles";
 import {ReactComponent as Cube} from "../../Assets/icons/cube-svgrepo-com.svg";
 import {ReactComponent as Cloud} from "../../Assets/icons/cloud-svgrepo-com.svg";
@@ -8,22 +7,24 @@ import {ReactComponent as Laptop} from "../../Assets/icons/laptop-svgrepo-com.sv
 import {ReactComponent as Cat} from "../../Assets/icons/domestic-cat-shape-svgrepo-com.svg";
 import {ReactComponent as Monkey} from "../../Assets/icons/monkey-mammal-face-outline-front-svgrepo-com.svg";
 import {ReactComponent as Book} from "../../Assets/icons/instruction-manual-manual-instructions-svgrepo-com.svg";
+import {headerHeight} from "../Header/index.styles";
+
+export const sideBarSize = 300;
 
 export const SideBarContent = styled.div`
-    display: flex;
+    position: absolute;
+    top: ${headerHeight};
+    left: 0;
+    display: ${({ isOpened }: { isOpened: boolean }) => isOpened ? 'flex' : 'none'};
     flex-direction: column;
-    width: 300px;
-    min-width: 300px;
-    max-width: 300px;
+    width: ${sideBarSize}px;
+    min-width: ${sideBarSize}px;
+    max-width: ${sideBarSize}px;
     height: 100%;
         
     background-color: ${Theme.darkBackground};
     
     ${SharedStyles.unselectableText};
-    
-    ${Media.desktop`
-        display: ${({ isOpened }: { isOpened: boolean }) => isOpened ? 'flex' : 'none'};
-    `}
 `;
 
 export const SideBarItem = styled.div`
@@ -38,14 +39,15 @@ export const SideBarItem = styled.div`
     font-size: 20px;
     line-height: 22px;
   
-    color: ${Theme.lightForeGroundColor};
-    border: solid 2px transparent;
+    color: ${Theme.lightForegroundColor};
+    border: solid 2px ${({ isSelected }: { isSelected: boolean }) => isSelected ? Theme.lightForegroundColor : 'transparent'};
     border-radius: 8px;
     
     text-transform: uppercase;
     
     :hover {
-        border-color: ${Theme.lightForeGroundColor};
+        border-color: ${Theme.mediumForegroundColor};
+        background-color: ${Theme.mediumForegroundColor};
         cursor: pointer;
     }
 `;
@@ -55,7 +57,7 @@ const iconCss = css`
     height: 32px;
     
     & path {
-        fill: ${Theme.lightForeGroundColor} !important;
+        fill: ${Theme.lightForegroundColor} !important;
     }
 `;
 

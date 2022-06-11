@@ -8,6 +8,9 @@ export const headerHeight = 72;
 export const HeaderContent = styled.div`
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 64px;
+    
     flex: 1;
     height: ${headerHeight}px;
     min-height: ${headerHeight}px;
@@ -15,6 +18,10 @@ export const HeaderContent = styled.div`
     padding: 0 64px 0 32px;
     
     background-color: ${Theme.darkBackground};
+    
+    ${Media.tablet`
+        padding-right: 32px;
+    `}
 `;
 
 export const MenuIcon = styled(FontAwesomeIcon)`
@@ -23,8 +30,8 @@ export const MenuIcon = styled(FontAwesomeIcon)`
     height: 32px;
     
     & path {
-        fill: ${Theme.lightForeGroundColor} !important;
-        color: ${Theme.lightForeGroundColor} !important;
+        fill: ${Theme.lightForegroundColor} !important;
+        color: ${Theme.lightForegroundColor} !important;
     }
     
     :hover {
@@ -34,4 +41,8 @@ export const MenuIcon = styled(FontAwesomeIcon)`
     ${Media.desktop`
         display: block;
     `}
+`;
+
+export const AvatarInfo = styled.div`
+    
 `;
