@@ -18,12 +18,13 @@ export const SideBarContent = styled.div`
     left: 0;
     display: ${({ isOpened }: { isOpened: boolean }) => isOpened ? 'flex' : 'none'};
     flex-direction: column;
-    width: ${sideBarSize}px;
-    min-width: ${sideBarSize}px;
-    max-width: ${sideBarSize}px;
+    width: ${sideBarSize - 2}px;
+    min-width: ${sideBarSize - 2}px;
+    max-width: ${sideBarSize - 2}px;
     height: 100%;
         
     background-color: ${Theme.darkBackground};
+    border-right: 2px solid ${Theme.veryDarkForegroundColor};
     
     ${SharedStyles.unselectableText};
 `;

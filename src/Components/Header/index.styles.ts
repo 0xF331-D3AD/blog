@@ -16,12 +16,13 @@ export const HeaderContent = styled.div`
     gap: 32px;
     
     flex: 1;
-    height: ${headerHeight}px;
-    min-height: ${headerHeight}px;
+    height: ${headerHeight - 2}px;
+    min-height: ${headerHeight - 2}px;
     
     padding: 0 32px;
     
     background-color: ${Theme.darkBackground};
+    border-bottom: 2px solid ${Theme.veryDarkForegroundColor};
     
     ${Media.phoneLg`
         padding: 0 16px;
