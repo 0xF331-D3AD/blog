@@ -33,29 +33,53 @@ const getRandomCommand = (): string => {
 
 export const Logo = () => {
     const [currentCommand, setCurrentCommand] = React.useState<string>(getRandomCommand());
+    const [displayedCommand, setDisplayedCommand] = React.useState<string>('');
     const size = useWindowSize();
+
+    const displayedCommandLength = React.useRef(0);
+    const typingInterval = React.useRef<NodeJS.Timer | undefined>();
+    const typingRateMs = 600;
+
+    const initTypingInterval = (size: {width: number}, command: string) => setInterval(() => {
+        if (size.width > commandVisibleScreenWidth) {
+            const partOfCommand = command.substring(0, displayedCommandLength.current);
+            displayedCommandLength.current += 1;
+            setDisplayedCommand(partOfCommand);
+        }
+    }, typingRateMs);
 
     React.useEffect(() => {
         if (size.width <= commandVisibleScreenWidth) {
-            setCurrentCommand('');
-        } else if (currentCommand === ''){
-            setCurrentCommand(getRandomCommand());
+            displayedCommandLength.current = 0;
+            setDisplayedCommand('');
+            clearInterval(typingInterval.current);
+            typingInterval.current = undefined;
+        } else if (!typingInterval.current){
+            // @ts-ignore
+            typingInterval.current = initTypingInterval(size, currentCommand);
         }
     }, [size]);
 
     React.useEffect(() => {
-        setTimeout(() => {
-            if (size.width > commandVisibleScreenWidth) {
-                // typing here
-            }
-        }, 500);
-    }, []);
+        console.log(`${displayedCommand}    ${currentCommand}`)
+        if (displayedCommand === currentCommand) {
+            setTimeout(() => {
+                displayedCommandLength.current = 0;
+                const newCommand = getRandomCommand();
+                setCurrentCommand(newCommand);
+                setDisplayedCommand('');
+
+                clearInterval(typingInterval.current);
+                typingInterval.current = initTypingInterval(size, newCommand);
+            }, typingRateMs);
+        }
+    }, [displayedCommand]);
 
     return (
         <LogoWrapper>
             <ShellSign>$</ShellSign>
             <CommandWrapper>
-                <Command>{currentCommand}</Command>
+                <Command>{displayedCommand}</Command>
                 <Underscore>_</Underscore>
             </CommandWrapper>
         </LogoWrapper>

@@ -24,14 +24,14 @@ export const LogoWrapper = styled.div`
     }
 `;
 
-const commandCss = css`
+const commandTextCss = css`
     color: ${Theme.lightForegroundColor};
     font-size: 18px;
     line-height: 20px;
 `;
 
 export const ShellSign = styled.div`
-    ${commandCss}
+    ${commandTextCss}
 `;
 
 export const CommandWrapper = styled.div`
@@ -41,7 +41,8 @@ export const CommandWrapper = styled.div`
 `;
 
 export const Command = styled.div`
-    ${commandCss}
+    ${commandTextCss}
+    white-space: pre-wrap;
     
     @media(max-width: ${commandVisibleScreenWidth}px) {
         display: none;
@@ -49,6 +50,6 @@ export const Command = styled.div`
 `;
 
 export const Underscore = styled.div`
-    ${commandCss}
+    ${commandTextCss}
     ${SharedStyles.pulsatingText};
 `;
