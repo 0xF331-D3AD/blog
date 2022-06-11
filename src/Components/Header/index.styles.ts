@@ -3,12 +3,14 @@ import {Theme} from "../../SharedStyles/theme";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Media} from "../../SharedStyles/media";
 
+export const headerHeight = 72;
+
 export const HeaderContent = styled.div`
     display: flex;
     align-items: center;
     flex: 1;
-    height: 72px;
-    min-height: 72px;
+    height: ${headerHeight}px;
+    min-height: ${headerHeight}px;
     
     padding: 0 64px 0 24px;
     

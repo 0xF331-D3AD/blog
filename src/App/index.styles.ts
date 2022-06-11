@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Background from "../Assets/background.jpg";
+import {headerHeight} from "../Components/Header/index.styles";
 
 export const SiteContent = styled.div`
     display: flex;
@@ -15,7 +16,11 @@ export const SidebarAndContentWrapper = styled.div`
     display: flex;
     height: 100%;
     
-    background-color: green;
+    height: calc(100% - ${headerHeight}px);
+    max-height: calc(100% - ${headerHeight}px);
+    
+    overflow-x: hidden;
+    overflow-y: hidden; 
 `;
 
 export const ContentPane = styled.div`
