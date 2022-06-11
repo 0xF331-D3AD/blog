@@ -8,6 +8,7 @@ export const SideBar = ({
     isOpened = false,
 }: Props) => {
     return (
-        <SideBarContent></SideBarContent>
+        <SideBarContent isOpened={isOpened}>
+        </SideBarContent>
     );
 };

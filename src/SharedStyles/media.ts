@@ -43,7 +43,7 @@ interface IMedia {
 }
 
 // @ts-ignore
-export const media: IMedia = Object.keys(devices).reduce((acc: { [l: string]: ThemedCssFunction<DefaultTheme> }, label) => {
+export const Media: IMedia = Object.keys(devices).reduce((acc: { [l: string]: ThemedCssFunction<DefaultTheme> }, label) => {
     // @ts-ignore
     acc[label] = (...args: any) => css`@media (max-width: ${devices[label] - 1}px) {${css(...args)}}`;
 

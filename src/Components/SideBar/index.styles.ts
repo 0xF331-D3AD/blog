@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {Theme} from "../../SharedStyles/theme";
+import {Media} from "../../SharedStyles/media";
 
 export const SideBarContent = styled.div`
     display: flex;
@@ -10,4 +11,8 @@ export const SideBarContent = styled.div`
     height: 100%;
     
     background-color: ${Theme.darkBackground};
+    
+    ${Media.desktop`
+        display: ${({ isOpened }: { isOpened: boolean }) => isOpened ? 'flex' : 'none'};
+    `}
 `;

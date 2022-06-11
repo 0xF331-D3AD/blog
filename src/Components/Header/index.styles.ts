@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {Theme} from "../../SharedStyles/theme";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {Media} from "../../SharedStyles/media";
 
 export const HeaderContent = styled.div`
     display: flex;
@@ -15,6 +16,7 @@ export const HeaderContent = styled.div`
 `;
 
 export const SidebarIcon = styled(FontAwesomeIcon)`
+    display: none;
     width: 32px;
     height: 32px;
     
@@ -26,4 +28,8 @@ export const SidebarIcon = styled(FontAwesomeIcon)`
     :hover {
         cursor: pointer;
     }
+    
+    ${Media.desktop`
+        display: block;
+    `}
 `;

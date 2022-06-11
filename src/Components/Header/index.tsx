@@ -12,7 +12,7 @@ export const Header = ({
     return (
         <HeaderContent>
             {/* @ts-ignore */}
-            <SidebarIcon icon={faBars}/>
+            <SidebarIcon icon={faBars} onClick={onMenuClick}/>
         </HeaderContent>
     );
 }
