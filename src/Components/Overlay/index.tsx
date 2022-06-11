@@ -1,5 +1,5 @@
 import {OverlayWrapper, SideBarOverlayWrapper} from "./index.styles";
-import {Component, ReactElement} from "react";
+import {Component, MouseEventHandler, ReactElement} from "react";
 
 type Props = {
     top?: number;
@@ -32,6 +32,7 @@ export const Overlay = ({
 
 type SideBarProps = Props & {
     isOpened: boolean,
+    onClick: MouseEventHandler<HTMLDivElement>,
 }
 
 export const SideBarOverlay = ({
@@ -44,11 +45,14 @@ export const SideBarOverlay = ({
                                    children,
                                    isOpened = true,
                                    style = {},
+                                   onClick = () => {
+                                   },
                                }: SideBarProps) => {
     return (
         <SideBarOverlayWrapper
             isOpened={isOpened}
             style={{...style}}
+            onClick={onClick}
         >
             {/*@ts-ignore*/}
             {children}

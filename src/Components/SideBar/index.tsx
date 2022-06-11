@@ -9,7 +9,7 @@ import {
     TutorialsIconSVG
 } from "./index.styles";
 import {InfiniteScroll} from "../InfiniteScroll";
-import {useNavigate} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 import {BaseRoutes} from "../../Enums";
 import React from "react";
 import {StyledComponent} from "styled-components";
@@ -56,12 +56,15 @@ const sideBarContent: SideBarContentType[] = [
 
 type Props = {
     isOpened: boolean,
+    setIsOpened: (newIsOpened: boolean) => void,
 };
 
 export const SideBar = ({
                             isOpened = false,
+                            setIsOpened = () => {},
                         }: Props) => {
     const [selectedSection, setSelectedSection] = React.useState<SideBarContentType | undefined>(undefined);
+    const location = useLocation();
     const navigate = useNavigate();
 
     const onItemClick = (item: SideBarContentType) => {
@@ -72,11 +75,22 @@ export const SideBar = ({
     }
 
     React.useEffect(() => {
-        onItemClick(sideBarContent[0]);
-    }, []);
+        if (selectedSection === undefined) {
+            const itemsByPathName: SideBarContentType[] = sideBarContent.filter(c => c.path === location.pathname);
+            const item = itemsByPathName.length ? itemsByPathName[0] : sideBarContent[0];
+            onItemClick(item);
+        }
+    }, [location]);
 
     return (
-        <SideBarOverlay isOpened={isOpened}>
+        <SideBarOverlay
+            isOpened={isOpened}
+            onClick={(e) => {
+                if (e.target === e.currentTarget) {
+                    setIsOpened(!isOpened);
+                };
+            }}
+        >
             <SideBarContent isOpened={isOpened}>
                 <InfiniteScroll>
                     {sideBarContent

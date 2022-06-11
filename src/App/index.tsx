@@ -20,7 +20,10 @@ export const App = () => {
                 onMenuClick={() => setIsMenuOpened(!isMenuOpened)}
             />
             <SidebarAndContentWrapper>
-                <SideBar isOpened={isMenuOpened}/>
+                <SideBar
+                    isOpened={isMenuOpened}
+                    setIsOpened={setIsMenuOpened}
+                />
                 <ContentPane/>
             </SidebarAndContentWrapper>
         </SiteContent>
