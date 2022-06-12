@@ -8,6 +8,7 @@ import {ContentPaneInfiniteScroll} from "../Components/InfiniteScroll";
 import {Matrix} from "../Components/Matrix/";
 import {Route, Routes} from "react-router-dom";
 import {BaseRoutes} from "../Enums";
+import {ComingSoon} from "./ComingSoon";
 
 export const App = () => {
     const [isMenuOpened, setIsMenuOpened] = React.useState<boolean>(false);
@@ -39,13 +40,13 @@ export const App = () => {
                     <ArticleContentWrapper>
                         <ContentPaneInfiniteScroll>
                             <Routes>
-                                <Route path={BaseRoutes.Article} element={<div/>}/>
-                                <Route path={BaseRoutes.CTF_HTB} element={<div/>}/>
-                                <Route path={BaseRoutes.CTF_OTW} element={<div/>}/>
-                                <Route path={BaseRoutes.CTF_STS} element={<div/>}/>
-                                <Route path={BaseRoutes.CTF_THM} element={<div/>}/>
-                                <Route path={BaseRoutes.Tutorial} element={<div/>}/>
-                                <Route path="*" element={<div/>}/>
+                                <Route path={BaseRoutes.Article} element={<ComingSoon/>}/>
+                                <Route path={BaseRoutes.CTF_HTB} element={<ComingSoon/>}/>
+                                <Route path={BaseRoutes.CTF_OTW} element={<ComingSoon/>}/>
+                                <Route path={BaseRoutes.CTF_STS} element={<ComingSoon/>}/>
+                                <Route path={BaseRoutes.CTF_THM} element={<ComingSoon/>}/>
+                                <Route path={BaseRoutes.Tutorial} element={<ComingSoon/>}/>
+                                <Route path="*" element={<ComingSoon/>}/>
                             </Routes>
                         </ContentPaneInfiniteScroll>
                     </ArticleContentWrapper>
