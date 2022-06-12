@@ -11,6 +11,8 @@ export const App = () => {
     const [isMenuOpened, setIsMenuOpened] = React.useState<boolean>(false);
     const size = useWindowSize();
 
+    document.body.style.overflowY = 'hidden';
+
     React.useEffect(() => {
         const isVisibleBySize = size.width >= devices.desktop;
         setIsMenuOpened(isVisibleBySize);
