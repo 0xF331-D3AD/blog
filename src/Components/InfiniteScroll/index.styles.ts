@@ -15,7 +15,7 @@ const scrollCss = css`
       
     background-color: inherit;
       
-    scrollbar-color: ${Theme.darkBackground} transparent;
+    scrollbar-color: ${Theme.mediumForegroundColor} transparent;
     scrollbar-width: 1em;
        
     ::-webkit-scrollbar-track {
@@ -23,13 +23,15 @@ const scrollCss = css`
     }
        
     ::-webkit-scrollbar-thumb {
-      outline: 1px solid slategrey;
+      outline: 1px solid ${Theme.mediumForegroundColor};
     }
 `;
 
 // @ts-ignore
 export const SideBarInfiniteScrollWrapper = styled.div`
     ${scrollCss}
+    
+    height: calc(100vh - ${headerHeight}px);
 `;
 
 export const ContentTypeScrollWrapper = styled.div`

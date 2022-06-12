@@ -10,10 +10,6 @@ export const App = () => {
     const [isMenuOpened, setIsMenuOpened] = React.useState<boolean>(false);
     const size = useWindowSize();
 
-    document.addEventListener('touchmove', function(evt) {
-        evt.preventDefault();
-    });
-
     React.useEffect(() => {
         const isVisibleBySize = size.width >= devices.desktop;
         setIsMenuOpened(isVisibleBySize);
