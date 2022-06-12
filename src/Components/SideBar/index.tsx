@@ -8,7 +8,7 @@ import {
     THMIconSVG,
     TutorialsIconSVG
 } from "./index.styles";
-import {InfiniteScroll} from "../InfiniteScroll";
+import {SideBarInfiniteScroll} from "../InfiniteScroll";
 import {useLocation, useNavigate} from "react-router-dom";
 import {BaseRoutes} from "../../Enums";
 import React from "react";
@@ -71,6 +71,7 @@ export const SideBar = ({
         if (item !== selectedSection) {
             setSelectedSection(item);
             navigate(item.path);
+            setIsOpened(!isOpened);
         }
     }
 
@@ -92,7 +93,7 @@ export const SideBar = ({
             }}
         >
             <SideBarContent isOpened={isOpened}>
-                <InfiniteScroll>
+                <SideBarInfiniteScroll>
                     {sideBarContent
                         .sort((c1, c2) => c1.title.localeCompare(c2.title))
                         .map(c => {
@@ -108,7 +109,7 @@ export const SideBar = ({
                                 </SideBarItem>
                             )
                         })}
-                </InfiniteScroll>
+                </SideBarInfiniteScroll>
             </SideBarContent>
         </SideBarOverlay>
     );

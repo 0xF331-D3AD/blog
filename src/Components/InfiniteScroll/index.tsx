@@ -1,4 +1,4 @@
-import {InfiniteScrollWrapper} from "./index.styles";
+import {ContentTypeScrollWrapper, SideBarInfiniteScrollWrapper} from "./index.styles";
 import React from "react";
 
 type InfiniteScrollProps = {
@@ -7,15 +7,29 @@ type InfiniteScrollProps = {
     gap?: number,
 }
 
-export const InfiniteScroll = ({
+export const SideBarInfiniteScroll = ({
                                    children = [],
                                    horizontal = false,
                                    gap = 0,
                                }: InfiniteScrollProps) => {
     return (
         // @ts-ignore
-        <InfiniteScrollWrapper horizontal={horizontal} gap={gap}>
+        <SideBarInfiniteScrollWrapper horizontal={horizontal} gap={gap}>
             {children}
-        </InfiniteScrollWrapper>
+        </SideBarInfiniteScrollWrapper>
     );
 };
+
+export const ContentPaneInfiniteScroll = ({
+                                              children = [],
+                                              horizontal = false,
+                                              gap = 0,
+                                          }: InfiniteScrollProps) => {
+    return (
+        // @ts-ignore
+        <ContentTypeScrollWrapper horizontal={horizontal} gap={gap}>
+            {children}
+        </ContentTypeScrollWrapper>
+    );
+};
+

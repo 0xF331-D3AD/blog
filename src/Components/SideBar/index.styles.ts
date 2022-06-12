@@ -30,12 +30,12 @@ export const SideBarContent = styled.div`
 `;
 
 export const SideBarItem = styled.div`
-    flex: 1;
     display: flex;
     align-items: center;
     gap: 16px;
     
     padding: 16px 32px;
+    max-height: 68px;
     
     font-weight: bold;
     font-size: 20px;

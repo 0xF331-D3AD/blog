@@ -1,9 +1,10 @@
-import {ContentPane, SidebarAndContentWrapper, SiteContent} from "./index.styles";
+import {Content, ContentPane, SidebarAndContentWrapper, SiteContent} from "./index.styles";
 import {Header} from "../Components/Header";
 import React from "react";
 import {SideBar} from "../Components/SideBar";
 import {devices} from "../SharedStyles/media";
 import {useWindowSize} from "../Hooks/WindowHooks";
+import {ContentPaneInfiniteScroll} from "../Components/InfiniteScroll";
 
 export const App = () => {
     const [isMenuOpened, setIsMenuOpened] = React.useState<boolean>(false);
@@ -24,7 +25,13 @@ export const App = () => {
                     isOpened={isMenuOpened}
                     setIsOpened={setIsMenuOpened}
                 />
-                <ContentPane/>
+                <ContentPane>
+                    <ContentPaneInfiniteScroll>
+                        <Content>
+                            AAAAAAAAAAAAAAAAAA
+                        </Content>
+                    </ContentPaneInfiniteScroll>
+                </ContentPane>
             </SidebarAndContentWrapper>
         </SiteContent>
     );
