@@ -35,18 +35,25 @@ export const HourGlassWrapper = styled.div`
     position: absolute;
 `;
 
+export const HourGlassFlexWrapper = styled.div`
+    display: flex;
+    
+    width: ${({ width }: { width: number }) => width}px;
+    height: ${({ height } : { height: number}) => height}px;
+`;
+
 export const HourGlassContainer = styled.div`
     position: relative;
     -webkit-animation: ${hourglassSpinKeyframes} ease-in 3s infinite;
     animation: ${hourglassSpinKeyframes} ease-in 3s infinite;
     
     width: ${({ width }: { width: number }) => width}px;
-    height: ${({ height } : { height: height}) => height}px;
+    height: ${({ height } : { height: number}) => height}px;
 `;
 
 export const Glass = styled.div`
     width: ${({ width }: { width: number }) => width}px;
-    height: ${({ height } : { height: height}) => height}px;
+    height: ${({ height } : { height: number}) => height}px;
 `;
 
 const triangleCss = css`
@@ -73,33 +80,21 @@ export const BottomHalfGlass = styled.div`
     ${upsideDownCss};
     
     border-top-color: ${({ glassColor }: { glassColor: string }) => glassColor};
-    margin-top: ${({ height } : { height: height}) => -1 / 3 * height}px;
+    margin-top: ${({ height } : { height: number}) => -1 / 3 * height}px;
 `;
 
-const layerCss = css`
+export const Layer = styled.div`
     position: absolute;
     left: 0;
     top: 0;
     
     width: ${({ width }: { width: number }) => width}px;
-    height: ${({ height } : { height: height}) => height}px;
+    height: ${({ height } : { height: number}) => height}px;
     
     -webkit-transform: scale(.75);
     -webkit-transform-origin: center top;
     transform: scale(.75);
     transform-origin: center top;
-`;
-
-export const LayerOne = styled.div`
-    ${layerCss};
-    
-    z-index: 5;
-`;
-
-export const LayerTwo = styled.div`
-    ${layerCss};
-    
-    z-index: 10;
 `;
 
 export const LayerOneTopTriangle = styled.div`
@@ -158,7 +153,6 @@ export const SandStream = styled.div`
     left: 50%;
     top: 50%;
     margin-left: ${({ width }: { width: number }) => Math.ceil(-0.5 * width * 0.075)}px;
-    z-index: 20;
     width: ${({ width }: { width: number }) => Math.ceil(width * 0.075)}px;
     height: ${({ height }: { height: number }) => Math.ceil(height / 2 - height / 4 * Math.sin(0.2618))}px;
     background: ${({ sandColor }: { sandColor: string }) => sandColor};
@@ -166,7 +160,6 @@ export const SandStream = styled.div`
 
 export const Bond = styled.div`
     position: absolute;
-    z-index: 30;
     left: ${({ width }: { width: number }) => width / 2}px;
     top: ${({ height }: { height: number }) => height / 2}px;
     margin-left: ${({ width }: { width: number }) => -1 * width / 8}px;

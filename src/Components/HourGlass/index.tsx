@@ -1,22 +1,22 @@
 // @ts-nocheck
 import React from "react";
 import {
+    Bond,
+    BondBottomTriangle,
+    BondTopTriangle,
     BottomHalfGlass,
     Glass,
     HourGlassContainer,
+    HourGlassFlexWrapper,
     HourGlassWrapper,
-    LayerOne,
+    Layer,
     LayerOneBottomTriangle,
     LayerOneTopTriangle,
-    LayerTwo,
     LayerTwoBottomTriangle,
     LayerTwoTopTriangle,
     RotateWrapper,
     SandStream,
     TopHalfGlass,
-    Bond,
-    BondTopTriangle,
-    BondBottomTriangle,
 } from "./index.styles";
 
 type Props = {
@@ -41,22 +41,22 @@ export const HourGlass = ({
                     <TopHalfGlass width={width} height={height} glassColor={glassColor}/>
                     <BottomHalfGlass width={width} height={height} glassColor={glassColor}/>
                 </Glass>
-                <LayerOne width={width} height={height}>
+                <Layer width={width} height={height}>
                     <div>
                         <LayerOneTopTriangle width={width} height={height} backgroundColor={backgroundColor}/>
                     </div>
                     <RotateWrapper>
                         <LayerOneBottomTriangle width={width} height={height} sandColor={sandColor}/>
                     </RotateWrapper>
-                </LayerOne>
-                <LayerTwo width={width} height={height}>
+                </Layer>
+                <Layer width={width} height={height}>
                     <div>
                         <LayerTwoTopTriangle width={width} height={height} sandColor={sandColor}/>
                     </div>
                     <RotateWrapper>
                         <LayerTwoBottomTriangle width={width} height={height} backgroundColor={backgroundColor}/>
                     </RotateWrapper>
-                </LayerTwo>
+                </Layer>
                 <SandStream width={width} height={height} sandColor={sandColor}/>
                 <Bond width={width} height={height}>
                     <BondTopTriangle width={width} height={height} glassColor={glassColor}/>
@@ -64,5 +64,28 @@ export const HourGlass = ({
                 </Bond>
             </HourGlassContainer>
         </HourGlassWrapper>
+    )
+};
+
+export const FlexHourGlass = ({
+                                  width,
+                                  height,
+                                  glassColor,
+                                  backgroundColor,
+                                  sandColor,
+                              }: Props) => {
+    return (
+        <HourGlassFlexWrapper
+            width={width}
+            height={height}
+        >
+            <HourGlass
+                width={width}
+                height={height}
+                glassColor={glassColor}
+                backgroundColor={backgroundColor}
+                sandColor={sandColor}
+            />
+        </HourGlassFlexWrapper>
     )
 };

@@ -1,17 +1,53 @@
 import React from "react";
-import {HourGlass} from "../../Components/HourGlass";
+import {ComingSoonContent, ComingSoonText, ComingSoonWrapper,} from "./index.styles";
+import {FlexHourGlass} from "../../Components/HourGlass";
 import {Theme} from "../../SharedStyles/theme";
+import {useWindowSize} from "../../Hooks/WindowHooks";
+import {devices} from "../../SharedStyles/media";
+
+type HourGlassSize = {
+    width: number,
+    height: number,
+}
+
+const initHourGlassSize: HourGlassSize = {
+    width: 160,
+    height: 180
+}
 
 export const ComingSoon = () => {
+    const [hourGlassSize, setHourGlassSize] = React.useState<HourGlassSize>(initHourGlassSize);
+    const size = useWindowSize();
+
+    React.useEffect(() => {
+        const newSize = { ...hourGlassSize };
+        if (size.width < devices.tablet) {
+            newSize.width = 100;
+            newSize.height = 115;
+        } else {
+            newSize.width = initHourGlassSize.width;
+            newSize.height = initHourGlassSize.height;
+        }
+        setHourGlassSize(newSize);
+    }, [size]);
+
     return (
-        <div>
-            <HourGlass
-                height={180}
-                width={160}
-                glassColor={Theme.mediumForegroundColor}
-                backgroundColor={Theme.darkBackground}
-                sandColor={Theme.lightForegroundColor}
-            />
-        </div>
+        <ComingSoonWrapper>
+            <ComingSoonContent>
+                <FlexHourGlass
+                    height={hourGlassSize.height}
+                    width={hourGlassSize.width}
+                    glassColor={Theme.mediumForegroundColor}
+                    backgroundColor={Theme.darkBackground}
+                    sandColor={Theme.lightForegroundColor}
+                />
+                <ComingSoonText>
+                    Looks like you're on a page that has no content yet!
+                    <br />
+                    <br />
+                    Please, come again later
+                </ComingSoonText>
+            </ComingSoonContent>
+        </ComingSoonWrapper>
     )
 }
