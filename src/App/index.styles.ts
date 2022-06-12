@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Background from "../Assets/background.jpg";
 import {headerHeight} from "../Components/Header/index.styles";
 import {Theme} from "../SharedStyles/theme";
 import {sideBarSize} from "../Components/SideBar/index.styles";
@@ -34,10 +33,6 @@ export const ContentPane = styled.div`
     
     width: 100%;
     height: 100%;
-    
-    background: url(${Background});
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
 `;
 
 export const ArticleContentWrapper = styled.div`
@@ -46,7 +41,6 @@ export const ArticleContentWrapper = styled.div`
     margin-left: auto;
     padding: 16px 96px;
     
-    border-radius: 16px;
     border: 2px solid ${Theme.darkBackground};
     
     ${Media.desktopMd`

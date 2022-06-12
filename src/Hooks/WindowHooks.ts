@@ -63,3 +63,22 @@ export const useLocalStorageLite = (
 
     return { state, setState };
 };
+
+export const stopScroll = (opened: boolean) => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    React.useEffect(() => {
+        const body = document.getElementsByTagName('body')[0];
+        if (!body) {
+            return;
+        }
+        body.style.overflowY = opened ? 'hidden' : 'auto';
+        body.style.overflowX = opened ? 'hidden' : 'auto';
+
+        // eslint-disable-next-line consistent-return
+        return () => {
+            body.style.overflowY = 'auto';
+            body.style.overflowX = 'auto';
+        };
+    }, [opened]);
+};
+

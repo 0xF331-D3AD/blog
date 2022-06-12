@@ -1,7 +1,7 @@
 import {Command, commandVisibleScreenWidth, CommandWrapper, LogoWrapper, ShellSign, Underscore} from "./index.styles";
 import React from "react";
 import {useWindowSize} from "../../Hooks/WindowHooks";
-import {getRandomIndexBetween} from "../../Utils/MathUtils";
+import {getRandomIndex} from "../../Utils/MathUtils";
 
 const commands: string[] = [
     'id',
@@ -30,7 +30,7 @@ const commands: string[] = [
 ];
 
 const getRandomCommand = (): string => {
-    const index = getRandomIndexBetween(commands.length);
+    const index = getRandomIndex(commands.length);
     return commands[index];
 }
 

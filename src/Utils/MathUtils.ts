@@ -7,7 +7,7 @@ export const getRandomBetween = (from: number, to: number): number => {
     return from + rnd * diff;
 };
 
-export const getRandomIndexBetween = (length: number): number => {
+export const getRandomIndex = (length: number): number => {
     if (length === 0) {
         throw new Error('Invalid length 0');
     }

@@ -5,6 +5,7 @@ import {SideBar} from "../Components/SideBar";
 import {devices} from "../SharedStyles/media";
 import {useWindowSize} from "../Hooks/WindowHooks";
 import {ContentPaneInfiniteScroll} from "../Components/InfiniteScroll";
+import {Matrix} from "../Components/Matrix/";
 
 export const App = () => {
     const [isMenuOpened, setIsMenuOpened] = React.useState<boolean>(false);
@@ -38,6 +39,7 @@ export const App = () => {
                     </ArticleContentWrapper>
                 </ContentPane>
             </SidebarAndContentWrapper>
+            <Matrix />
         </SiteContent>
     );
 }
