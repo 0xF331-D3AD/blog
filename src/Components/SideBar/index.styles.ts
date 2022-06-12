@@ -12,6 +12,10 @@ import {Media} from "../../SharedStyles/media";
 
 export const sideBarSize = 300;
 
+export const SideBarContentPane = styled.div`
+    height: 100%;
+`;
+
 export const SideBarContent = styled.div`
     position: absolute;
     top: ${headerHeight};

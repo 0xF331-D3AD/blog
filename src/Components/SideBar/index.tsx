@@ -3,6 +3,7 @@ import {
     HTBIconSVG,
     OTWIconSVG,
     SideBarContent,
+    SideBarContentPane,
     SideBarItem,
     STSIconSVG,
     THMIconSVG,
@@ -88,34 +89,35 @@ export const SideBar = ({
     }, [location]);
 
     return (
-        <SideBarOverlay
-            isOpened={isOpened}
-            onClick={(e) => {
-                if (e.target === e.currentTarget) {
-                    setIsOpened(!isOpened);
-                }
-                ;
-            }}
-        >
-            <SideBarContent isOpened={isOpened}>
-                <SideBarInfiniteScroll>
-                    {sideBarContent
-                        .sort((c1, c2) => c1.title.localeCompare(c2.title))
-                        .map(c => {
-                            const Icon = c.icon;
-                            const isSelected = c.title === selectedSection?.title;
-                            return (
-                                <SideBarItem
-                                    isSelected={isSelected}
-                                    onClick={() => onItemClick(c)}
-                                >
-                                    <Icon/>
-                                    {c.title}
-                                </SideBarItem>
-                            )
-                        })}
-                </SideBarInfiniteScroll>
-            </SideBarContent>
-        </SideBarOverlay>
+        <SideBarContentPane>
+            <SideBarOverlay
+                isOpened={isOpened}
+                onClick={(e) => {
+                    if (e.target === e.currentTarget) {
+                        setIsOpened(!isOpened);
+                    }
+                }}
+            >
+                <SideBarContent isOpened={isOpened}>
+                    <SideBarInfiniteScroll>
+                        {sideBarContent
+                            .sort((c1, c2) => c1.title.localeCompare(c2.title))
+                            .map(c => {
+                                const Icon = c.icon;
+                                const isSelected = c.title === selectedSection?.title;
+                                return (
+                                    <SideBarItem
+                                        isSelected={isSelected}
+                                        onClick={() => onItemClick(c)}
+                                    >
+                                        <Icon/>
+                                        {c.title}
+                                    </SideBarItem>
+                                )
+                            })}
+                    </SideBarInfiniteScroll>
+                </SideBarContent>
+            </SideBarOverlay>
+        </SideBarContentPane>
     );
 };
