@@ -6,6 +6,8 @@ import {devices} from "../SharedStyles/media";
 import {useWindowSize} from "../Hooks/WindowHooks";
 import {ContentPaneInfiniteScroll} from "../Components/InfiniteScroll";
 import {Matrix} from "../Components/Matrix/";
+import {Route, Routes} from "react-router-dom";
+import {BaseRoutes} from "../Enums";
 
 export const App = () => {
     const [isMenuOpened, setIsMenuOpened] = React.useState<boolean>(false);
@@ -36,7 +38,14 @@ export const App = () => {
                 <ContentPane>
                     <ArticleContentWrapper>
                         <ContentPaneInfiniteScroll>
-
+                            <Routes>
+                                <Route path={BaseRoutes.Article} element={<div />} />
+                                <Route path={BaseRoutes.CTF_HTB} element={<div />} />
+                                <Route path={BaseRoutes.CTF_OTW} element={<div />} />
+                                <Route path={BaseRoutes.CTF_STS} element={<div />} />
+                                <Route path={BaseRoutes.CTF_THM} element={<div />} />
+                                <Route path={BaseRoutes.Tutorial} element={<div />} />
+                            </Routes>
                         </ContentPaneInfiniteScroll>
                     </ArticleContentWrapper>
                 </ContentPane>

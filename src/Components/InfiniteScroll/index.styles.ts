@@ -24,6 +24,8 @@ const scrollCss = css`
 export const SideBarInfiniteScrollWrapper = styled.div`
     ${scrollCss}
     
+    gap: 4px;
+    
     //92px - sidebar bottom with gap
     height: calc(100vh - ${headerHeight}px - 60px);
     

@@ -126,4 +126,6 @@ export const SideBarBottom = styled.div`
 
 export const VirusIconSVG = styled(Virus)`
     ${iconCss}
+    
+    ${SharedStyles.rotatingIcon}
 `;

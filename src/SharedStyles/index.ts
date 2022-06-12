@@ -90,10 +90,32 @@ const scrollBarStyle = css`
     }
 `;
 
+const halfRotatingIconKeyframe = keyframes`
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+`;
+
+const halfRotatingIcon = css`
+    animation-name: ${halfRotatingIconKeyframe};
+    animation-duration: 10s;
+
+    animation-iteration-count: infinite;
+    transform-origin: 50% 50%;
+    display: inline-block;
+`;
+
 export const SharedStyles = {
     unselectableText,
     ellipsisOverflow,
     selectableText,
     pulsatingText,
     scrollBarStyle,
+    rotatingIcon: halfRotatingIcon
 };
