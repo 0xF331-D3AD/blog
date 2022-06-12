@@ -61,7 +61,7 @@ export const useLocalStorageLite = (
         };
     }, [state]);
 
-    return { state, setState };
+    return {state, setState};
 };
 
 export const stopScroll = (opened: boolean) => {

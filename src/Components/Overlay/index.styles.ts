@@ -16,7 +16,7 @@ const overlayCss = css`
     display: flex;
     
     background-color: ${({transparent}: { transparent: boolean }) => transparent ? 'transparent' : Theme.overlayColor};
-    z-index: ${({ overlayIndex }: { overlayIndex?: number }) => 10000 + Number(overlayIndex)};
+    z-index: ${({overlayIndex}: { overlayIndex?: number }) => 10000 + Number(overlayIndex)};
 `;
 
 export const OverlayWrapper = styled.div`
@@ -26,7 +26,7 @@ export const OverlayWrapper = styled.div`
 export const SideBarOverlayWrapper = styled.div`
     ${overlayCss}
     
-    display: ${({ isOpened }: { isOpened: boolean }) => isOpened ? 'flex' : 'none'};
+    display: ${({isOpened}: { isOpened: boolean }) => isOpened ? 'flex' : 'none'};
     
     top: ${headerHeight}px;
     left: 0;

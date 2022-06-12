@@ -39,7 +39,7 @@ export const App = () => {
                     </ArticleContentWrapper>
                 </ContentPane>
             </SidebarAndContentWrapper>
-            <Matrix />
+            <Matrix/>
         </SiteContent>
     );
 }

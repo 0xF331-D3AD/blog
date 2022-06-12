@@ -1,4 +1,5 @@
 import {css, keyframes} from "styled-components";
+import {Theme} from "./theme";
 
 const unselectableText = css`
   -webkit-touch-callout: none; /* iOS Safari */
@@ -70,9 +71,29 @@ const pulsatingText = css`
     animation-iteration-count: infinite;
 `;
 
+const scrollBarStyle = css`
+    scrollbar-color: ${Theme.mediumForegroundColor} transparent;
+    scrollbar-width: 6px;
+    
+    &::-webkit-scrollbar {
+        color: ${Theme.mediumForegroundColor} transparent;
+        width: 6px;
+    }
+       
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px ${Theme.mediumForegroundColor};
+      border-radius: 6px;
+    }
+       
+    &::-webkit-scrollbar-thumb {
+      outline: 1px solid ${Theme.mediumForegroundColor};
+    }
+`;
+
 export const SharedStyles = {
     unselectableText,
     ellipsisOverflow,
     selectableText,
     pulsatingText,
+    scrollBarStyle,
 };

@@ -16,7 +16,7 @@ export const SideBarContent = styled.div`
     position: absolute;
     top: ${headerHeight};
     left: 0;
-    display: ${({ isOpened }: { isOpened: boolean }) => isOpened ? 'flex' : 'none'};
+    display: ${({isOpened}: { isOpened: boolean }) => isOpened ? 'flex' : 'none'};
     flex-direction: column;
     width: ${sideBarSize - 2}px;
     min-width: ${sideBarSize - 2}px;
@@ -42,7 +42,7 @@ export const SideBarItem = styled.div`
     line-height: 18px;
   
     color: ${Theme.lightForegroundColor};
-    border: solid 2px ${({ isSelected }: { isSelected: boolean }) => isSelected ? Theme.lightForegroundColor : 'transparent'};
+    border: solid 2px ${({isSelected}: { isSelected: boolean }) => isSelected ? Theme.lightForegroundColor : 'transparent'};
     border-radius: 8px;
     
     text-transform: uppercase;

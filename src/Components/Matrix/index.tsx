@@ -65,7 +65,7 @@ export const Matrix = () => {
     return (
         <MatrixWrapper>
             {/* @ts-ignore */}
-            <MatrixCanvas id="matrix-canvas" ref={canvasRef} />
+            <MatrixCanvas id="matrix-canvas" ref={canvasRef}/>
         </MatrixWrapper>
     );
 }

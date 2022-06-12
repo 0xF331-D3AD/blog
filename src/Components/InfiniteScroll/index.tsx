@@ -8,10 +8,10 @@ type InfiniteScrollProps = {
 }
 
 export const SideBarInfiniteScroll = ({
-                                   children = [],
-                                   horizontal = false,
-                                   gap = 0,
-                               }: InfiniteScrollProps) => {
+                                          children = [],
+                                          horizontal = false,
+                                          gap = 0,
+                                      }: InfiniteScrollProps) => {
     return (
         // @ts-ignore
         <SideBarInfiniteScrollWrapper horizontal={horizontal} gap={gap}>

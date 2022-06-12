@@ -43,7 +43,7 @@ export const Logo = () => {
     const typingInterval = React.useRef<NodeJS.Timer | undefined>();
     const typingRateMs = 550;
 
-    const initTypingInterval = (size: {width: number}, command: string) => setInterval(() => {
+    const initTypingInterval = (size: { width: number }, command: string) => setInterval(() => {
         if (size.width > commandVisibleScreenWidth) {
             const partOfCommand = command.substring(0, displayedCommandLength.current);
             displayedCommandLength.current += 1;
@@ -57,7 +57,7 @@ export const Logo = () => {
             setDisplayedCommand('');
             clearInterval(typingInterval.current);
             typingInterval.current = undefined;
-        } else if (!typingInterval.current){
+        } else if (!typingInterval.current) {
             // @ts-ignore
             typingInterval.current = initTypingInterval(size, currentCommand);
         }

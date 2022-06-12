@@ -1,6 +1,7 @@
 import styled, {css} from 'styled-components';
 import {Theme} from "../../SharedStyles/theme";
 import {headerHeight} from "../Header/index.styles";
+import {SharedStyles} from "../../SharedStyles";
 
 //@ts-ignore
 const scrollCss = css`
@@ -10,21 +11,12 @@ const scrollCss = css`
     
     width: 100%;
     height: 100%;
-    overflow-x: ${({horizontal}: { horizontal: boolean }) => (horizontal ? 'scroll' : 'hidden')};
-    overflow-y: ${({horizontal}: { horizontal: boolean }) => (horizontal ? 'hidden' : 'scroll')};
+    overflow-x: ${({horizontal}: { horizontal: boolean }) => (horizontal ? 'auto' : 'hidden')};
+    overflow-y: ${({horizontal}: { horizontal: boolean }) => (horizontal ? 'hidden' : 'auto')};
       
     background-color: inherit;
-      
-    scrollbar-color: ${Theme.mediumForegroundColor} transparent;
-    scrollbar-width: 1em;
-       
-    ::-webkit-scrollbar-track {
-      -webkit-box-shadow: inset 0 0 6px ${Theme.mediumForegroundColor};
-    }
-       
-    ::-webkit-scrollbar-thumb {
-      outline: 1px solid ${Theme.mediumForegroundColor};
-    }
+    
+    ${SharedStyles.scrollBarStyle};
 `;
 
 // @ts-ignore
@@ -37,9 +29,8 @@ export const SideBarInfiniteScrollWrapper = styled.div`
 export const ContentTypeScrollWrapper = styled.div`
     ${scrollCss};
     
-    gap: 30px;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     
     // 2*24px -this element's padding
     width: calc(100% - 2*24px);
