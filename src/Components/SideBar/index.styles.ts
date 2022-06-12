@@ -13,7 +13,7 @@ import {Media} from "../../SharedStyles/media";
 export const sideBarSize = 300;
 
 export const SideBarContentPane = styled.div`
-    height: 100%;
+    height: calc(100vh - ${headerHeight}px);
 `;
 
 export const SideBarContent = styled.div`
@@ -25,7 +25,7 @@ export const SideBarContent = styled.div`
     width: ${sideBarSize - 2}px;
     min-width: ${sideBarSize - 2}px;
     max-width: ${sideBarSize - 2}px;
-    height: 100%;
+    height: calc(100vh - ${headerHeight}px);
         
     background-color: ${Theme.darkBackground};
     border-right: 2px solid ${Theme.veryDarkForegroundColor};
