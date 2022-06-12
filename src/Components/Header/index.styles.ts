@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {Theme} from "../../SharedStyles/theme";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {ReactComponent as Menu} from "../../Assets/icons/menu-svgrepo-com.svg";
 import {Media} from "../../SharedStyles/media";
 import {
     ReactComponent as Anonymous
@@ -32,12 +32,12 @@ export const HeaderContent = styled.div`
     ${SharedStyles.unselectableText}
 `;
 
-export const MenuIcon = styled(FontAwesomeIcon)`
+export const MenuIcon = styled(Menu)`
     display: none;
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     
-    & path {
+    & path, g {
         fill: ${Theme.lightForegroundColor} !important;
         color: ${Theme.lightForegroundColor} !important;
     }

@@ -7,7 +7,6 @@ import {
     MenuIcon,
     Username
 } from "./index.styles";
-import {faBars} from '@fortawesome/fontawesome-free-solid'
 import {UserAvatarInfo} from "../../Types/UserTypes";
 import {Logo} from "../Logo";
 
@@ -26,7 +25,7 @@ export const Header = ({
     return (
         <HeaderContent>
             {/* @ts-ignore */}
-            <MenuIcon icon={faBars} onClick={onMenuClick}/>
+            <MenuIcon onClick={onMenuClick}/>
             <LogoAndAvatarHolder>
                 <Logo/>
                 <AvatarInfo>
