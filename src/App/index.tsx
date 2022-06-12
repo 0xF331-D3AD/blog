@@ -1,4 +1,4 @@
-import {Content, ContentPane, SidebarAndContentWrapper, SiteContent} from "./index.styles";
+import {ArticleContentWrapper, ContentPane, SidebarAndContentWrapper, SiteContent} from "./index.styles";
 import {Header} from "../Components/Header";
 import React from "react";
 import {SideBar} from "../Components/SideBar";
@@ -24,13 +24,18 @@ export const App = () => {
                 <SideBar
                     isOpened={isMenuOpened}
                     setIsOpened={setIsMenuOpened}
+                    onSideBarItemClick={() => {
+                        if (size.width < devices.desktop) {
+                            setIsMenuOpened(false);
+                        }
+                    }}
                 />
                 <ContentPane>
-                    <ContentPaneInfiniteScroll>
-                        <Content>
-                            AAAAAAAAAAAAAAAAAA
-                        </Content>
-                    </ContentPaneInfiniteScroll>
+                    <ArticleContentWrapper>
+                        <ContentPaneInfiniteScroll>
+
+                        </ContentPaneInfiniteScroll>
+                    </ArticleContentWrapper>
                 </ContentPane>
             </SidebarAndContentWrapper>
         </SiteContent>

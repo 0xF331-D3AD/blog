@@ -2,7 +2,8 @@ import styled from "styled-components";
 import Background from "../Assets/background.jpg";
 import {headerHeight} from "../Components/Header/index.styles";
 import {Theme} from "../SharedStyles/theme";
-import {SharedStyles} from "../SharedStyles";
+import {sideBarSize} from "../Components/SideBar/index.styles";
+import {Media} from "../SharedStyles/media";
 
 export const SiteContent = styled.div`
     display: flex;
@@ -12,6 +13,8 @@ export const SiteContent = styled.div`
     min-width: 100vw;
     height: 100vh;
     min-height: 100vh;
+    
+    overflow: hidden;
 `;
 
 export const SidebarAndContentWrapper = styled.div`
@@ -37,17 +40,32 @@ export const ContentPane = styled.div`
     background-size: 100% 100%;
 `;
 
-export const Content = styled.div`
-    flex: 1;
-    display: flex;
-    height: 100%;
+export const ArticleContentWrapper = styled.div`
+    width: calc(100% - ${sideBarSize + 192}px);
+    min-width: 0;
+    margin-left: auto;
+    padding: 16px 96px;
     
     border-radius: 16px;
-    border: 2px solid ${Theme.veryDarkForegroundColor};
-    padding: 16px;
+    border: 2px solid ${Theme.darkBackground};
     
-    ${SharedStyles.ellipsisOverflow}
+    ${Media.desktopMd`
+        width: calc(100% - ${sideBarSize + 128}px);
+        padding: 16px 64px;
+    `}
     
-    color: ${Theme.lightForegroundColor};
-    background-color: ${Theme.darkBackground};
+    ${Media.desktop`
+        width: calc(100% - 128px);
+        padding: 16px 64px;
+    `}
+
+    ${Media.tablet`
+        width: calc(100% - 64px);
+        padding: 16px 32px;
+    `}
+    
+    ${Media.phoneLg`
+        width: calc(100% - 32px);
+        padding: 16px;
+    `}
 `;

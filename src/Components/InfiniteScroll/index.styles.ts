@@ -1,7 +1,6 @@
 import styled, {css} from 'styled-components';
 import {Theme} from "../../SharedStyles/theme";
-import {sideBarSize} from "../SideBar/index.styles";
-import {Media} from "../../SharedStyles/media";
+import {headerHeight} from "../Header/index.styles";
 
 //@ts-ignore
 const scrollCss = css`
@@ -36,28 +35,30 @@ export const SideBarInfiniteScrollWrapper = styled.div`
 export const ContentTypeScrollWrapper = styled.div`
     ${scrollCss};
     
-    width: calc(100% - ${sideBarSize + 192}px);
-    min-width: 0;
-    margin-left: auto;
-    padding: 16px 96px;
+    gap: 30px;
+    overflow-x: hidden;
+    overflow-y: scroll;
     
-    ${Media.desktopMd`
-        width: calc(100% - ${sideBarSize + 128}px);
-        padding: 16px 64px;
-    `}
+    // 2*24px -this element's padding
+    width: calc(100% - 2*24px);
+    // 32px - parent's padding
+    height: calc(100vh - ${headerHeight}px - 32px - 2*24px);
     
-    ${Media.desktop`
-        width: calc(100% - 128px);
-        padding: 16px 64px;
-    `}
-
-    ${Media.tablet`
-        width: calc(100% - 64px);
-        padding: 16px 32px;
-    `}
+    padding: 24px;
     
-    ${Media.phoneLg`
-        width: calc(100% - 32px);
-        padding: 16px;
-    `}
+    border-radius: 16px;
+    border: 2px solid ${Theme.veryDarkForegroundColor};
+    
+    background-color: ${Theme.darkBackground};
+    
+    // background-color: red;
+    //
+    // div {
+    //     display: flex;
+    //     min-width: 100%;
+    //    
+    //     font-size: 18px;
+    //     line-height: 20px;
+    //     color: white;
+    // }
 `;

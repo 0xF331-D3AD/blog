@@ -7,7 +7,7 @@ const commands: string[] = [
     'id',
     'which python',
     'cd /tmp',
-    'ls -la',
+    'ls -la /home',
     'cat /etc/passwd',
     'nc -e /bin/bash',
     'su root',
@@ -24,6 +24,9 @@ const commands: string[] = [
     'ssh root@$IP',
     'openssl passwd -6',
     'chmod +x script.sh',
+    'strings file.exe',
+    'netstat -tulpn',
+    './enum.sh | tee res',
 ];
 
 const getRandomCommand = (): string => {
@@ -38,7 +41,7 @@ export const Logo = () => {
 
     const displayedCommandLength = React.useRef(0);
     const typingInterval = React.useRef<NodeJS.Timer | undefined>();
-    const typingRateMs = 600;
+    const typingRateMs = 550;
 
     const initTypingInterval = (size: {width: number}, command: string) => setInterval(() => {
         if (size.width > commandVisibleScreenWidth) {

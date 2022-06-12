@@ -57,11 +57,15 @@ const sideBarContent: SideBarContentType[] = [
 type Props = {
     isOpened: boolean,
     setIsOpened: (newIsOpened: boolean) => void,
+    onSideBarItemClick?: () => void,
 };
 
 export const SideBar = ({
                             isOpened = false,
-                            setIsOpened = () => {},
+                            setIsOpened = () => {
+                            },
+                            onSideBarItemClick = () => {
+                            },
                         }: Props) => {
     const [selectedSection, setSelectedSection] = React.useState<SideBarContentType | undefined>(undefined);
     const location = useLocation();
@@ -71,7 +75,7 @@ export const SideBar = ({
         if (item !== selectedSection) {
             setSelectedSection(item);
             navigate(item.path);
-            setIsOpened(!isOpened);
+            onSideBarItemClick();
         }
     }
 
@@ -89,7 +93,8 @@ export const SideBar = ({
             onClick={(e) => {
                 if (e.target === e.currentTarget) {
                     setIsOpened(!isOpened);
-                };
+                }
+                ;
             }}
         >
             <SideBarContent isOpened={isOpened}>
