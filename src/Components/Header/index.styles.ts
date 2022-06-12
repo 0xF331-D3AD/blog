@@ -34,8 +34,8 @@ export const HeaderContent = styled.div`
 
 export const MenuIcon = styled(FontAwesomeIcon)`
     display: none;
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     
     & path {
         fill: ${Theme.lightForegroundColor} !important;
@@ -57,8 +57,8 @@ export const MenuIcon = styled(FontAwesomeIcon)`
 `;
 
 export const AnonymousAvatar = styled(Anonymous)`
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     padding: 4px;
     
     & path {
@@ -75,8 +75,8 @@ export const AnonymousAvatar = styled(Anonymous)`
 `;
 
 export const Avatar = styled.div`
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
     
     border-radius: 50%;
     

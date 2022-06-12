@@ -38,8 +38,8 @@ export const SideBarItem = styled.div`
     max-height: 68px;
     
     font-weight: bold;
-    font-size: 20px;
-    line-height: 22px;
+    font-size: 16px;
+    line-height: 18px;
   
     color: ${Theme.lightForegroundColor};
     border: solid 2px ${({ isSelected }: { isSelected: boolean }) => isSelected ? Theme.lightForegroundColor : 'transparent'};
@@ -61,8 +61,8 @@ export const SideBarItem = styled.div`
 `;
 
 const iconCss = css`
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     
     & path {
         fill: ${Theme.lightForegroundColor} !important;
