@@ -39,12 +39,13 @@ export const App = () => {
                     <ArticleContentWrapper>
                         <ContentPaneInfiniteScroll>
                             <Routes>
-                                <Route path={BaseRoutes.Article} element={<div />} />
-                                <Route path={BaseRoutes.CTF_HTB} element={<div />} />
-                                <Route path={BaseRoutes.CTF_OTW} element={<div />} />
-                                <Route path={BaseRoutes.CTF_STS} element={<div />} />
-                                <Route path={BaseRoutes.CTF_THM} element={<div />} />
-                                <Route path={BaseRoutes.Tutorial} element={<div />} />
+                                <Route path={BaseRoutes.Article} element={<div/>}/>
+                                <Route path={BaseRoutes.CTF_HTB} element={<div/>}/>
+                                <Route path={BaseRoutes.CTF_OTW} element={<div/>}/>
+                                <Route path={BaseRoutes.CTF_STS} element={<div/>}/>
+                                <Route path={BaseRoutes.CTF_THM} element={<div/>}/>
+                                <Route path={BaseRoutes.Tutorial} element={<div/>}/>
+                                <Route path="*" element={<div/>}/>
                             </Routes>
                         </ContentPaneInfiniteScroll>
                     </ArticleContentWrapper>
