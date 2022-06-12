@@ -7,8 +7,9 @@ import {ReactComponent as Laptop} from "../../Assets/icons/laptop-svgrepo-com.sv
 import {ReactComponent as Cat} from "../../Assets/icons/domestic-cat-shape-svgrepo-com.svg";
 import {ReactComponent as Monkey} from "../../Assets/icons/monkey-mammal-face-outline-front-svgrepo-com.svg";
 import {ReactComponent as Book} from "../../Assets/icons/instruction-manual-manual-instructions-svgrepo-com.svg";
+import {ReactComponent as Virus} from "../../Assets/icons/virus-svgrepo-com.svg";
 import {headerHeight} from "../Header/index.styles";
-import {Media} from "../../SharedStyles/media";
+import {devices, Media} from "../../SharedStyles/media";
 
 export const sideBarSize = 300;
 
@@ -16,8 +17,10 @@ export const SideBarContent = styled.div`
     position: absolute;
     top: ${headerHeight};
     left: 0;
+    
     display: ${({isOpened}: { isOpened: boolean }) => isOpened ? 'flex' : 'none'};
     flex-direction: column;
+    
     width: ${sideBarSize - 2}px;
     min-width: ${sideBarSize - 2}px;
     max-width: ${sideBarSize - 2}px;
@@ -54,8 +57,6 @@ export const SideBarItem = styled.div`
     }
     
     ${Media.phoneMd`
-        font-size: 16px;
-        line-height: 18px;
         padding: 12px 24px;
     `}
 `;
@@ -95,5 +96,34 @@ export const STSIconSVG = styled(Monkey)`
 `;
 
 export const TutorialsIconSVG = styled(Book)`
+    ${iconCss}
+`;
+
+export const SideBarBottom = styled.div`
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    
+    padding: 16px 32px;
+    max-height: 60px;
+    
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 18px;
+  
+    color: ${Theme.lightForegroundColor};
+    
+    :hover {
+        cursor: pointer;
+    }
+    
+    @media(max-height: ${devices.phoneLg}px){
+        display: none;
+    }
+`;
+
+export const VirusIconSVG = styled(Virus)`
     ${iconCss}
 `;

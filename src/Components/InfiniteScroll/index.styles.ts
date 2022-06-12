@@ -2,6 +2,7 @@ import styled, {css} from 'styled-components';
 import {Theme} from "../../SharedStyles/theme";
 import {headerHeight} from "../Header/index.styles";
 import {SharedStyles} from "../../SharedStyles";
+import {devices} from "../../SharedStyles/media";
 
 //@ts-ignore
 const scrollCss = css`
@@ -23,7 +24,12 @@ const scrollCss = css`
 export const SideBarInfiniteScrollWrapper = styled.div`
     ${scrollCss}
     
-    height: calc(100vh - ${headerHeight}px);
+    //92px - sidebar bottom with gap
+    height: calc(100vh - ${headerHeight}px - 60px);
+    
+    @media(max-height: ${devices.phoneLg}px){
+        height: calc(100vh - ${headerHeight}px);
+    }
 `;
 
 export const ContentTypeScrollWrapper = styled.div`

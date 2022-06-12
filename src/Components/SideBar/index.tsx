@@ -3,10 +3,12 @@ import {
     HTBIconSVG,
     OTWIconSVG,
     SideBarContent,
+    SideBarBottom,
     SideBarItem,
     STSIconSVG,
     THMIconSVG,
-    TutorialsIconSVG
+    TutorialsIconSVG,
+    VirusIconSVG,
 } from "./index.styles";
 import {SideBarInfiniteScroll} from "../InfiniteScroll";
 import {useLocation, useNavigate} from "react-router-dom";
@@ -114,6 +116,10 @@ export const SideBar = ({
                             )
                         })}
                 </SideBarInfiniteScroll>
+                <SideBarBottom>
+                    0xF331-D3AD at 2022
+                    <VirusIconSVG />
+                </SideBarBottom>
             </SideBarContent>
         </SideBarOverlay>
     );
