@@ -10,6 +10,11 @@ export const App = () => {
     const [isMenuOpened, setIsMenuOpened] = React.useState<boolean>(false);
     const size = useWindowSize();
 
+    if (document?.getElementById('root')?.style?.height) {
+        // @ts-ignore
+        document.getElementById('root').style.height = window.innerHeight + 'px';
+    }
+
     React.useEffect(() => {
         const isVisibleBySize = size.width >= devices.desktop;
         setIsMenuOpened(isVisibleBySize);
