@@ -36,5 +36,6 @@ export const SideBarOverlayWrapper = styled.div`
     ${Media.desktop`
         right: 0;
         width: 100%;
+        z-index: 10000;
     `}
 `;

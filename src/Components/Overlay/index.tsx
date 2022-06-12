@@ -23,25 +23,29 @@ export const Overlay = ({
                             style = {},
                         }: Props) => {
     return (
-        <OverlayWrapper style={{...style}}>
+        <OverlayWrapper
+            top={top}
+            left={left}
+            right={right}
+            bottom={bottom}
+            overlayIndex={overlayIndex}
+            transparent={transparent}
+            style={{...style}}
+        >
             {/*@ts-ignore*/}
             {children}
         </OverlayWrapper>
     )
 }
 
-type SideBarProps = Props & {
+type SideBarProps = {
+    children?: Component | Component[] | ReactElement<any, any> | ReactElement<any, any>[] | undefined | null;
+    style?: any
     isOpened: boolean,
     onClick: MouseEventHandler<HTMLDivElement>,
 }
 
 export const SideBarOverlay = ({
-                                   top = 0,
-                                   left = 0,
-                                   right = 0,
-                                   bottom = 0,
-                                   overlayIndex = 0,
-                                   transparent = false,
                                    children,
                                    isOpened = true,
                                    style = {},
