@@ -123,7 +123,7 @@ Rendered?
 &radic;x&sup2; + &sum;x
 
 
-# Stuff
+# GMF Stuff
 
 ~Strikethrough~	
 
@@ -131,3 +131,8 @@ Rendered?
 
 * [x] List item checked
 
+# Remark-math Stuff
+
+$$
+L = \frac{1}{2} \rho v^2 S C_L
+$$
