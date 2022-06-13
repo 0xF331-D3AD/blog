@@ -42,6 +42,35 @@ export const MarkdownWrapper = styled.div`
             height: 90%;
         `}
     }
+    
+    table {
+        display: flex;
+        flex-direction: column;
+        
+        margin-left: auto;
+        margin-right: auto;
+        
+        width: 70%;
+        
+        ${Media.tablet`
+            width: 90%;
+            height: 90%;
+        `}
+        
+        border-collapse: collapse;
+        border: 2px solid ${Theme.lightForegroundColor};
+        
+        tr, th, thead {
+            display: flex;
+            flex: 1;
+        }
+        
+        td {
+            display: flex;
+            flex: 1;
+            border: 1px solid ${Theme.lightForegroundColor};
+        }
+    }
 
     ${Media.tablet`
         font-size: 14px;

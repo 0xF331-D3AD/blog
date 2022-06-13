@@ -112,11 +112,12 @@ This **word** is bold. This <em>word</em> is italic.
 
 Rendered?
 
-|   |   |   |   |   |
-|---|---|---|---|---|
-|   |   |   |   |   |
-|   |   |   |   |   |
-|   |   |   |   |   |
+| A1       | A2       | Hello      | Pwn           | C2 goes brrr   |
+|----------|----------|------------|---------------|----------------|
+| 1        | 2        | 3          | blaldwbefwenf | Rere Hehe pepe |
+| WannaCry | WannaDie | Wanna Hugs | -             | weff           |
+|          |          |            |               |                |
+| wefwef   | 53253563 | 34ve       | 22 3e\#       | 3r34r          |
 
 # Formula
 
