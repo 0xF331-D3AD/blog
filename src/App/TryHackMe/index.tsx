@@ -3,13 +3,16 @@ import {useLocation} from "react-router-dom";
 import {buildFileUrlFromPathname} from "../../Utils/MarkdownUtils";
 import {getMarkdown} from "../../Service/MarkdownService";
 import {Theme} from "../../SharedStyles/theme";
+import {ErrorModal} from "../../Components/ErrorModal";
 
 export const TryHackMe = () => {
-    const [content, setContent] = React.useState('');
+    const [error, setError] = React.useState<string>('');
+    const [content, setContent] = React.useState<string>('');
 
     const location = useLocation();
 
     const fetchContent = async () => {
+        // Add .md to pathname to get an error
         const contentUrl = buildFileUrlFromPathname(location.pathname);
         try {
             const markdown = await getMarkdown(contentUrl);
@@ -33,6 +36,14 @@ export const TryHackMe = () => {
             color: Theme.lightForegroundColor,
         }}>
             {content}
+            {
+                error && (
+                    <ErrorModal
+                        close={() => setError('')}
+                        message={error}
+                    />
+                )
+            }
         </div>
     )
 }

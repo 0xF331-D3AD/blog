@@ -34,6 +34,13 @@ export const SideBarInfiniteScrollWrapper = styled.div`
     }
 `;
 
+export const ModalInfiniteScrollWrapper = styled.div`
+    ${scrollCss}
+    
+    overflow-x: hidden;
+    overflow-y: auto;
+`;
+
 export const ContentTypeScrollWrapper = styled.div`
     ${scrollCss};
     
@@ -51,15 +58,4 @@ export const ContentTypeScrollWrapper = styled.div`
     border: 2px solid ${Theme.veryDarkForegroundColor};
     
     background-color: ${Theme.darkBackground};
-    
-    // background-color: red;
-    //
-    // div {
-    //     display: flex;
-    //     min-width: 100%;
-    //    
-    //     font-size: 18px;
-    //     line-height: 20px;
-    //     color: white;
-    // }
 `;

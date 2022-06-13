@@ -9,7 +9,8 @@ type Props = {
     overlayIndex?: number;
     transparent?: boolean;
     children?: Component | Component[] | ReactElement<any, any> | ReactElement<any, any>[] | undefined | null;
-    style?: any
+    style?: any,
+    onClick: MouseEventHandler<HTMLDivElement>,
 }
 
 export const Overlay = ({
@@ -21,6 +22,8 @@ export const Overlay = ({
                             transparent = false,
                             children,
                             style = {},
+                            onClick = () => {
+                            },
                         }: Props) => {
     return (
         <OverlayWrapper
@@ -30,6 +33,7 @@ export const Overlay = ({
             bottom={bottom}
             overlayIndex={overlayIndex}
             transparent={transparent}
+            onClick={onClick}
             style={{...style}}
         >
             {/*@ts-ignore*/}
