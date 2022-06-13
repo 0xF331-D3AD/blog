@@ -7,5 +7,6 @@ export const Theme = {
     darkForegroundColor: '#2d3d2f',
     veryDarkForegroundColor: '#1e2820',
     overlayColor: 'rgba(15, 25, 16, .85)',
+    matrixOverlayColor: 'rgba(0, 0, 0, .5)',
     white: '#ffffff',
 };

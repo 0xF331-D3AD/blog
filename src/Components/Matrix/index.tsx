@@ -6,7 +6,13 @@ import {Theme} from "../../SharedStyles/theme";
 const alphabet: string[] = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890'.split('');
 const fontSize = 14;
 
-export const Matrix = () => {
+type Props = {
+    isBlurred?: boolean,
+}
+
+export const Matrix = ({
+                           isBlurred = false,
+                       }: Props) => {
     const intervalRef = useRef<NodeJS.Timer | undefined>(undefined);
     const canvasRef = useRef<HTMLCanvasElement>()
 
@@ -25,12 +31,12 @@ export const Matrix = () => {
         return drops;
     }
 
-    const draw = (canvas: HTMLCanvasElement, drops: number[]) => {
+    const draw = (canvas: HTMLCanvasElement, drops: number[], isBlurred: boolean) => {
         const ctx = canvas.getContext('2d')!;
         // translucent BG to show trail
         ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = Theme.lightForegroundColor;
+        ctx.fillStyle = isBlurred ? Theme.darkForegroundColor : Theme.mediumForegroundColor;
         ctx.font = `${fontSize}px arial`;
 
         for (let i = 0; i < drops.length; i++) {
@@ -58,11 +64,18 @@ export const Matrix = () => {
 
     useLayoutEffect(() => {
         const drops = setupMatrix(canvasRef.current!);
-        const startDrawing = () => draw(canvasRef.current!, drops);
+        const startDrawing = () => draw(canvasRef.current!, drops, isBlurred);
         startMatrix(startDrawing);
     }, []);
 
+    React.useEffect(() => {
+        const drops = setupMatrix(canvasRef.current!);
+        const startDrawing = () => draw(canvasRef.current!, drops, isBlurred);
+        startMatrix(startDrawing);
+    }, [isBlurred]);
+
     return (
+        // @ts-ignore
         <MatrixWrapper>
             {/* @ts-ignore */}
             <MatrixCanvas id="matrix-canvas" ref={canvasRef}/>

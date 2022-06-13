@@ -6,7 +6,7 @@ import {devices} from "../SharedStyles/media";
 import {useWindowSize} from "../Hooks/WindowHooks";
 import {ContentPaneInfiniteScroll} from "../Components/InfiniteScroll";
 import {Matrix} from "../Components/Matrix/";
-import {Route, Routes} from "react-router-dom";
+import {Route, Routes, useLocation} from "react-router-dom";
 import {ComingSoon} from "./ComingSoon";
 import {NotFound} from "./NotFound";
 import {
@@ -21,6 +21,8 @@ import {AppContentBaseRoutesForRouter, AppRoutes} from "../Enums/AppRoutes";
 
 export const App = () => {
     const [isMenuOpened, setIsMenuOpened] = React.useState<boolean>(false);
+    const [isMatrixBlurred, setIsMatrixBlurred] = React.useState<boolean>(false);
+    const location = useLocation();
     const size = useWindowSize();
 
     document.body.style.overflowY = 'hidden';
@@ -35,6 +37,11 @@ export const App = () => {
             setIsMenuOpened(false);
         }
     }
+
+    React.useEffect(() => {
+        const blurred = location.pathname.endsWith('.md');
+        setIsMatrixBlurred(blurred);
+    }, [location]);
 
     return (
         <SiteContent>
@@ -68,7 +75,7 @@ export const App = () => {
                     </ArticleContentWrapper>
                 </ContentPane>
             </SidebarAndContentWrapper>
-            <Matrix/>
+            <Matrix isBlurred={isMatrixBlurred} />
         </SiteContent>
     );
 }
