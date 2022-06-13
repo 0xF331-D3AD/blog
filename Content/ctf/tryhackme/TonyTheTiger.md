@@ -119,7 +119,7 @@ Interesting. Let's `cat /home/jboss/.bash_history`. We will find another flag th
 ## *Escalate!*
 
 Let's escalate our privileges. First, switch to user *jboss*;
-Then, type `sudo -l` to see what he can run as sudo
+Then, type `sudo -l` to see what he can run with sudo
 
 > Matching Defaults entries for jboss on thm-java-deserial:
     env_reset, mail_badpass,
