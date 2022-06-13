@@ -84,7 +84,7 @@ Download an image:
 > `wget https://i.imgur.com/be2sOV9.jpg`
 
  Retrieve flag:
-> `strings be2sOV9.jpg | grep -e '.\\{5,\\}'`
+> `strings be2sOV9.jpg | grep -e '.\{5,\}'`
 
 ---
 
