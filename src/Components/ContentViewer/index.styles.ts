@@ -3,6 +3,8 @@ import {Theme} from "../../SharedStyles/theme";
 import {Media} from "../../SharedStyles/media";
 
 export const MarkdownWrapper = styled.div`
+    padding-bottom: 24px;
+    
     color: ${Theme.lightForegroundColor};
     
     font-size: 16px;
