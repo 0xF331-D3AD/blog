@@ -50,24 +50,24 @@ export const MarkdownWrapper = styled.div`
         margin-left: auto;
         margin-right: auto;
         
-        width: 70%;
+        width: 85%;
         
         ${Media.tablet`
-            width: 90%;
-            height: 90%;
+            width: 100%;
         `}
         
         border-collapse: collapse;
-        border: 2px solid ${Theme.lightForegroundColor};
+        border: 1px solid ${Theme.lightForegroundColor};
         
         tr, th, thead {
             display: flex;
             flex: 1;
         }
         
-        td {
+        td, th {
             display: flex;
             flex: 1;
+            word-break: break-all;
             border: 1px solid ${Theme.lightForegroundColor};
         }
     }
