@@ -7,7 +7,6 @@ import {ProgressOverlay} from "../ProgressOverlay";
 import {AppContentBaseRoutes, AppRoutes} from "../../Enums/AppRoutes";
 import ReactMarkdown from 'react-markdown';
 import gfm from 'remark-gfm';
-import remarkMath from 'remark-math';
 import {MarkdownWrapper} from "./index.styles";
 
 type Props = {
@@ -59,7 +58,7 @@ const ContentViewer = ({
 
     return (
         <MarkdownWrapper>
-            <ReactMarkdown remarkPlugins={[gfm, remarkMath]}>
+            <ReactMarkdown remarkPlugins={[gfm]}>
                 {content}
             </ReactMarkdown>
             {

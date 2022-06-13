@@ -2,12 +2,14 @@ import React, {useLayoutEffect, useRef} from "react";
 import {MatrixCanvas, MatrixWrapper} from "./index.styles";
 import {getRandomIndex} from "../../Utils/MathUtils";
 import {Theme} from "../../SharedStyles/theme";
+import {useWindowSize} from "../../Hooks/WindowHooks";
 
 const alphabet: string[] = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890'.split('');
 const fontSize = 14;
 
 
 export const Matrix = () => {
+    const size = useWindowSize();
     const intervalRef = useRef<NodeJS.Timer | undefined>(undefined);
     const canvasRef = useRef<HTMLCanvasElement>()
 
@@ -61,7 +63,7 @@ export const Matrix = () => {
         const drops = setupMatrix(canvasRef.current!);
         const startDrawing = () => draw(canvasRef.current!, drops);
         startMatrix(startDrawing);
-    }, []);
+    }, [size]);
 
     return (
         // @ts-ignore

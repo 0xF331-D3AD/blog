@@ -17,6 +17,30 @@ export const MarkdownWrapper = styled.div`
         }
     }
     
+    input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        
+        ${Media.tablet`
+            width: 16px;
+            height: 16px;
+        `}
+    }
+    
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        
+        width: 70%;
+        height: 70%;
+        
+        ${Media.tablet`
+            width: 90%;
+            height: 90%;
+        `}
+    }
+
     ${Media.tablet`
         font-size: 14px;
     `}
