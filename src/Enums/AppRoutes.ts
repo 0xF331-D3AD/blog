@@ -12,7 +12,7 @@ type RoutesType = {
     Tutorial: string,
 }
 
-export const BaseRoutes: RoutesType = Object.freeze({
+export const AppContentBaseRoutes: RoutesType = Object.freeze({
     Article: `${baseUrl}article/`,
     CTF_THM: `${baseUrl}ctf/tryhackme/`,
     CTF_HTB: `${baseUrl}ctf/hackthebox/`,
@@ -23,11 +23,16 @@ export const BaseRoutes: RoutesType = Object.freeze({
 
 const getBaseRoutesForRouter = (): RoutesType => {
     const out = {};
-    for (const key of Object.keys(BaseRoutes)) {
+    for (const key of Object.keys(AppContentBaseRoutes)) {
         // @ts-ignore
-        out[key] = `${BaseRoutes[key]}*`;
+        out[key] = `${AppContentBaseRoutes[key]}*`;
     }
     return out as RoutesType;
 }
 
-export const BaseRoutesForRouter: RoutesType = Object.freeze(getBaseRoutesForRouter());
+export const AppContentBaseRoutesForRouter: RoutesType = Object.freeze(getBaseRoutesForRouter());
+
+export const AppRoutes = Object.freeze({
+   COMING_SOON: 'coming-soon',
+   NOT_FOUND: 'not-found',
+});

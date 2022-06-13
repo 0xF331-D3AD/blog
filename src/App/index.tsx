@@ -10,7 +10,7 @@ import {Route, Routes} from "react-router-dom";
 import {ComingSoon} from "./ComingSoon";
 import {NotFound} from "./NotFound";
 import {TryHackMe} from "./TryHackMe";
-import {BaseRoutesForRouter} from "../Enums/BaseRoutes";
+import {AppContentBaseRoutesForRouter, AppRoutes} from "../Enums/AppRoutes";
 
 export const App = () => {
     const [isMenuOpened, setIsMenuOpened] = React.useState<boolean>(false);
@@ -44,12 +44,14 @@ export const App = () => {
                     <ArticleContentWrapper>
                         <ContentPaneInfiniteScroll>
                             <Routes>
-                                <Route path={BaseRoutesForRouter.Article} element={<ComingSoon/>}/>
-                                <Route path={BaseRoutesForRouter.CTF_HTB} element={<ComingSoon/>}/>
-                                <Route path={BaseRoutesForRouter.CTF_OTW} element={<ComingSoon/>}/>
-                                <Route path={BaseRoutesForRouter.CTF_STS} element={<ComingSoon/>}/>
-                                <Route path={BaseRoutesForRouter.CTF_THM} element={<TryHackMe/>}/>
-                                <Route path={BaseRoutesForRouter.Tutorial} element={<ComingSoon/>}/>
+                                <Route path={AppContentBaseRoutesForRouter.Article} element={<ComingSoon/>}/>
+                                <Route path={AppContentBaseRoutesForRouter.CTF_HTB} element={<ComingSoon/>}/>
+                                <Route path={AppContentBaseRoutesForRouter.CTF_OTW} element={<ComingSoon/>}/>
+                                <Route path={AppContentBaseRoutesForRouter.CTF_STS} element={<ComingSoon/>}/>
+                                <Route path={AppContentBaseRoutesForRouter.CTF_THM} element={<TryHackMe/>}/>
+                                <Route path={AppContentBaseRoutesForRouter.Tutorial} element={<ComingSoon/>}/>
+                                <Route path={AppRoutes.NOT_FOUND} element={<NotFound/>}/>
+                                <Route path={AppRoutes.COMING_SOON} element={<ComingSoon/>}/>
                                 <Route path="*" element={<NotFound/>}/>
                             </Routes>
                         </ContentPaneInfiniteScroll>

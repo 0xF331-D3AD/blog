@@ -12,10 +12,10 @@ import {
 } from "./index.styles";
 import {SideBarInfiniteScroll} from "../InfiniteScroll";
 import {useLocation, useNavigate} from "react-router-dom";
-import {BaseRoutes} from "../../Enums";
 import React from "react";
 import {StyledComponent} from "styled-components";
 import {SideBarOverlay} from "../Overlay";
+import {AppContentBaseRoutes} from "../../Enums/AppRoutes";
 
 type SideBarContentType = {
     icon: StyledComponent<any, any>,
@@ -26,32 +26,32 @@ type SideBarContentType = {
 const sideBarContent: SideBarContentType[] = [
     {
         title: 'Articles',
-        path: BaseRoutes.Article,
+        path: AppContentBaseRoutes.Article,
         icon: ArticlesIconSVG,
     },
     {
         title: 'CTF HTB',
-        path: BaseRoutes.CTF_HTB,
+        path: AppContentBaseRoutes.CTF_HTB,
         icon: HTBIconSVG,
     },
     {
         title: 'CTF OTW',
-        path: BaseRoutes.CTF_OTW,
+        path: AppContentBaseRoutes.CTF_OTW,
         icon: OTWIconSVG,
     },
     {
         title: 'CTF THM',
-        path: BaseRoutes.CTF_THM,
+        path: AppContentBaseRoutes.CTF_THM,
         icon: THMIconSVG,
     },
     {
         title: 'CTF STS',
-        path: BaseRoutes.CTF_STS,
+        path: AppContentBaseRoutes.CTF_STS,
         icon: STSIconSVG,
     },
     {
         title: 'Tutorials',
-        path: BaseRoutes.Tutorial,
+        path: AppContentBaseRoutes.Tutorial,
         icon: TutorialsIconSVG,
     },
 ];
