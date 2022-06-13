@@ -5,10 +5,10 @@ export const buildFileUrlFromPathname = (pathname: string): URL => {
         const url = `${Environment.CONTENT_BASE_URL}${Environment.CONTENT_DIRECTORY_INDEX_FILENAME}`;
         return new URL(url);
     } else if (!pathname.endsWith('.md')) {
-        const pathnameNoBaseLocationNoTrailingSlash = pathname.endsWith('/')
+        const pathnameNoTrailingSlash = pathname.endsWith('/')
             ? pathname.slice(0, pathname.length - 1)
             : pathname;
-        const url = `${Environment.CONTENT_BASE_URL}${pathnameNoBaseLocationNoTrailingSlash}/${Environment.CONTENT_DIRECTORY_INDEX_FILENAME}`;
+        const url = `${Environment.CONTENT_BASE_URL}${pathnameNoTrailingSlash}/${Environment.CONTENT_DIRECTORY_INDEX_FILENAME}`;
         return new URL(url);
     }
     const url = `${Environment.CONTENT_BASE_URL}${pathname}`;
