@@ -15,12 +15,12 @@ code, escalating our privileges etc.
 ---
 
 - What is a great IRL example of an "Object"? 
->lamp
+> lamp
 - What is the acronym of a possible type of attack resulting from a
 "serialisation" attack?
 > DoS
 - What lower-level format does data within "Objects" get converted into
->byte stream
+> byte stream
 
 ## *Reconnaissance*
 
@@ -85,12 +85,6 @@ Download an image:
  Retrieve flag:
 > strings be2sOV9.jpg | grep -e '.\\{5,\\}'
 
----
-
-- Tony has started a totally unbiased blog about taste-testing various
-cereals! He'd love for you to have a read...
-> THM{Tony_Sure_Loves_Frosted_Flakes}
-
 ## *Exploit!*
 
 Ok, so we have JBoss server, vulnerable to CVE-2015-7501. Let's not reivent a bicycle and
@@ -111,15 +105,11 @@ Let's upgrade our netcat shell and snoop around:
 
 First thing that we can find is 'note' in /home/jboss, from which we learn a password:
 
-> jboss:likeaboss
-
 Then, let's use `history` to find what commands were executed
 
 > echo "I see you peeping! You're on the right lines..."
 
-Interesting. Let's `cat /home/jboss/.bash_history`. We will find another flag there:
-
-> THM{50c10ad46b5793704601ecdad865eb06}
+Interesting. Let's `cat /home/jboss/.bash_history`. We will find another flag there.
 
 ---
 
@@ -138,22 +128,18 @@ Then, type `sudo -l` to see what he can run as sudo
 Locate payload on [GTFOBins](https://gtfobins.github.io/gtfobins/find/#sudo) and escalate
 your privileges to root.
 
-Navigate to /root. You'll find base64 encoded hash:
-
-> QkM3N0FDMDcyRUUzMEUzNzYwODA2ODY0RTIzNEM3Q0Y==
+Navigate to /root. You'll find base64 encoded flag:
 
 Decode it:
 
-> echo 'QkM3N0FDMDcyRUUzMEUzNzYwODA2ODY0RTIzNEM3Q0Y==' | base64 -d
+> echo '$ENCODED_FLAG' | base64 -d
 
 Determine hash type:
 
-> name-that-hash --text BC77AC072EE30E3760806864E234C7CF
+> name-that-hash --text "$FLAG"
 
 Crack MD5 hash with hashcat and rockyou wordlist:
 
 > hashcat --force -m 0 -a 0 hash.txt ~/CyberSecurity/SecLists/Passwords/Leaked-Databases/rockyou.txt
 
 And get the final flag:
-
-> zxcvbnm123456789
