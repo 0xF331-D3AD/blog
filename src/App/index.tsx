@@ -52,6 +52,7 @@ export const App = () => {
                                 <Route path={AppContentBaseRoutesForRouter.Tutorial} element={<ComingSoon/>}/>
                                 <Route path={AppRoutes.NOT_FOUND} element={<NotFound/>}/>
                                 <Route path={AppRoutes.COMING_SOON} element={<ComingSoon/>}/>
+                                <Route path={AppRoutes.BLOG} element={<ComingSoon/>}/>
                                 <Route path="*" element={<NotFound/>}/>
                             </Routes>
                         </ContentPaneInfiniteScroll>

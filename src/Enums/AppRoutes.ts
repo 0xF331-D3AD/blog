@@ -1,5 +1,4 @@
 import {Environment} from "./Environment";
-import {stringify} from "querystring";
 
 const baseUrl = Environment.BASE_LOCATION;
 
@@ -33,6 +32,7 @@ const getBaseRoutesForRouter = (): RoutesType => {
 export const AppContentBaseRoutesForRouter: RoutesType = Object.freeze(getBaseRoutesForRouter());
 
 export const AppRoutes = Object.freeze({
-   COMING_SOON: 'coming-soon',
-   NOT_FOUND: 'not-found',
+    COMING_SOON: 'coming-soon',
+    NOT_FOUND: 'not-found',
+    BLOG: 'blog',
 });
