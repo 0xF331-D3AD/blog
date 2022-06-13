@@ -13,19 +13,19 @@ type RoutesType = {
 }
 
 export const AppContentBaseRoutes: RoutesType = Object.freeze({
-    Article: `${baseUrl}article/`,
-    CTF_THM: `${baseUrl}ctf/tryhackme/`,
-    CTF_HTB: `${baseUrl}ctf/hackthebox/`,
-    CTF_OTW: `${baseUrl}ctf/overthewire/`,
-    CTF_STS: `${baseUrl}ctf/smashthestack/`,
-    Tutorial: `${baseUrl}tutorial/`,
+    Article: `${baseUrl}article`,
+    CTF_THM: `${baseUrl}ctf/tryhackme`,
+    CTF_HTB: `${baseUrl}ctf/hackthebox`,
+    CTF_OTW: `${baseUrl}ctf/overthewire`,
+    CTF_STS: `${baseUrl}ctf/smashthestack`,
+    Tutorial: `${baseUrl}tutorial`,
 });
 
 const getBaseRoutesForRouter = (): RoutesType => {
     const out = {};
     for (const key of Object.keys(AppContentBaseRoutes)) {
         // @ts-ignore
-        out[key] = `${AppContentBaseRoutes[key]}*`;
+        out[key] = `${AppContentBaseRoutes[key]}/*`;
     }
     return out as RoutesType;
 }

@@ -1,9 +1,10 @@
 import React from "react";
-import {ComingSoonContent, ComingSoonText, ComingSoonWrapper,} from "./index.styles";
-import {FlexHourGlass} from "../../Components/HourGlass";
-import {Theme} from "../../SharedStyles/theme";
+import {Overlay} from "../Overlay";
 import {useWindowSize} from "../../Hooks/WindowHooks";
 import {devices} from "../../SharedStyles/media";
+import {ProgressOverlayContent} from "./index.styles";
+import {FlexHourGlass} from "../HourGlass";
+import {Theme} from "../../SharedStyles/theme";
 
 type HourGlassSize = {
     width: number,
@@ -11,22 +12,22 @@ type HourGlassSize = {
 }
 
 const initHourGlassSize: HourGlassSize = {
-    width: 120,
-    height: 135,
+    width: 160,
+    height: 180,
 }
 
-export const ComingSoon = () => {
+export const ProgressOverlay = () => {
     const [hourGlassSize, setHourGlassSize] = React.useState<HourGlassSize>(initHourGlassSize);
     const size = useWindowSize();
 
     React.useEffect(() => {
         const newSize = { ...hourGlassSize };
         if (size.width < devices.phoneLg) {
-            newSize.width = 40;
-            newSize.height = 45;
+            newSize.width = 60;
+            newSize.height = 70;
         } else if (size.width < devices.tablet) {
-            newSize.width = 80;
-            newSize.height = 90;
+            newSize.width = 90;
+            newSize.height = 105;
         } else {
             newSize.width = initHourGlassSize.width;
             newSize.height = initHourGlassSize.height;
@@ -35,22 +36,16 @@ export const ComingSoon = () => {
     }, [size]);
 
     return (
-        <ComingSoonWrapper>
-            <ComingSoonContent>
+        <Overlay>
+            <ProgressOverlayContent>
                 <FlexHourGlass
                     height={hourGlassSize.height}
                     width={hourGlassSize.width}
                     glassColor={Theme.mediumForegroundColor}
-                    backgroundColor={Theme.darkBackground}
+                    backgroundColor={Theme.mediumBackground}
                     sandColor={Theme.lightForegroundColor}
                 />
-                <ComingSoonText>
-                    Looks like you're on a page that has no content yet!
-                    <br />
-                    <br />
-                    Please, come again later
-                </ComingSoonText>
-            </ComingSoonContent>
-        </ComingSoonWrapper>
+            </ProgressOverlayContent>
+        </Overlay>
     )
 }

@@ -10,7 +10,7 @@ type Props = {
     transparent?: boolean;
     children?: Component | Component[] | ReactElement<any, any> | ReactElement<any, any>[] | undefined | null;
     style?: any,
-    onClick: MouseEventHandler<HTMLDivElement>,
+    onClick?: MouseEventHandler<HTMLDivElement>,
 }
 
 export const Overlay = ({
