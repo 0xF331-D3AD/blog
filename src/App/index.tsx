@@ -9,7 +9,14 @@ import {Matrix} from "../Components/Matrix/";
 import {Route, Routes} from "react-router-dom";
 import {ComingSoon} from "./ComingSoon";
 import {NotFound} from "./NotFound";
-import {TryHackMe} from "./TryHackMe";
+import {
+    CtfViewer,
+    HackTheBoxViewer,
+    LandingViewer,
+    OverTheWireViewer,
+    SmashTheStackViewer,
+    TryHackMeViewer
+} from "../Components/ArticleViewer";
 import {AppContentBaseRoutesForRouter, AppRoutes} from "../Enums/AppRoutes";
 
 export const App = () => {
@@ -45,14 +52,16 @@ export const App = () => {
                         <ContentPaneInfiniteScroll>
                             <Routes>
                                 <Route path={AppContentBaseRoutesForRouter.Article} element={<ComingSoon/>}/>
-                                <Route path={AppContentBaseRoutesForRouter.CTF_HTB} element={<ComingSoon/>}/>
-                                <Route path={AppContentBaseRoutesForRouter.CTF_OTW} element={<ComingSoon/>}/>
-                                <Route path={AppContentBaseRoutesForRouter.CTF_STS} element={<ComingSoon/>}/>
-                                <Route path={AppContentBaseRoutesForRouter.CTF_THM} element={<TryHackMe/>}/>
+                                <Route path={AppContentBaseRoutesForRouter.CTF} element={<CtfViewer/>}/>
+                                <Route path={AppContentBaseRoutesForRouter.CTF_HTB} element={<HackTheBoxViewer/>}/>
+                                <Route path={AppContentBaseRoutesForRouter.CTF_OTW} element={<OverTheWireViewer/>}/>
+                                <Route path={AppContentBaseRoutesForRouter.CTF_STS} element={<SmashTheStackViewer/>}/>
+                                <Route path={AppContentBaseRoutesForRouter.CTF_THM} element={<TryHackMeViewer/>}/>
                                 <Route path={AppContentBaseRoutesForRouter.Tutorial} element={<ComingSoon/>}/>
                                 <Route path={AppRoutes.NOT_FOUND} element={<NotFound/>}/>
                                 <Route path={AppRoutes.COMING_SOON} element={<ComingSoon/>}/>
                                 <Route path={AppRoutes.BLOG} element={<ComingSoon/>}/>
+                                <Route path={AppRoutes.Landing} element={<LandingViewer/>}/>
                                 <Route path="*" element={<NotFound/>}/>
                             </Routes>
                         </ContentPaneInfiniteScroll>

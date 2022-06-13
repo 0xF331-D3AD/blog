@@ -3,16 +3,24 @@ import {useLocation, useNavigate} from "react-router-dom";
 import {buildFileUrlFromPathname} from "../../Utils/MarkdownUtils";
 import {getMarkdown} from "../../Service/MarkdownService";
 import {Theme} from "../../SharedStyles/theme";
-import {ErrorModal} from "../../Components/ErrorModal";
-import {ProgressOverlay} from "../../Components/ProgressOverlay";
-import {AppContentBaseRoutes} from "../../Enums/AppRoutes";
+import {ErrorModal} from "../ErrorModal";
+import {ProgressOverlay} from "../ProgressOverlay";
+import {AppContentBaseRoutes, AppRoutes} from "../../Enums/AppRoutes";
+import ReactMarkdown from 'react-markdown';
+import gfm from 'remark-gfm';
+import remarkMath from 'remark-math';
+import {Environment} from "../../Enums/Environment";
 
-export const TryHackMe = () => {
+type Props = {
+    baseUrl: string,
+}
+
+export const ArticleViewer = ({
+                                  baseUrl,
+                              }: Props) => {
     const [loading, setLoading] = React.useState<boolean>(true);
     const [error, setError] = React.useState<string>('');
     const [content, setContent] = React.useState<string>('');
-
-    const baseUrl = AppContentBaseRoutes.CTF_THM;
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -33,6 +41,7 @@ export const TryHackMe = () => {
                     setContent(indexMarkdown);
                     navigate(baseUrl);
                 } catch (innerError) {
+                    navigate(Environment.BASE_LOCATION);
                     // @ts-ignore
                     setError(`Initial error: ${e.message};\nError while redirecting: ${innerError.message}`);
                 }
@@ -53,7 +62,9 @@ export const TryHackMe = () => {
         <div style={{
             color: Theme.lightForegroundColor,
         }}>
-            {content}
+            <ReactMarkdown remarkPlugins={[gfm, remarkMath]}>
+                {content}
+            </ReactMarkdown>
             {
                 error && (
                     <ErrorModal
@@ -63,8 +74,15 @@ export const TryHackMe = () => {
                 )
             }
             {loading && !error && (
-                <ProgressOverlay />
+                <ProgressOverlay/>
             )}
         </div>
     )
 }
+
+export const LandingViewer = () => (<ArticleViewer baseUrl={AppRoutes.Landing}/>);
+export const CtfViewer = () => (<ArticleViewer baseUrl={AppContentBaseRoutes.CTF}/>);
+export const TryHackMeViewer = () => (<ArticleViewer baseUrl={AppContentBaseRoutes.CTF_THM}/>);
+export const HackTheBoxViewer = () => (<ArticleViewer baseUrl={AppContentBaseRoutes.CTF_HTB}/>);
+export const OverTheWireViewer = () => (<ArticleViewer baseUrl={AppContentBaseRoutes.CTF_OTW}/>);
+export const SmashTheStackViewer = () => (<ArticleViewer baseUrl={AppContentBaseRoutes.CTF_STS}/>);
