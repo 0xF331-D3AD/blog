@@ -32,6 +32,5 @@ export const AppContentBaseRoutesForRouter: RoutesType = Object.freeze(getBaseRo
 export const AppRoutes = Object.freeze({
     COMING_SOON: 'coming-soon',
     NOT_FOUND: 'not-found',
-    BLOG: 'blog',
     Landing: `/`,
 });

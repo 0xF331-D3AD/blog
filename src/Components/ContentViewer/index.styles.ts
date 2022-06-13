@@ -1,0 +1,6 @@
+import styled from "styled-components";
+import {Theme} from "../../SharedStyles/theme";
+
+export const MarkdownWrapper = styled.div`
+    color: ${Theme.lightForegroundColor};
+`;

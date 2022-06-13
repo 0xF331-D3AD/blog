@@ -2,20 +2,19 @@ import React from "react";
 import {useLocation, useNavigate} from "react-router-dom";
 import {buildFileUrlFromPathname} from "../../Utils/MarkdownUtils";
 import {getMarkdown} from "../../Service/MarkdownService";
-import {Theme} from "../../SharedStyles/theme";
 import {ErrorModal} from "../ErrorModal";
 import {ProgressOverlay} from "../ProgressOverlay";
 import {AppContentBaseRoutes, AppRoutes} from "../../Enums/AppRoutes";
 import ReactMarkdown from 'react-markdown';
 import gfm from 'remark-gfm';
 import remarkMath from 'remark-math';
-import {Environment} from "../../Enums/Environment";
+import {MarkdownWrapper} from "./index.styles";
 
 type Props = {
     baseUrl: string,
 }
 
-export const ArticleViewer = ({
+const ContentViewer = ({
                                   baseUrl,
                               }: Props) => {
     const [loading, setLoading] = React.useState<boolean>(true);
@@ -59,9 +58,7 @@ export const ArticleViewer = ({
     }, [location]);
 
     return (
-        <div style={{
-            color: Theme.lightForegroundColor,
-        }}>
+        <MarkdownWrapper>
             <ReactMarkdown remarkPlugins={[gfm, remarkMath]}>
                 {content}
             </ReactMarkdown>
@@ -76,13 +73,15 @@ export const ArticleViewer = ({
             {loading && !error && (
                 <ProgressOverlay/>
             )}
-        </div>
+        </MarkdownWrapper>
     )
 }
 
-export const LandingViewer = () => (<ArticleViewer baseUrl={AppRoutes.Landing}/>);
-export const CtfViewer = () => (<ArticleViewer baseUrl={AppContentBaseRoutes.CTF}/>);
-export const TryHackMeViewer = () => (<ArticleViewer baseUrl={AppContentBaseRoutes.CTF_THM}/>);
-export const HackTheBoxViewer = () => (<ArticleViewer baseUrl={AppContentBaseRoutes.CTF_HTB}/>);
-export const OverTheWireViewer = () => (<ArticleViewer baseUrl={AppContentBaseRoutes.CTF_OTW}/>);
-export const SmashTheStackViewer = () => (<ArticleViewer baseUrl={AppContentBaseRoutes.CTF_STS}/>);
+export const LandingViewer = () => (<ContentViewer baseUrl={AppRoutes.Landing}/>);
+export const ArticlesViewer = () => (<ContentViewer baseUrl={AppContentBaseRoutes.Article}/>);
+export const CtfViewer = () => (<ContentViewer baseUrl={AppContentBaseRoutes.CTF}/>);
+export const TryHackMeViewer = () => (<ContentViewer baseUrl={AppContentBaseRoutes.CTF_THM}/>);
+export const HackTheBoxViewer = () => (<ContentViewer baseUrl={AppContentBaseRoutes.CTF_HTB}/>);
+export const OverTheWireViewer = () => (<ContentViewer baseUrl={AppContentBaseRoutes.CTF_OTW}/>);
+export const SmashTheStackViewer = () => (<ContentViewer baseUrl={AppContentBaseRoutes.CTF_STS}/>);
+export const TutorialViewer = () => (<ContentViewer baseUrl={AppContentBaseRoutes.Tutorial}/>);

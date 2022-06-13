@@ -10,13 +10,14 @@ import {Route, Routes, useLocation} from "react-router-dom";
 import {ComingSoon} from "./ComingSoon";
 import {NotFound} from "./NotFound";
 import {
+    ArticlesViewer,
     CtfViewer,
     HackTheBoxViewer,
     LandingViewer,
     OverTheWireViewer,
     SmashTheStackViewer,
-    TryHackMeViewer
-} from "../Components/ArticleViewer";
+    TryHackMeViewer, TutorialViewer
+} from "../Components/ContentViewer";
 import {AppContentBaseRoutesForRouter, AppRoutes} from "../Enums/AppRoutes";
 
 export const App = () => {
@@ -58,16 +59,15 @@ export const App = () => {
                     <ArticleContentWrapper>
                         <ContentPaneInfiniteScroll>
                             <Routes>
-                                <Route path={AppContentBaseRoutesForRouter.Article} element={<ComingSoon/>}/>
+                                <Route path={AppContentBaseRoutesForRouter.Article} element={<ArticlesViewer/>}/>
                                 <Route path={AppContentBaseRoutesForRouter.CTF} element={<CtfViewer/>}/>
                                 <Route path={AppContentBaseRoutesForRouter.CTF_HTB} element={<HackTheBoxViewer/>}/>
                                 <Route path={AppContentBaseRoutesForRouter.CTF_OTW} element={<OverTheWireViewer/>}/>
                                 <Route path={AppContentBaseRoutesForRouter.CTF_STS} element={<SmashTheStackViewer/>}/>
                                 <Route path={AppContentBaseRoutesForRouter.CTF_THM} element={<TryHackMeViewer/>}/>
-                                <Route path={AppContentBaseRoutesForRouter.Tutorial} element={<ComingSoon/>}/>
+                                <Route path={AppContentBaseRoutesForRouter.Tutorial} element={<TutorialViewer/>}/>
                                 <Route path={AppRoutes.NOT_FOUND} element={<NotFound/>}/>
                                 <Route path={AppRoutes.COMING_SOON} element={<ComingSoon/>}/>
-                                <Route path={AppRoutes.BLOG} element={<ComingSoon/>}/>
                                 <Route path={AppRoutes.Landing} element={<LandingViewer/>}/>
                                 <Route path="*" element={<NotFound/>}/>
                             </Routes>
