@@ -81,10 +81,10 @@ But then I tried looking for hidden content in images and Boom!
 An image at posts/frosted-flakes/ contained flag inside:
 
 Download an image: 
-> 'wget https://i.imgur.com/be2sOV9.jpg'
+> `wget https://i.imgur.com/be2sOV9.jpg`
 
  Retrieve flag:
-> 'strings be2sOV9.jpg | grep -e '.\\{5,\\}''
+> `strings be2sOV9.jpg | grep -e '.\\{5,\\}'`
 
 ---
 
@@ -135,14 +135,14 @@ Navigate to /root. You'll find base64 encoded flag:
 
 Decode it:
 
-> 'echo '$ENCODED_FLAG' | base64 -d'
+> `echo '$ENCODED_FLAG' | base64 -d`
 
 Determine hash type:
 
-> 'name-that-hash --text "$FLAG"'
+> `name-that-hash --text "$FLAG"`
 
 Crack MD5 hash with hashcat and rockyou wordlist:
 
-> 'hashcat --force -m 0 -a 0 hash.txt ~/CyberSecurity/SecLists/Passwords/Leaked-Databases/rockyou.txt'
+> `hashcat --force -m 0 -a 0 hash.txt ~/CyberSecurity/SecLists/Passwords/Leaked-Databases/rockyou.txt`
 
 And get the final flag.
