@@ -73,12 +73,12 @@ directories in service, running on port 80:
 - /posts/frosted-flakes/
 - /posts/my-first-post/
 
-After reading blogs, walking an apllication, searching for comments,
+After reading blogs, walking an application, searching for comments,
 hidden content, references, after running directory scanners and trying
 path traversal, I got approximately nothing.
 
 But then I tried looking for hidden content in images and Boom!
-An image at posts/frosted-flakes/ contained flag inside:
+An image at posts/frosted-flakes/ contained flag inside.
 
 Download an image: 
 > `wget https://i.imgur.com/be2sOV9.jpg`
@@ -90,9 +90,9 @@ Download an image:
 
 ## *Exploit!*
 
-Ok, so we have JBoss server, vulnerable to CVE-2015-7501. Let's not reivent a bicycle and
-find an exploit on the Internet. The can be found in [byt3b33d3r's Github](https://github.com/byt3bl33d3r/java-deserialization-exploits),
-but let's used the modified version that is supplied in this room.
+Ok, so we have JBoss server, vulnerable to CVE-2015-7501. Let's not reinvent a bicycle and
+find an exploit on the Internet. It can be found in [byt3b33d3r's Github](https://github.com/byt3bl33d3r/java-deserialization-exploits),
+but let's use the modified version that is supplied in this room.
 
 1. Setup a netcat listener:
 > `nc -lvnp 8080`
