@@ -14,8 +14,8 @@ type Props = {
 }
 
 const ContentViewer = ({
-                                  baseUrl,
-                              }: Props) => {
+                           baseUrl,
+                       }: Props) => {
     const [loading, setLoading] = React.useState<boolean>(true);
     const [error, setError] = React.useState<string>('');
     const [content, setContent] = React.useState<string>('');

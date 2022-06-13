@@ -1,7 +1,7 @@
 import {Environment} from "../Enums/Environment";
 
 export const buildFileUrlFromPathname = (pathname: string): URL => {
-    if (pathname === ''){
+    if (pathname === '') {
         const url = `${Environment.CONTENT_BASE_URL}${Environment.CONTENT_DIRECTORY_INDEX_FILENAME}`;
         return new URL(url);
     } else if (!pathname.endsWith('.md')) {

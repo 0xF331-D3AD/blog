@@ -20,7 +20,7 @@ export const ComingSoon = () => {
     const size = useWindowSize();
 
     React.useEffect(() => {
-        const newSize = { ...hourGlassSize };
+        const newSize = {...hourGlassSize};
         if (size.width < devices.phoneLg) {
             newSize.width = 40;
             newSize.height = 45;
@@ -46,8 +46,8 @@ export const ComingSoon = () => {
                 />
                 <ComingSoonText>
                     Looks like you're on a page that has no content yet!
-                    <br />
-                    <br />
+                    <br/>
+                    <br/>
                     Please, come again later
                 </ComingSoonText>
             </ComingSoonContent>

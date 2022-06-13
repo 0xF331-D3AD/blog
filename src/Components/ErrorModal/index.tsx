@@ -1,5 +1,5 @@
 import React from "react";
-import {ErrorContentWrapper, ErrorIcon, ErrorMessageBox, ModalMessage, ErrorScrollContentWrapper} from "./index.styles";
+import {ErrorContentWrapper, ErrorIcon, ErrorMessageBox, ErrorScrollContentWrapper, ModalMessage} from "./index.styles";
 import {Overlay} from "../Overlay";
 import {ModalInfiniteScroll} from "../InfiniteScroll";
 

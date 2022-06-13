@@ -38,8 +38,8 @@ export const HourGlassWrapper = styled.div`
 export const HourGlassFlexWrapper = styled.div`
     display: flex;
     
-    width: ${({ width }: { width: number }) => width}px;
-    height: ${({ height } : { height: number}) => height}px;
+    width: ${({width}: { width: number }) => width}px;
+    height: ${({height}: { height: number }) => height}px;
 `;
 
 export const HourGlassContainer = styled.div`
@@ -47,19 +47,22 @@ export const HourGlassContainer = styled.div`
     -webkit-animation: ${hourglassSpinKeyframes} ease-in 3s infinite;
     animation: ${hourglassSpinKeyframes} ease-in 3s infinite;
     
-    width: ${({ width }: { width: number }) => width}px;
-    height: ${({ height } : { height: number}) => height}px;
+    width: ${({width}: { width: number }) => width}px;
+    height: ${({height}: { height: number }) => height}px;
 `;
 
 export const Glass = styled.div`
-    width: ${({ width }: { width: number }) => width}px;
-    height: ${({ height } : { height: number}) => height}px;
+    width: ${({width}: { width: number }) => width}px;
+    height: ${({height}: { height: number }) => height}px;
 `;
 
 const triangleCss = css`
     border-color: transparent;
     border-style: solid;
-    border-width: ${({ width, height }: { width: number, height: number }) => `${2 / 3 * height}px ${0.5 * width}px 0 ${0.5 * width}px`};
+    border-width: ${({
+                                                 width,
+                                                 height
+                                             }: { width: number, height: number }) => `${2 / 3 * height}px ${0.5 * width}px 0 ${0.5 * width}px`};
     width: 0;
     height: 0;
 `;
@@ -72,15 +75,15 @@ const upsideDownCss = css`
 export const TopHalfGlass = styled.div`
     ${triangleCss};
     
-    border-top-color: ${({ glassColor }: { glassColor: string }) => glassColor};
+    border-top-color: ${({glassColor}: { glassColor: string }) => glassColor};
 `;
 
 export const BottomHalfGlass = styled.div`
     ${triangleCss};
     ${upsideDownCss};
     
-    border-top-color: ${({ glassColor }: { glassColor: string }) => glassColor};
-    margin-top: ${({ height } : { height: number}) => -1 / 3 * height}px;
+    border-top-color: ${({glassColor}: { glassColor: string }) => glassColor};
+    margin-top: ${({height}: { height: number }) => -1 / 3 * height}px;
 `;
 
 export const Layer = styled.div`
@@ -88,8 +91,8 @@ export const Layer = styled.div`
     left: 0;
     top: 0;
     
-    width: ${({ width }: { width: number }) => width}px;
-    height: ${({ height } : { height: number}) => height}px;
+    width: ${({width}: { width: number }) => width}px;
+    height: ${({height}: { height: number }) => height}px;
     
     -webkit-transform: scale(.75);
     -webkit-transform-origin: center top;
@@ -101,18 +104,18 @@ export const LayerOneTopTriangle = styled.div`
     ${triangleCss};
     position: absolute;
     // 0.2618 radians = 15 degrees
-    bottom: ${({ height }: { height: number }) => Math.ceil(height * Math.sin(0.2618))}px;
+    bottom: ${({height}: { height: number }) => Math.ceil(height * Math.sin(0.2618))}px;
     
-    border-top-color:  ${({ backgroundColor }: { backgroundColor: string }) => backgroundColor};
+    border-top-color:  ${({backgroundColor}: { backgroundColor: string }) => backgroundColor};
 `;
 
 export const LayerOneBottomTriangle = styled.div`
     ${triangleCss};
     position: absolute;
     // 0.2618 radians = 15 degrees
-    bottom: ${({ height }: { height: number }) => Math.ceil(height * Math.sin(0.2618) + height / 3)}px;
+    bottom: ${({height}: { height: number }) => Math.ceil(height * Math.sin(0.2618) + height / 3)}px;
     
-    border-top-color: ${({ sandColor }: { sandColor: string }) => sandColor};
+    border-top-color: ${({sandColor}: { sandColor: string }) => sandColor};
 `;
 
 const layerTwoFlowAnimation = css`
@@ -126,9 +129,9 @@ export const LayerTwoTopTriangle = styled.div`
     ${triangleCss};
     position: absolute;
     // 0.2618 radians = 15 degrees
-    bottom: ${({ height }: { height: number }) => Math.ceil(height * Math.sin(0.2618))}px;
+    bottom: ${({height}: { height: number }) => Math.ceil(height * Math.sin(0.2618))}px;
     
-    border-top-color: ${({ sandColor }: { sandColor: string }) => sandColor};
+    border-top-color: ${({sandColor}: { sandColor: string }) => sandColor};
     
     ${layerTwoFlowAnimation}
 `;
@@ -137,9 +140,9 @@ export const LayerTwoBottomTriangle = styled.div`
     ${triangleCss};
     position: absolute;
     // 0.2618 radians = 15 degrees
-    bottom: ${({ height }: { height: number }) => Math.ceil(height * Math.sin(0.2618) + height / 3)}px;
+    bottom: ${({height}: { height: number }) => Math.ceil(height * Math.sin(0.2618) + height / 3)}px;
     
-    border-top-color:  ${({ backgroundColor }: { backgroundColor: string }) => backgroundColor};
+    border-top-color:  ${({backgroundColor}: { backgroundColor: string }) => backgroundColor};
     
     ${layerTwoFlowAnimation}
 `;
@@ -152,18 +155,18 @@ export const SandStream = styled.div`
     position: absolute;
     left: 50%;
     top: 50%;
-    margin-left: ${({ width }: { width: number }) => Math.ceil(-0.5 * width * 0.075)}px;
-    width: ${({ width }: { width: number }) => Math.ceil(width * 0.075)}px;
-    height: ${({ height }: { height: number }) => Math.ceil(height / 2 - height / 4 * Math.sin(0.2618))}px;
-    background: ${({ sandColor }: { sandColor: string }) => sandColor};
+    margin-left: ${({width}: { width: number }) => Math.ceil(-0.5 * width * 0.075)}px;
+    width: ${({width}: { width: number }) => Math.ceil(width * 0.075)}px;
+    height: ${({height}: { height: number }) => Math.ceil(height / 2 - height / 4 * Math.sin(0.2618))}px;
+    background: ${({sandColor}: { sandColor: string }) => sandColor};
 `;
 
 export const Bond = styled.div`
     position: absolute;
-    left: ${({ width }: { width: number }) => width / 2}px;
-    top: ${({ height }: { height: number }) => height / 2}px;
-    margin-left: ${({ width }: { width: number }) => -1 * width / 8}px;
-    margin-top: ${({ height }: { height: number }) => -1 * height / 18}px;
+    left: ${({width}: { width: number }) => width / 2}px;
+    top: ${({height}: { height: number }) => height / 2}px;
+    margin-left: ${({width}: { width: number }) => -1 * width / 8}px;
+    margin-top: ${({height}: { height: number }) => -1 * height / 18}px;
     width: 0;
     height: 0;
 `;
@@ -171,15 +174,21 @@ export const Bond = styled.div`
 export const BondTopTriangle = styled.div`
     ${triangleCss}
     
-    border-top-color: ${({ glassColor }: { glassColor: string }) => glassColor};;
-    width: ${({ width }: { width: number }) => width / 8}px;
-    border-width: ${({ width, height }: { width: number, height: number }) => `${height / 18}px ${width / 16}px 0 ${width / 16}px`};
+    border-top-color: ${({glassColor}: { glassColor: string }) => glassColor};;
+    width: ${({width}: { width: number }) => width / 8}px;
+    border-width: ${({
+                                                                                                                                                                                                                         width,
+                                                                                                                                                                                                                         height
+                                                                                                                                                                                                                     }: { width: number, height: number }) => `${height / 18}px ${width / 16}px 0 ${width / 16}px`};
 `;
 
 export const BondBottomTriangle = styled.div`
     ${triangleCss}
     
-    border-bottom-color: ${({ glassColor }: { glassColor: string }) => glassColor};
-    margin-top: ${({ height }: { height: number }) => -1 * height / 18}px;
-    border-width: ${({ width, height }: { width: number, height: number }) => `0 ${width / 8}px ${height / 9}px ${width / 8}px`};
+    border-bottom-color: ${({glassColor}: { glassColor: string }) => glassColor};
+    margin-top: ${({height}: { height: number }) => -1 * height / 18}px;
+    border-width: ${({
+                                                                                                                                                                                                                                             width,
+                                                                                                                                                                                                                                             height
+                                                                                                                                                                                                                                         }: { width: number, height: number }) => `0 ${width / 8}px ${height / 9}px ${width / 8}px`};
 `;

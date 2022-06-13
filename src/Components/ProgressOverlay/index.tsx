@@ -21,7 +21,7 @@ export const ProgressOverlay = () => {
     const size = useWindowSize();
 
     React.useEffect(() => {
-        const newSize = { ...hourGlassSize };
+        const newSize = {...hourGlassSize};
         if (size.width < devices.phoneLg) {
             newSize.width = 60;
             newSize.height = 70;

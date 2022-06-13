@@ -1,4 +1,4 @@
-import {ContentTypeScrollWrapper, SideBarInfiniteScrollWrapper, ModalInfiniteScrollWrapper} from "./index.styles";
+import {ContentTypeScrollWrapper, ModalInfiniteScrollWrapper, SideBarInfiniteScrollWrapper} from "./index.styles";
 import React from "react";
 
 type InfiniteScrollProps = {
@@ -21,10 +21,10 @@ export const SideBarInfiniteScroll = ({
 };
 
 export const ModalInfiniteScroll = ({
-                                          children = [],
-                                          horizontal = false,
-                                          gap = 0,
-                                      }: InfiniteScrollProps) => {
+                                        children = [],
+                                        horizontal = false,
+                                        gap = 0,
+                                    }: InfiniteScrollProps) => {
     return (
         // @ts-ignore
         <ModalInfiniteScrollWrapper horizontal={horizontal} gap={gap}>
