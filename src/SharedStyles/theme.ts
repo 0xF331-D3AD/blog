@@ -8,6 +8,7 @@ export const Theme = {
     matrixColor: '#3b4f3d',
     veryDarkForegroundColor: '#1e2820',
     overlayColor: 'rgba(15, 25, 16, .85)',
+    codeColor: '#eefc32',
     linkColor: '#c05ec9',
     visitedLinkColor: '#803b87',
 };

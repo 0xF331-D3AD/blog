@@ -71,6 +71,27 @@ export const MarkdownWrapper = styled.div`
             border: 1px solid ${Theme.lightForegroundColor};
         }
     }
+    
+    blockquote {
+        padding: 4px 18px;
+        background-color: ${Theme.lightBackground};
+        
+        border-radius: 16px;
+        
+        ${Media.phoneLg`
+            width: 85%;
+            margin-left: auto;
+            margin-right: auto;
+        `}
+        
+        p {
+            display: block;
+        }
+    }
+    
+    code {
+        color: ${Theme.codeColor};
+    }
 
     ${Media.tablet`
         font-size: 14px;
