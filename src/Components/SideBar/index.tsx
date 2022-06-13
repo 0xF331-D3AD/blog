@@ -82,14 +82,12 @@ export const SideBar = ({
     }
 
     React.useEffect(() => {
-        if (selectedSection === undefined) {
-            const itemsByPathName: SideBarContentType[] = sideBarContent.filter(c => {
-                return location.pathname === c.path || location.pathname.startsWith(c.path + '/')
-            });
-            const item = itemsByPathName.length ? itemsByPathName[0] : undefined;
-            setSelectedSection(item);
-            onSideBarItemClick();
-        }
+        const itemsByPathName: SideBarContentType[] = sideBarContent.filter(c => {
+            return location.pathname === c.path || location.pathname.startsWith(c.path + '/')
+        });
+        const item = itemsByPathName.length ? itemsByPathName[0] : undefined;
+        setSelectedSection(item);
+        onSideBarItemClick();
     }, [location]);
 
     return (
