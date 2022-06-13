@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/blog/static/css/main.e6c13ad2.css",
-    "main.js": "/blog/static/js/main.7563e70c.js",
+    "main.js": "/blog/static/js/main.14262b9d.js",
     "static/media/monkey-mammal-face-outline-front-svgrepo-com.svg": "/blog/static/media/monkey-mammal-face-outline-front-svgrepo-com.b83b72a95e3ce31b490185044d3937b9.svg",
     "static/media/virus-svgrepo-com.svg": "/blog/static/media/virus-svgrepo-com.6cd62b73d603d7b5f3f09895274167a5.svg",
     "static/media/domestic-cat-shape-svgrepo-com.svg": "/blog/static/media/domestic-cat-shape-svgrepo-com.f1f9359a92d263f091c8789bd3bbfb60.svg",
@@ -13,10 +13,10 @@
     "static/media/menu-svgrepo-com.svg": "/blog/static/media/menu-svgrepo-com.f52e22ef2a8353cc027299adb03337ca.svg",
     "index.html": "/blog/index.html",
     "main.e6c13ad2.css.map": "/blog/static/css/main.e6c13ad2.css.map",
-    "main.7563e70c.js.map": "/blog/static/js/main.7563e70c.js.map"
+    "main.14262b9d.js.map": "/blog/static/js/main.14262b9d.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.7563e70c.js"
+    "static/js/main.14262b9d.js"
   ]
 }
