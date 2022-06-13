@@ -117,5 +117,5 @@ export const SharedStyles = {
     selectableText,
     pulsatingText,
     scrollBarStyle,
-    rotatingIcon: halfRotatingIcon
+    halfRotatingIcon,
 };

@@ -2,8 +2,8 @@ import {
     ArticlesIconSVG,
     HTBIconSVG,
     OTWIconSVG,
-    SideBarContent,
     SideBarBottom,
+    SideBarContent,
     SideBarItem,
     STSIconSVG,
     THMIconSVG,
@@ -11,7 +11,7 @@ import {
     VirusIconSVG,
 } from "./index.styles";
 import {SideBarInfiniteScroll} from "../InfiniteScroll";
-import {useLocation, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {BaseRoutes} from "../../Enums";
 import React from "react";
 import {StyledComponent} from "styled-components";
@@ -70,7 +70,6 @@ export const SideBar = ({
                             },
                         }: Props) => {
     const [selectedSection, setSelectedSection] = React.useState<SideBarContentType | undefined>(undefined);
-    const location = useLocation();
     const navigate = useNavigate();
 
     const onItemClick = (item: SideBarContentType) => {
@@ -80,14 +79,6 @@ export const SideBar = ({
             onSideBarItemClick();
         }
     }
-
-    React.useEffect(() => {
-        if (selectedSection === undefined) {
-            const itemsByPathName: SideBarContentType[] = sideBarContent.filter(c => c.path === location.pathname);
-            const item = itemsByPathName.length ? itemsByPathName[0] : sideBarContent[0];
-            onItemClick(item);
-        }
-    }, [location]);
 
     return (
         <SideBarOverlay
@@ -118,7 +109,7 @@ export const SideBar = ({
                 </SideBarInfiniteScroll>
                 <SideBarBottom>
                     0xF331-D3AD at 2022
-                    <VirusIconSVG />
+                    <VirusIconSVG/>
                 </SideBarBottom>
             </SideBarContent>
         </SideBarOverlay>

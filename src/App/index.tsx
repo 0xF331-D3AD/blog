@@ -9,6 +9,8 @@ import {Matrix} from "../Components/Matrix/";
 import {Route, Routes} from "react-router-dom";
 import {BaseRoutes} from "../Enums";
 import {ComingSoon} from "./ComingSoon";
+import {NotFound} from "./NotFound";
+import {Environment} from "../Enums/Environment";
 
 export const App = () => {
     const [isMenuOpened, setIsMenuOpened] = React.useState<boolean>(false);
@@ -21,6 +23,14 @@ export const App = () => {
         setIsMenuOpened(isVisibleBySize);
     }, [size]);
 
+    const onSideBarItemClick = () => {
+        if (size.width < devices.desktop) {
+            setIsMenuOpened(false);
+        }
+    }
+
+    console.log(Environment.BASE_LOCATION);
+
     return (
         <SiteContent>
             <Header
@@ -30,11 +40,7 @@ export const App = () => {
                 <SideBar
                     isOpened={isMenuOpened}
                     setIsOpened={setIsMenuOpened}
-                    onSideBarItemClick={() => {
-                        if (size.width < devices.desktop) {
-                            setIsMenuOpened(false);
-                        }
-                    }}
+                    onSideBarItemClick={onSideBarItemClick}
                 />
                 <ContentPane>
                     <ArticleContentWrapper>
@@ -46,7 +52,7 @@ export const App = () => {
                                 <Route path={BaseRoutes.CTF_STS} element={<ComingSoon/>}/>
                                 <Route path={BaseRoutes.CTF_THM} element={<ComingSoon/>}/>
                                 <Route path={BaseRoutes.Tutorial} element={<ComingSoon/>}/>
-                                <Route path="*" element={<ComingSoon/>}/>
+                                <Route path="*" element={<NotFound/>}/>
                             </Routes>
                         </ContentPaneInfiniteScroll>
                     </ArticleContentWrapper>

@@ -21,9 +21,12 @@ export const ComingSoon = () => {
 
     React.useEffect(() => {
         const newSize = { ...hourGlassSize };
-        if (size.width < devices.tablet) {
-            newSize.width = 100;
-            newSize.height = 115;
+        if (size.width < devices.phoneLg) {
+            newSize.width = 40;
+            newSize.height = 45;
+        } else if (size.width < devices.tablet) {
+            newSize.width = 80;
+            newSize.height = 90;
         } else {
             newSize.width = initHourGlassSize.width;
             newSize.height = initHourGlassSize.height;

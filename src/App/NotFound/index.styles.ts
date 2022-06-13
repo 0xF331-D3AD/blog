@@ -2,8 +2,10 @@
 import styled from "styled-components";
 import {Theme} from "../../SharedStyles/theme";
 import {Media} from "../../SharedStyles/media";
+import {ReactComponent as Virus} from "../../Assets/icons/virus-svgrepo-com.svg";
+import {SharedStyles} from "../../SharedStyles";
 
-export const ComingSoonWrapper = styled.div`
+export const NotFoundWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,12 +16,12 @@ export const ComingSoonWrapper = styled.div`
     min-height: 0;
 `;
 
-export const ComingSoonContent = styled.div`
+export const NotFoundContent = styled.div`
     display: flex;
-    flex-direction: column;
-    align-items: center;
     min-width: 0;
     min-height: 0;
+    flex-direction: column;
+    align-items: center;
     gap: 32px;
     
     width: 360px;
@@ -29,7 +31,7 @@ export const ComingSoonContent = styled.div`
     `}
 `;
 
-export const ComingSoonText = styled.div`
+export const NotFoundText = styled.div`
     text-align: center;
     
     font-weight: bold;
@@ -46,5 +48,26 @@ export const ComingSoonText = styled.div`
     ${Media.phoneLg`
         font-size: 14px;
         line-height: 16px;
+    `}
+`;
+
+export const NotFoundIcon = styled(Virus)`
+    width: 160px;
+    height: 160px;
+    
+    & path {
+        fill: ${Theme.lightForegroundColor};
+    }
+
+    ${SharedStyles.halfRotatingIcon};
+    
+    ${Media.tablet`
+        width: 80px;
+        height: 80px;
+    `}
+    
+    ${Media.phoneLg`
+        width: 40px;
+        height: 40px;
     `}
 `;
