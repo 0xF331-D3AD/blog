@@ -1,5 +1,5 @@
 import React from "react";
-import {ErrorMessageBox, ModalMessage, ErrorIcon, ErrorContentWrapper} from "./index.styles";
+import {ErrorContentWrapper, ErrorIcon, ErrorMessageBox, ModalMessage, ErrorScrollContentWrapper} from "./index.styles";
 import {Overlay} from "../Overlay";
 import {ModalInfiniteScroll} from "../InfiniteScroll";
 
@@ -23,14 +23,16 @@ export const ErrorModal = ({
             }}
         >
             <ErrorMessageBox>
-                <ModalInfiniteScroll>
-                    <ErrorContentWrapper>
-                        <ErrorIcon />
-                        <ModalMessage>
-                            {message || 'An error occurred! Please, raise an issue on Github'}
-                        </ModalMessage>
-                    </ErrorContentWrapper>
-                </ModalInfiniteScroll>
+                <ErrorContentWrapper>
+                    <ModalInfiniteScroll>
+                        <ErrorScrollContentWrapper>
+                            <ErrorIcon/>
+                            <ModalMessage>
+                                {message || 'An error occurred! Please, raise an issue on Github'}
+                            </ModalMessage>
+                        </ErrorScrollContentWrapper>
+                    </ModalInfiniteScroll>
+                </ErrorContentWrapper>
             </ErrorMessageBox>
         </Overlay>
     )

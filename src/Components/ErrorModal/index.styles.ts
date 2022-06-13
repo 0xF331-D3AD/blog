@@ -27,6 +27,19 @@ export const ErrorMessageBox = styled.div`
 export const ErrorContentWrapper = styled.div`
     display: flex;
     align-items: center;
+    // flex-direction: column;
+    // gap: 20px;
+    
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    
+    // padding: 16px 24px;
+`;
+
+export const ErrorScrollContentWrapper = styled.div`
+    display: flex;
+    align-items: center;
     flex-direction: column;
     gap: 20px;
     
