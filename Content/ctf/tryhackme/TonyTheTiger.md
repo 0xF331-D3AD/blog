@@ -1,7 +1,7 @@
 
 # **Tony the Tiger**
 
-In this room we'll be exploiting Serialization Attack on Java application.
+In this room we'll exploit Serialization Attack on Java application.
 
 ---
 
@@ -29,7 +29,7 @@ Let's enumerate the machine. We'll start with nmap scan:
 
 > `sudo nmap 10.10.41.59 -Pn -p- -A -vv -T4 -oN nmap-scan --script discovery,vuln`
 
-After running the scan, a whole bunch of open ports came out (17...).
+After running the scan, a bunch of open ports came out (17...).
 
 - 22/tcp   open  ssh         syn-ack ttl 63 OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.13 (Ubuntu Linux; protocol 2.0)
 - 80/tcp   open  http        syn-ack ttl 63 Apache httpd 2.4.7 ((Ubuntu))
@@ -49,21 +49,24 @@ After running the scan, a whole bunch of open ports came out (17...).
 - 8080/tcp open  http        syn-ack ttl 63 Apache Tomcat/Coyote JSP engine 1.1
 - 8083/tcp open  http        syn-ack ttl 63 JBoss service httpd
 
-So far we learned, that it has ssh, a couple of HTTP applications, 
+So far we've learned, that it has ssh, a couple of HTTP applications, 
 it's on Ubuntu, backend uses Java.
 
 - What service is running on port "8080"
+
 > Apache Tomcat/Coyote JSP engine 1.1
+
 - What is the name of the front-end application running on "8080"? (Open
 it in browser)
+
 > JBoss
 
 ---
 
 ## *Find Tony's Flag!*
 
-http-enum and http-sitemap-generator nmap scripts revealed some
-directories in service, running on port 80:
+http-enum and http-sitemap-generator nmap scripts have revealed some
+directories, accessible via service, running on port 80:
 - /
 - /css/
 - /images/
@@ -75,7 +78,7 @@ directories in service, running on port 80:
 
 After reading blogs, walking an application, searching for comments,
 hidden content, references, after running directory scanners and trying
-path traversal, I got approximately nothing.
+path traversal, I got nothing.
 
 But then I tried looking for hidden content in images and Boom!
 An image at posts/frosted-flakes/ contained flag inside.
@@ -83,15 +86,15 @@ An image at posts/frosted-flakes/ contained flag inside.
 Download an image: 
 > `wget https://i.imgur.com/be2sOV9.jpg`
 
- Retrieve flag:
+ Retrieve the flag:
 > `strings be2sOV9.jpg | grep -e '.\{5,\}'`
 
 ---
 
 ## *Exploit!*
 
-Ok, so we have JBoss server, vulnerable to CVE-2015-7501. Let's not reinvent a bicycle and
-find an exploit on the Internet. It can be found in [byt3b33d3r's Github](https://github.com/byt3bl33d3r/java-deserialization-exploits),
+Ok, so we have JBoss server, vulnerable to CVE-2015-7501. An exploit can
+be found at [byt3b33d3r's Github](https://github.com/byt3bl33d3r/java-deserialization-exploits),
 but let's use the modified version that is supplied in this room.
 
 1. Setup a netcat listener:
@@ -106,9 +109,9 @@ Let's upgrade our netcat shell and snoop around:
 3. stty raw -echo
 4. fg + ['Enter' 2 times]
 
-First thing that we can find is 'note' in /home/jboss, from which we learn a password:
+First thing that we find is 'note' in /home/jboss, from which we learn jboss's password.
 
-Then, let's use `history` to find what commands were executed
+Then we'll use `history` to find what commands were executed
 
 > echo "I see you peeping! You're on the right lines..."
 
@@ -118,15 +121,15 @@ Interesting. Let's `cat /home/jboss/.bash_history`. We will find another flag th
 
 ## *Escalate!*
 
-Let's escalate our privileges. First, switch to user *jboss*;
+Ok, it's time for privilege escalation! First, switch to user *jboss*;
 Then, type `sudo -l` to see what he can run with sudo
 
 > Matching Defaults entries for jboss on thm-java-deserial:
-    env_reset, mail_badpass,
-    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+>    env_reset, mail_badpass,
+>    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
 >
 > User jboss may run the following commands on thm-java-deserial:
-    (ALL) NOPASSWD: /usr/bin/find
+>    (ALL) NOPASSWD: /usr/bin/find
 
 Locate payload on [GTFOBins](https://gtfobins.github.io/gtfobins/find/#sudo) and escalate
 your privileges to root.
@@ -145,4 +148,4 @@ Crack MD5 hash with hashcat and rockyou wordlist:
 
 > `hashcat --force -m 0 -a 0 hash.txt ~/CyberSecurity/SecLists/Passwords/Leaked-Databases/rockyou.txt`
 
-And get the final flag.
+Finally, you have a root flag.
