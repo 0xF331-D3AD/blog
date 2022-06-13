@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {Theme} from "../../SharedStyles/theme";
 import {ReactComponent as ErrorSign} from "../../Assets/icons/warning-svgrepo-com.svg";
+import {Media} from "../../SharedStyles/media";
 
 export const ErrorMessageBox = styled.div`
     display: flex;
@@ -22,19 +23,25 @@ export const ErrorMessageBox = styled.div`
     border: 2px solid ${Theme.veryDarkForegroundColor};
     
     background-color: ${Theme.darkBackground};
+    
+    ${Media.phoneLg`
+        width: 240px;
+        max-width: 240px;
+        min-width: 240px;
+        
+        height: 160px;
+        max-height: 160px;
+        min-height: 160px;
+    `}
 `;
 
 export const ErrorContentWrapper = styled.div`
     display: flex;
     align-items: center;
-    // flex-direction: column;
-    // gap: 20px;
-    
+
     min-width: 0;
     width: 100%;
     max-width: 100%;
-    
-    // padding: 16px 24px;
 `;
 
 export const ErrorScrollContentWrapper = styled.div`
@@ -48,6 +55,10 @@ export const ErrorScrollContentWrapper = styled.div`
     max-width: calc(100% - 48px);
     
     padding: 16px 24px;
+    
+    ${Media.phoneLg`
+        gap: 16px;
+    `}
 `;
 
 export const ErrorIcon = styled(ErrorSign)`
@@ -59,6 +70,13 @@ export const ErrorIcon = styled(ErrorSign)`
     & path {
         fill: ${Theme.lightForegroundColor} !important;
     }
+    
+    ${Media.phoneLg`
+        min-width: 36px !important;
+        max-width: 36px !important;
+        min-height: 36px !important;
+        max-height: 36px !important;
+    `}
 `;
 
 export const ModalMessage = styled.div`
@@ -72,4 +90,9 @@ export const ModalMessage = styled.div`
     line-height: 20px;
     
     max-height: 100px;
+    
+    ${Media.phoneLg`
+        font-size: 14px;
+        line-height: 16px;
+    `}
 `;
