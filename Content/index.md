@@ -122,3 +122,12 @@ Rendered?
 
 &radic;x&sup2; + &sum;x
 
+
+# Stuff
+
+~Strikethrough~	
+
+* [ ] List item unchecked
+
+* [x] List item checked
+
