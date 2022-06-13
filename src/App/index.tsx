@@ -10,7 +10,6 @@ import {Route, Routes} from "react-router-dom";
 import {BaseRoutes} from "../Enums";
 import {ComingSoon} from "./ComingSoon";
 import {NotFound} from "./NotFound";
-import {Environment} from "../Enums/Environment";
 
 export const App = () => {
     const [isMenuOpened, setIsMenuOpened] = React.useState<boolean>(false);
@@ -28,8 +27,6 @@ export const App = () => {
             setIsMenuOpened(false);
         }
     }
-
-    console.log(Environment.BASE_LOCATION);
 
     return (
         <SiteContent>

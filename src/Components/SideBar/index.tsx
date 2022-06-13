@@ -11,7 +11,7 @@ import {
     VirusIconSVG,
 } from "./index.styles";
 import {SideBarInfiniteScroll} from "../InfiniteScroll";
-import {useNavigate} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 import {BaseRoutes} from "../../Enums";
 import React from "react";
 import {StyledComponent} from "styled-components";
@@ -70,6 +70,7 @@ export const SideBar = ({
                             },
                         }: Props) => {
     const [selectedSection, setSelectedSection] = React.useState<SideBarContentType | undefined>(undefined);
+    const location = useLocation();
     const navigate = useNavigate();
 
     const onItemClick = (item: SideBarContentType) => {
@@ -79,6 +80,17 @@ export const SideBar = ({
             onSideBarItemClick();
         }
     }
+
+    React.useEffect(() => {
+        if (selectedSection === undefined) {
+            const itemsByPathName: SideBarContentType[] = sideBarContent.filter(c => {
+                return location.pathname === c.path || location.pathname.startsWith(c.path + '/')
+            });
+            const item = itemsByPathName.length ? itemsByPathName[0] : undefined;
+            setSelectedSection(item);
+            onSideBarItemClick();
+        }
+    }, [location]);
 
     return (
         <SideBarOverlay
