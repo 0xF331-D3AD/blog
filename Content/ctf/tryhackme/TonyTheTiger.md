@@ -3,6 +3,7 @@
 
 In this room we'll be exploiting Serialization Attack on Java application.
 
+---
 
 ## *Support Material* 
 
@@ -12,8 +13,6 @@ begins with us tampering with this byte stream in order to trick an
 application into disclosing sensitive information, executing arbitrary
 code, escalating our privileges etc.
 
----
-
 - What is a great IRL example of an "Object"? 
 > lamp
 - What is the acronym of a possible type of attack resulting from a
@@ -21,6 +20,8 @@ code, escalating our privileges etc.
 > DoS
 - What lower-level format does data within "Objects" get converted into
 > byte stream
+
+---
 
 ## *Reconnaissance*
 
@@ -51,13 +52,13 @@ After running the scan, a whole bunch of open ports came out (17...).
 So far we learned, that it has ssh, a couple of HTTP applications, 
 it's on Ubuntu, backend uses Java.
 
----
-
 - What service is running on port "8080"
 > Apache Tomcat/Coyote JSP engine 1.1
 - What is the name of the front-end application running on "8080"? (Open
 it in browser)
 > JBoss
+
+---
 
 ## *Find Tony's Flag!*
 
@@ -84,6 +85,8 @@ Download an image:
 
  Retrieve flag:
 > 'strings be2sOV9.jpg | grep -e '.\\{5,\\}''
+
+---
 
 ## *Exploit!*
 
