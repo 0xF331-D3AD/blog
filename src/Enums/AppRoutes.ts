@@ -1,7 +1,3 @@
-import {Environment} from "./Environment";
-
-const baseUrl = Environment.BASE_LOCATION;
-
 type RoutesType = {
     Article: string,
     CTF: string,
@@ -13,13 +9,13 @@ type RoutesType = {
 }
 
 export const AppContentBaseRoutes: RoutesType = Object.freeze({
-    Article: `${baseUrl}article`,
-    CTF: `${baseUrl}ctf`,
-    CTF_THM: `${baseUrl}ctf/tryhackme`,
-    CTF_HTB: `${baseUrl}ctf/hackthebox`,
-    CTF_OTW: `${baseUrl}ctf/overthewire`,
-    CTF_STS: `${baseUrl}ctf/smashthestack`,
-    Tutorial: `${baseUrl}tutorial`,
+    Article: `/article`,
+    CTF: `/ctf`,
+    CTF_THM: `/ctf/tryhackme`,
+    CTF_HTB: `/ctf/hackthebox`,
+    CTF_OTW: `/ctf/overthewire`,
+    CTF_STS: `/ctf/smashthestack`,
+    Tutorial: `/tutorial`,
 });
 
 const getBaseRoutesForRouter = (): RoutesType => {
@@ -37,5 +33,5 @@ export const AppRoutes = Object.freeze({
     COMING_SOON: 'coming-soon',
     NOT_FOUND: 'not-found',
     BLOG: 'blog',
-    Landing: `${baseUrl}`,
+    Landing: `/`,
 });

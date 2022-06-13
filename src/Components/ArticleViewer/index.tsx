@@ -41,7 +41,7 @@ export const ArticleViewer = ({
                     setContent(indexMarkdown);
                     navigate(baseUrl);
                 } catch (innerError) {
-                    navigate(Environment.BASE_LOCATION);
+                    navigate(AppRoutes.Landing);
                     // @ts-ignore
                     setError(`Initial error: ${e.message};\nError while redirecting: ${innerError.message}`);
                 }

@@ -10,4 +10,4 @@ cyber-security platforms - [TryHackMe](https://tryhackme.com)
 
 ## S
 
-- [Sakura Room](https://0xf331-d3ad.github.io/blog/ctf/tryhackme/Sakura.md)
+- [Sakura Room](https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/Sakura.md)
