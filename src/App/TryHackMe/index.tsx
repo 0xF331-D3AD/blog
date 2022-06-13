@@ -1,5 +1,5 @@
 import React from "react";
-import {useLocation} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 import {buildFileUrlFromPathname} from "../../Utils/MarkdownUtils";
 import {getMarkdown} from "../../Service/MarkdownService";
 import {Theme} from "../../SharedStyles/theme";
@@ -15,6 +15,7 @@ export const TryHackMe = () => {
     const baseUrl = AppContentBaseRoutes.CTF_THM;
 
     const location = useLocation();
+    const navigate = useNavigate();
 
     const fetchContent = async () => {
         // Add .md to pathname to get an error
@@ -25,11 +26,12 @@ export const TryHackMe = () => {
             setContent(markdown);
         } catch (e) {
             // @ts-ignore
-            if (e.name === 'AxiosError' && e.status === 404) {
+            if (e.name === 'AxiosError' && e.code === "ERR_BAD_REQUEST") {
                 const indexUrl = buildFileUrlFromPathname(baseUrl);
                 try {
                     const indexMarkdown = await getMarkdown(indexUrl);
                     setContent(indexMarkdown);
+                    navigate(baseUrl);
                 } catch (innerError) {
                     // @ts-ignore
                     setError(`Initial error: ${e.message};\nError while redirecting: ${innerError.message}`);
