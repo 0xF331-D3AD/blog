@@ -73,6 +73,9 @@ export const MarkdownWrapper = styled.div`
     }
     
     blockquote {
+        word-break: break-all;
+        display: flex;
+        flex-direction: column;
         padding: 4px 18px;
         background-color: ${Theme.lightBackground};
         
@@ -85,7 +88,7 @@ export const MarkdownWrapper = styled.div`
         `}
         
         p {
-            display: block;
+            display: flex;
         }
     }
     
