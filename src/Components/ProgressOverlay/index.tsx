@@ -1,6 +1,6 @@
 import React from "react";
 import {Overlay} from "../Overlay";
-import {useWindowSize} from "../../Hooks/WindowHooks";
+import {stopScroll, useWindowSize} from "../../Hooks/WindowHooks";
 import {devices} from "../../SharedStyles/media";
 import {ProgressOverlayContent} from "./index.styles";
 import {FlexHourGlass} from "../HourGlass";
@@ -34,6 +34,8 @@ export const ProgressOverlay = () => {
         }
         setHourGlassSize(newSize);
     }, [size]);
+
+    stopScroll(true);
 
     return (
         <Overlay>

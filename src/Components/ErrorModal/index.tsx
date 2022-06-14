@@ -2,6 +2,7 @@ import React from "react";
 import {ErrorContentWrapper, ErrorIcon, ErrorMessageBox, ErrorScrollContentWrapper, ModalMessage} from "./index.styles";
 import {Overlay} from "../Overlay";
 import {ModalInfiniteScroll} from "../InfiniteScroll";
+import {stopScroll} from "../../Hooks/WindowHooks";
 
 type Props = {
     close: () => void,
@@ -14,6 +15,7 @@ export const ErrorModal = ({
                                },
                            }: Props) => {
 
+    stopScroll(true);
     return (
         <Overlay
             onClick={(e) => {

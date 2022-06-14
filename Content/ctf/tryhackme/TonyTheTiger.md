@@ -94,7 +94,7 @@ Download an image:
 ## *Exploit!*
 
 Ok, so we have JBoss server, vulnerable to CVE-2015-7501. An exploit can
-be found at [byt3b33d3r's Github](https://github.com/byt3bl33d3r/java-deserialization-exploits),
+be found at [byt3bl33d3r's Github](https://github.com/byt3bl33d3r/java-deserialization-exploits),
 but let's use the modified version that is supplied in this room.
 
 1. Setup a netcat listener:

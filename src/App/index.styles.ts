@@ -62,4 +62,9 @@ export const ArticleContentWrapper = styled.div`
         width: calc(100% - 32px);
         padding: 16px;
     `}
+    
+    ${Media.phoneMd`
+        width: calc(100% - 24px);
+        padding: 12px 12px 16px 12px;
+    `}
 `;

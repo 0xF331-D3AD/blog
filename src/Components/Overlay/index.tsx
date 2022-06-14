@@ -1,5 +1,6 @@
 import {OverlayWrapper, SideBarOverlayWrapper} from "./index.styles";
 import {Component, MouseEventHandler, ReactElement} from "react";
+import {stopScroll} from "../../Hooks/WindowHooks";
 
 type Props = {
     top?: number;
@@ -56,6 +57,7 @@ export const SideBarOverlay = ({
                                    onClick = () => {
                                    },
                                }: SideBarProps) => {
+    stopScroll(isOpened);
     return (
         <SideBarOverlayWrapper
             isOpened={isOpened}
