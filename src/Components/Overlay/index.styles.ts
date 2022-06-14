@@ -31,7 +31,7 @@ export const SideBarOverlayWrapper = styled.div`
     top: ${headerHeight}px;
     left: 0;
     width: ${sideBarSize}px;
-    max-height: calc(100% - ${headerHeight}px);
+    max-height: calc(100vh - ${headerHeight}px);
     
     ${Media.desktop`
         right: 0;
