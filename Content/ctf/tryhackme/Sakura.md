@@ -14,8 +14,7 @@ noticed some of binary code. You can filter all this code like this:
 
 > `strings sakurapwnedletter.svg | grep -v -e 'd=".*"' | grep -e '[01]\{8,\}' -o`
 
-After decoding it with [CyberChef](https://cyberchef.org/#recipe=From_Binary('Space',8))  
-we get some gibberish and a hint:
+After decoding it with [CyberChef](https://cyberchef.org/#recipe=From_Binary('Space',8))  we get some gibberish and a hint:
 
 > A picture is worth 1000 words but metadata is worth far more
 
@@ -141,6 +140,47 @@ Now paste the SSID and you'll get the answer!
 ---
 
 ## *Homebound*
+
+
+What airport is closest to the location the attacker shared a photo from prior to getting on their flight?
+
+Let's take a look at the image below:
+
+![Monument](https://pbs.twimg.com/media/Esh-uTvUcAc-sXC?format=jpg&name=large)
+
+Zoom in and look for some landmarks, road signs, stands, railways, nature objects.
+We can see Washington Monument down the road and U.S. Capitol in the right bottom corner.
+So attacker was clearly at Washington D.C.
+
+![Location-1](https://i.postimg.cc/cLvDNn2Y/map-washington-district.png)
+
+Quick search on Google Maps has revealed, that attacker is somewhere in the bottom area.
+
+Next thing I did, was searching for 'Washington airport', and using locations of the
+obelisc and the Capitol, I found just the right one near Long Bridge Park - Ronald Reigan
+National Airport. The answer is the code for this airport, which is
+
+> DCA
+
+What airport did the attacker have their last layover in?
+
+![Last layover](https://pbs.twimg.com/media/EsiM12KVoAEhAsI?format=png&name=large)
+
+This ona can be solved with a simple reverse-image lookup. Upload it to Google inages
+and it will show you 'Tokyo International Airport [Haneda] JAL Sakura Lounge - JAL'.
+The answer is the code of this airport, which is:
+
+> HND
+
+What lake can be seen in the map shared by the attacker as they were on their final 
+flight home?
+
+![A Lake](https://pbs.twimg.com/media/EsiNRuRU0AEH32u?format=jpg&name=small)
+
+First of all, lets locate Japan with Google maps and find this iceland on top.
+That would be Sado Iceland. Next, just zoom in to the biggest lake.
+
+> Lake Inawashiro
 
 What city does the attacker likely consider "home"?
 
