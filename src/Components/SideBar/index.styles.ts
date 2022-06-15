@@ -100,7 +100,6 @@ export const TutorialsIconSVG = styled(Book)`
 `;
 
 export const SideBarBottom = styled.div`
-    margin-top: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
