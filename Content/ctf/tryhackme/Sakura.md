@@ -101,7 +101,7 @@ This will get you the hacker's account:
 Let's dive in his tweets. We'll see some MD5 hash and a hint about Access Points
 and Deep Paste.
 
-![SakuraLoverAiko](https://pbs.twimg.com/media/EsdhaUSVkAAM803?format=png&name=small)
+![SakuraLoverAiko](https://i.postimg.cc/BQXCtwfy/sakura-lover-aiko.png)
 
 
 There's a website that allowes users to share plain text through public posts ("pastes"),
@@ -146,7 +146,7 @@ What airport is closest to the location the attacker shared a photo from prior t
 
 Let's take a look at the image below:
 
-![Monument](https://pbs.twimg.com/media/Esh-uTvUcAc-sXC?format=jpg&name=large)
+![Monument](https://i.postimg.cc/7Lw4xzJB/monument.jpg)
 
 Zoom in and look for some landmarks, road signs, stands, railways, nature objects.
 We can see Washington Monument down the road and U.S. Capitol in the right bottom corner.
@@ -164,7 +164,7 @@ National Airport. The answer is the code for this airport, which is
 
 What airport did the attacker have their last layover in?
 
-![Last layover](https://pbs.twimg.com/media/EsiM12KVoAEhAsI?format=png&name=large)
+![Last layover](https://i.postimg.cc/3RqzD0WQ/last-layover.png)
 
 This ona can be solved with a simple reverse-image lookup. Upload it to Google inages
 and it will show you 'Tokyo International Airport [Haneda] JAL Sakura Lounge - JAL'.
@@ -175,7 +175,7 @@ The answer is the code of this airport, which is:
 What lake can be seen in the map shared by the attacker as they were on their final 
 flight home?
 
-![A Lake](https://pbs.twimg.com/media/EsiNRuRU0AEH32u?format=jpg&name=small)
+![A Lake](https://i.postimg.cc/Fz3mrVpB/lake.jpg)
 
 First of all, lets locate Japan with Google maps and find this iceland on top.
 That would be Sado Iceland. Next, just zoom in to the biggest lake.
