@@ -78,6 +78,9 @@ export const SideBar = ({
             setSelectedSection(item);
             navigate(item.path);
             onSideBarItemClick();
+        } else {
+            navigate(item.path);
+            onSideBarItemClick();
         }
     }
 
