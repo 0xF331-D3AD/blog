@@ -2,7 +2,7 @@
 # Sakura Room
 
 This is yet another OSINT challenge - we have to find out everything
-about hackers, using only an svg image that they left behind
+about hackers, using only a svg image that they left behind
 
 ---
 
@@ -104,28 +104,28 @@ and Deep Paste.
 ![SakuraLoverAiko](https://i.postimg.cc/BQXCtwfy/sakura-lover-aiko.png)
 
 
-There's a website that allowes users to share plain text through public posts ("pastes"),
-it's called "Pastebin". The hacker in his tweets reffers to it's Dark Web equivalent,
+There's a website that allows users to share plain text through public posts ("pastes"),
+it's called "Pastebin". The hacker in his tweets refers to its Dark Web equivalent,
 Deep Paste.
 
 So let's fire up Tor, then search for hidden wiki, and then try a couple of dark web 
 search engines, that are listed in there. I had luck with OnionLand. Search for
-DeepPaste with it and you should find this:
+DeepPaste with it, and you should find this:
 
 ![DeepPaste](https://i.postimg.cc/13Z2WgdT/deep-paste.png)
 
 Click on the 'Deep Paste' on top and you'll be navigated to the page where you can create
 pastes. Scroll down to the bottom and click on "Search Pastes..." and paste the MD5 from
-Twitter. If no luck in finding it, here's a srceenshot:
+Twitter. If no luck in finding it, here's a screenshot:
 
 ![Wifi-stuff](https://i.postimg.cc/0269gJcy/wifi-stuff.png)
 
-What is the URL for the location where the attacker saved their WiFi  SSIDs and passwords?
+What is the URL for the location where the attacker saved their Wi-Fi  SSIDs and passwords?
 
 > http://depasteon6cqgrykzrgya52xglohg5ovyuyhte3ll7hzix7h5ldfqsyd.onion/show.php?md5=0a5c6e136a98a60b8a21643ce8c15a74
 
 
-What is the BSSID for the attacker's Home WiFi?
+What is the BSSID for the attacker's Home Wi-Fi?
 
 BSSID stands for Basic Service Set Identifier, and it’s the MAC physical address of the access point or wireless router that is used to connect to the WiFi.
 
@@ -166,7 +166,7 @@ What airport did the attacker have their last layover in?
 
 ![Last layover](https://i.postimg.cc/3RqzD0WQ/last-layover.png)
 
-This ona can be solved with a simple reverse-image lookup. Upload it to Google inages
+This ona can be solved with a simple reverse-image lookup. Upload it to Google images
 and it will show you 'Tokyo International Airport [Haneda] JAL Sakura Lounge - JAL'.
 The answer is the code of this airport, which is:
 
@@ -177,7 +177,7 @@ flight home?
 
 ![A Lake](https://i.postimg.cc/Fz3mrVpB/lake.jpg)
 
-First of all, lets locate Japan with Google maps and find this iceland on top.
+First of all, lets locate Japan with Google Maps and find this iceland on top.
 That would be Sado Iceland. Next, just zoom in to the biggest lake.
 
 > Lake Inawashiro
