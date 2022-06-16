@@ -1,4 +1,4 @@
-# Intro PoS Scripting
+# Intro PoC Scripting
 
 In this room we'll explore the basics of exploit development, read metasploit
 source code and exploit Webmin 1.580 (CVE-2012-2982)
