@@ -8,6 +8,10 @@ Here's where you find all answers on your questions!
 This section contains writeups for the most amazing
 cyber-security platforms - [TryHackMe](https://tryhackme.com)
 
+## I
+
+- [Intro to PoC Scripting](https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/IntroPoCScripting.md)
+
 ## S
 
 - [Sakura Room](https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/Sakura.md)
