@@ -53,7 +53,8 @@ immediately vulnerable to this exploit?
 
 > 1.890
 
-- What type of attack was this? Note, we're looking for how this was added to the code for Webmin, not how this results in remote code execution (RCE).
+- What type of attack was this? Note, we're looking for how this was added to the code for Webmin, not
+how this results in remote code execution (RCE).
 
 From the screenshot above we know, that this was a...
 
@@ -76,7 +77,7 @@ We can fing the answer using a simple dork:
 Assessments that a Metasploit module was added for this backdoor. What pull number was 
 this added in?
 
-From the same post on AKB we can jump straigh to the Metasploit GitHub page with
+From the same post on AKB we can jump straight to the Metasploit GitHub page with
 PR that adds exploit for this particular vulnerability:
 
 > 12219
@@ -92,7 +93,7 @@ RHOSTS and LHOST, what is the third option we must set to 'True'?
 
 - Run the exploit. What is the user flag?
 
-> located at /home/datk/user.txt
+> located at /home/dark/user.txt
 
 - How about the root flag?
 
