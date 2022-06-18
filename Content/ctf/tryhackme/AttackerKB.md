@@ -1,5 +1,9 @@
 # AttackerKB
 
+In this room we'll be exploring an amazing resource called [AttackerKB](https://attackerkb.com/).
+It is similar to ExploitDB(https://www.exploit-db.com/), however provides you with a lot more
+information about vulnerabilities, exploits and mitigations (And the interface is way nicer :3).
+
 ---
 
 ## *Discovering the Lay of the Land*
