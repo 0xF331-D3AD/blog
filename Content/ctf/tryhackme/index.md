@@ -12,6 +12,7 @@ the most amazing cyber-security platforms - [TryHackMe](https://tryhackme.com)
 
 ## *I*
 
+- [IDE](https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/IDE.md)
 - [Intro to PoC Scripting](https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/IntroPoCScripting.md)
 
 ## *S*
