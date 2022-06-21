@@ -15,6 +15,10 @@ the most amazing cyber-security platforms - [TryHackMe](https://tryhackme.com)
 - [IDE](https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/IDE.md)
 - [Intro to PoC Scripting](https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/IntroPoCScripting.md)
 
+## *P*
+
+- [Psycho Break](https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/PsychoBreak.md)
+
 ## *S*
 
 - [Sakura Room](https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/Sakura.md)
