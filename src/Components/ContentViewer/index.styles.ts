@@ -19,6 +19,13 @@ export const MarkdownWrapper = styled.div`
         }
     }
     
+    pre {
+        display: flex;   
+        flex-direction: column;
+        flex: 1;
+        word-break: break-all;
+    }
+    
     input[type="checkbox"] {
         width: 18px;
         height: 18px;
@@ -94,6 +101,7 @@ export const MarkdownWrapper = styled.div`
     
     code {
         color: ${Theme.codeColor};
+        overflow-x: scroll;
     }
 
     ${Media.tablet`
