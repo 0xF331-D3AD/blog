@@ -10,10 +10,18 @@ the most amazing cyber-security platforms - [TryHackMe](https://tryhackme.com)
 
 - [AttackerKB](https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/AttackerKB.md)
 
+## *C*
+
+- [Cyborg](https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/Cyborg.md)
+
 ## *I*
 
 - [IDE](https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/IDE.md)
 - [Intro to PoC Scripting](https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/IntroPoCScripting.md)
+
+## *M*
+
+- [Mr. Phisher](https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/MrPhisher.md)
 
 ## *P*
 
