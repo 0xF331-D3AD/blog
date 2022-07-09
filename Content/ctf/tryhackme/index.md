@@ -12,6 +12,7 @@ the most amazing cyber-security platforms - [TryHackMe](https://tryhackme.com)
 
 ## *B*
 
+- [Bebop](https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/Bebop.md)
 - [Blueprint](https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/Blueprint.md)
 
 ## *C*
@@ -47,3 +48,7 @@ the most amazing cyber-security platforms - [TryHackMe](https://tryhackme.com)
 ## *T*
 
 - [Tony the Tiger](https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/TonyTheTiger.md)
+
+## *W*
+
+- [Wireshark: The Basics](https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/WiresharkTheBasics.md)
