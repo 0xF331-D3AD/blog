@@ -1,0 +1,4 @@
+export const Environment = Object.freeze({
+    CONTENT_BASE_URL: process.env.REACT_APP_CONTENT_BASE_URL!,
+    CONTENT_DIRECTORY_INDEX_FILENAME: process.env.REACT_APP_CONTENT_DIRECTORY_INDEX_FILENAME!,
+});
