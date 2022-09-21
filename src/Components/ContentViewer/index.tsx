@@ -69,7 +69,7 @@ const MarkdownViewer = ({
                     AppContentBaseRoutes.CTF_VULNHUB
                 ].includes(location.pathname)
                     ? (
-                        <CTFIndexViewer content={content as CTFIndexFile} />
+                        <CTFIndexViewer pageContent={content as CTFIndexFile} />
                     )
                     :
                     (
