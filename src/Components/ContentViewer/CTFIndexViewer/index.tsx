@@ -1,11 +1,14 @@
 import React from "react";
 import {
     IndexPage,
+    PageHeader,
+    PageHeadingWrapper,
     Articles,
     ArticleGroupWrapper,
     ArticleGroupHeader,
     ArticleLinkWrapper,
     ArticlesGroup,
+    PageDescription
 } from "./index.styles";
 import {CTFIndexFile} from "../../../Types/CTFIndexFileType";
 import M from "materialize-css";
@@ -16,8 +19,8 @@ type Props = {
 }
 
 export const CTFIndexViewer = ({
-                                pageContent
-                            }: Props) => {
+                                   pageContent
+                               }: Props) => {
     React.useEffect(() => {
         M.AutoInit();
     });
@@ -27,6 +30,22 @@ export const CTFIndexViewer = ({
     }
     return (
         <IndexPage>
+            <PageHeadingWrapper>
+                <PageHeader>{pageContent.header}</PageHeader>
+                <PageDescription>
+                    {pageContent.description}
+                    <span>
+                        This section contains writeups to one of the greatest hacking platforms:{' '}
+                        <a
+                            href={sanitizeUrl(pageContent.platformURL)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {pageContent.platformName}
+                        </a>
+                    </span>
+                </PageDescription>
+            </PageHeadingWrapper>
             <Articles className="collapsible">
                 {
                     pageContent.content.map(c => (

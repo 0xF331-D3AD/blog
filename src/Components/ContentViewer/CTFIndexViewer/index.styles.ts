@@ -4,7 +4,29 @@ import {Theme} from "../../../SharedStyles/theme";
 export const IndexPage = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 32px;
+`;
+
+export const PageHeadingWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+`;
+
+export const PageHeader = styled.div`
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 34px;
+`;
+
+export const PageDescription = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
 `;
 
 export const Articles = styled.ul`
