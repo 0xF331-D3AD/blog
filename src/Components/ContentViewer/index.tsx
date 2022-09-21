@@ -58,10 +58,11 @@ const MarkdownViewer = ({
         fetchContent();
     }, [location]);
 
+    alert(location.pathname);
+    alert(location.pathname === AppContentBaseRoutes.CTF_THM);
     return (
         <MarkdownWrapper>
             {
-
                 [
                     AppContentBaseRoutes.CTF_THM,
                     AppContentBaseRoutes.CTF_OTW,
