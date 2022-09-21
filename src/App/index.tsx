@@ -20,7 +20,6 @@ import {
     TutorialViewer
 } from "../Components/ContentViewer";
 import {AppContentBaseRoutesForRouter, AppRoutes} from "../Enums/AppRoutes";
-import 'materialize-css/dist/css/materialize.min.css';
 
 export const App = () => {
     const [isMenuOpened, setIsMenuOpened] = React.useState<boolean>(false);
