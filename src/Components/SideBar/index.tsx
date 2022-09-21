@@ -113,6 +113,7 @@ export const SideBar = ({
                                 <SideBarItem
                                     isSelected={isSelected}
                                     onClick={() => onItemClick(c)}
+                                    key={c.title}
                                 >
                                     <Icon/>
                                     {c.title}

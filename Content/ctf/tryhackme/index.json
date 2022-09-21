@@ -1,5 +1,17 @@
 {
   "header": "TryHackMe Writeups",
-  "description": "Wanna see a different way to hack the machine? Curious about alternative tools?\nNo luck with solving the challenge on your own?\n\nHere's where you find answers for all your questions! This section contains writeups for\nthe most amazing cyber-security platforms - [TryHackMe](https://tryhackme.com)\n",
-
+  "description": "Wanna see a different way to hack the machine? Curious about alternative tools? No luck with solving the challenge on your own? Here's where you find answers for all your questions!",
+  "platformName": "TryHackMe",
+  "platformURL": "https://tryhackme.com/",
+  "content": [
+    {
+      "groupHeader": "0",
+      "articles": [
+        {
+          "name": "0 Day",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/0day.md"
+        }
+      ]
+    }
+  ]
 }

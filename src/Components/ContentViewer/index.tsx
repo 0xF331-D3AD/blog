@@ -8,12 +8,13 @@ import {AppContentBaseRoutes, AppRoutes} from "../../Enums/AppRoutes";
 import ReactMarkdown from 'react-markdown';
 import gfm from 'remark-gfm';
 import {MarkdownWrapper} from "./index.styles";
+import {CTFIndexViewer} from "./CTFIndexViewer";
 
 type Props = {
     baseUrl: string,
 }
 
-const ContentViewer = ({
+const MarkdownViewer = ({
                            baseUrl,
                        }: Props) => {
     const [loading, setLoading] = React.useState<boolean>(true);
@@ -28,15 +29,15 @@ const ContentViewer = ({
         const contentUrl = buildFileUrlFromPathname(location.pathname);
         setLoading(true);
         try {
-            const markdown = await getDocument(contentUrl);
-            setContent(markdown);
+            const document = await getDocument(contentUrl);
+            setContent(document);
         } catch (e) {
             // @ts-ignore
             if (e.name === 'AxiosError' && e.code === "ERR_BAD_REQUEST") {
                 const indexUrl = buildFileUrlFromPathname(baseUrl);
                 try {
-                    const indexMarkdown = await getDocument(indexUrl);
-                    setContent(indexMarkdown);
+                    const indexDocument = await getDocument(indexUrl);
+                    setContent(indexDocument);
                     navigate(baseUrl);
                 } catch (innerError) {
                     navigate(AppRoutes.Landing);
@@ -58,9 +59,24 @@ const ContentViewer = ({
 
     return (
         <MarkdownWrapper>
-            <ReactMarkdown remarkPlugins={[gfm]}>
-                {content}
-            </ReactMarkdown>
+            {
+
+                [
+                    AppContentBaseRoutes.CTF_THM,
+                    AppContentBaseRoutes.CTF_OTW,
+                    AppContentBaseRoutes.CTF_HTB,
+                    AppContentBaseRoutes.CTF_VULNHUB
+                ].includes(location.pathname)
+                    ? (
+                        <CTFIndexViewer content={content} />
+                    )
+                    :
+                    (
+                    <ReactMarkdown remarkPlugins={[gfm]}>
+                        {content}
+                    </ReactMarkdown>
+                    )
+            }
             {
                 error && (
                     <ErrorModal
@@ -76,11 +92,11 @@ const ContentViewer = ({
     )
 }
 
-export const LandingViewer = () => (<ContentViewer baseUrl={AppRoutes.Landing}/>);
-export const ArticlesViewer = () => (<ContentViewer baseUrl={AppContentBaseRoutes.Article}/>);
-export const CtfViewer = () => (<ContentViewer baseUrl={AppContentBaseRoutes.CTF}/>);
-export const TryHackMeViewer = () => (<ContentViewer baseUrl={AppContentBaseRoutes.CTF_THM}/>);
-export const HackTheBoxViewer = () => (<ContentViewer baseUrl={AppContentBaseRoutes.CTF_HTB}/>);
-export const OverTheWireViewer = () => (<ContentViewer baseUrl={AppContentBaseRoutes.CTF_OTW}/>);
-export const VulnhubViewer = () => (<ContentViewer baseUrl={AppContentBaseRoutes.CTF_VULNHUB}/>);
-export const TutorialViewer = () => (<ContentViewer baseUrl={AppContentBaseRoutes.Tutorial}/>);
+export const LandingViewer = () => (<MarkdownViewer baseUrl={AppRoutes.Landing}/>);
+export const ArticlesViewer = () => (<MarkdownViewer baseUrl={AppContentBaseRoutes.Article}/>);
+export const CtfViewer = () => (<MarkdownViewer baseUrl={AppContentBaseRoutes.CTF}/>);
+export const TryHackMeViewer = () => (<MarkdownViewer baseUrl={AppContentBaseRoutes.CTF_THM}/>);
+export const HackTheBoxViewer = () => (<MarkdownViewer baseUrl={AppContentBaseRoutes.CTF_HTB}/>);
+export const OverTheWireViewer = () => (<MarkdownViewer baseUrl={AppContentBaseRoutes.CTF_OTW}/>);
+export const VulnhubViewer = () => (<MarkdownViewer baseUrl={AppContentBaseRoutes.CTF_VULNHUB}/>);
+export const TutorialViewer = () => (<MarkdownViewer baseUrl={AppContentBaseRoutes.Tutorial}/>);

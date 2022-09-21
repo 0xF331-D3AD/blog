@@ -2,7 +2,7 @@ import {Environment} from "../Enums/Environment";
 import {AppContentBaseRoutes} from "../Enums/AppRoutes";
 
 const isCTFPathname = (pathname: string): boolean => {
-    return pathname.startsWith(AppContentBaseRoutes.CTF);
+    return pathname.startsWith(AppContentBaseRoutes.CTF) && pathname !== AppContentBaseRoutes.CTF;
 }
 
 export const buildFileUrlFromPathname = (pathname: string): URL => {
