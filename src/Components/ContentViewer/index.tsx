@@ -9,6 +9,7 @@ import ReactMarkdown from 'react-markdown';
 import gfm from 'remark-gfm';
 import {MarkdownWrapper} from "./index.styles";
 import {CTFIndexViewer} from "./CTFIndexViewer";
+import {CTFIndexFile} from "../../Types/CTFIndexFileType";
 
 type Props = {
     baseUrl: string,
@@ -19,7 +20,7 @@ const MarkdownViewer = ({
                        }: Props) => {
     const [loading, setLoading] = React.useState<boolean>(true);
     const [error, setError] = React.useState<string>('');
-    const [content, setContent] = React.useState<string>('');
+    const [content, setContent] = React.useState<string | CTFIndexFile>('');
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -68,12 +69,12 @@ const MarkdownViewer = ({
                     AppContentBaseRoutes.CTF_VULNHUB
                 ].includes(location.pathname)
                     ? (
-                        <CTFIndexViewer content={content} />
+                        <CTFIndexViewer content={content as CTFIndexFile} />
                     )
                     :
                     (
                     <ReactMarkdown remarkPlugins={[gfm]}>
-                        {content}
+                        {content as string}
                     </ReactMarkdown>
                     )
             }

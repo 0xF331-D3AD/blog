@@ -2,16 +2,18 @@ import React from "react";
 import {CTFIndexFile} from "../../../Types/CTFIndexFileType";
 
 type Props = {
-    content: string,
+    content: CTFIndexFile,
 }
 
 export const CTFIndexViewer = ({
                                 content
                             }: Props) => {
-    const data: CTFIndexFile = JSON.parse(content);
+    if (!content) {
+        return null;
+    }
     return (
         <>
-            {JSON.stringify(data, null, 2)}
+            {JSON.stringify(content, null, 2)}
         </>
     )
 

@@ -12,6 +12,303 @@
           "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/0day.md"
         }
       ]
+    },
+    {
+      "groupHeader": "A",
+      "articles": [
+        {
+          "name": "Advent Of Cyber 2",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/AdventOfCyber2.md"
+        },
+        {
+          "name": "Android Malware Analysis",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/AndroidMalwareAnalysis.md"
+        },
+        {
+          "name": "Atlassian CVE-2022-26134",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/Atlassian-CVE-2022-26134.md"
+        },
+        {
+          "name": "AttackerKB",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/Atlassian-CVE-2022-26134.md"
+        },
+        {
+          "name": "Attacking ICS Plant 1",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/AttackingICSPlant_1.md"
+        }
+      ]
+    },
+    {
+      "groupHeader": "B",
+      "articles": [
+        {
+          "name": "Bebop",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/Bebop.md"
+        },
+        {
+          "name": "Blueprint",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/Blueprint.md"
+        },
+        {
+          "name": "Breaching AD",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/BreachingAD.md"
+        },
+        {
+          "name": "Break Out The Cage",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/BreakOutTheCage.md"
+        }
+      ]
+    },
+    {
+      "groupHeader": "C",
+      "articles": [
+        {
+          "name": "Cmess",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/Cmess.md"
+        },
+        {
+          "name": "Committed",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/Committed.md"
+        },
+        {
+          "name": "CTF Collection Vol:1",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/CTFCollectionVol_1.md"
+        },
+        {
+          "name": "Cyber Heroes",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/CyberHeroes.md"
+        },
+        {
+          "name": "Cyber Scotland 2021",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/CyberScotland2021.md"
+        },
+        {
+          "name": "Cyborg",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/Cyborg.md"
+        }
+      ]
+    },
+    {
+      "groupHeader": "E",
+      "articles": [
+        {
+          "name": "Empire",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/Empire.md"
+        }
+      ]
+    },
+    {
+      "groupHeader": "H",
+      "articles": [
+        {
+          "name": "Hacker vs Hasker",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/HackerVsHacker.md"
+        }
+      ]
+    },
+    {
+      "groupHeader": "I",
+      "articles": [
+        {
+          "name": "IDE",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/IDE.md"
+        },
+        {
+          "name": "Intro to PoC Scripting",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/IntroPoCScripting.md"
+        },
+        {
+          "name": "IOS Forensics",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/IosForensics.md"
+        },
+        {
+          "name": "ISO 27001",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/ISO27001.md"
+        }
+      ]
+    },
+    {
+      "groupHeader": "J",
+      "articles": [
+        {
+          "name": "Jack Of All Trades",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/JackOfAllTrades.md"
+        },
+        {
+          "name": "Jason",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/Jason.md"
+        },
+        {
+          "name": "JPG Chat",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/JPGChat.md"
+        }
+      ]
+    },
+    {
+      "groupHeader": "K",
+      "articles": [
+        {
+          "name": "KaffeeSec - SoMeSINT",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/KaffeeSecSoMeSINT.md"
+        },
+        {
+          "name": "KoTH Food CTF",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/KoTHFoodCTF.md"
+        }
+      ]
+    },
+    {
+      "groupHeader": "L",
+      "articles": [
+        {
+          "name": "Learn Rust",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/LearnRust.md"
+        }
+      ]
+    },
+    {
+      "groupHeader": "M",
+      "articles": [
+        {
+          "name": "Madness",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/Madness.md"
+        },
+        {
+          "name": "Magician",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/Magician.md"
+        },
+        {
+          "name": "MAL: Researching",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/MalResearching.md"
+        },
+        {
+          "name": "Mobile Malware Analysis",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/MobileMalwareAnalysis.md"
+        },
+        {
+          "name": "Mr. Phisher",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/MrPhisher.md"
+        }
+      ]
+    },
+    {
+      "groupHeader": "N",
+      "articles": [
+        {
+          "name": "Network Miner",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/NetworkMiner.md"
+        },
+        {
+          "name": "Nerd Herd",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/NerdHerd.md"
+        }
+      ]
+    },
+    {
+      "groupHeader": "O",
+      "articles": [
+        {
+          "name": "Osquery",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/Osquery.md"
+        },
+        {
+          "name": "Overpass 3",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/Overpass3.md"
+        }
+      ]
+    },
+    {
+      "groupHeader": "P",
+      "articles": [
+        {
+          "name": "Pokemon",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/Pokemon.md"
+        },
+        {
+          "name": "Powershell For Pentesters",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/Powershell4Pentesters.md"
+        },
+        {
+          "name": "Printer Hacking 101",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/PrinterHacking101.md"
+        },
+        {
+          "name": "Psycho Break",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/PsychoBreak.md"
+        },
+        {
+          "name": "Python For Pentesters",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/PythonForPentesters.md"
+        }
+      ]
+    },
+    {
+      "groupHeader": "Q",
+      "articles": [
+        {
+          "name": "Quotinent",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/Quotinent.md"
+        }
+      ]
+    },
+    {
+      "groupHeader": "S",
+      "articles": [
+        {
+          "name": "Sakura Room",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/Sakura.md"
+        },
+        {
+          "name": "Snort",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/Snort.md"
+        },
+        {
+          "name": "Splunk 101",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/Splunk101.md"
+        },
+        {
+          "name": "SSTI",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/SSTI.md"
+        }
+      ]
+    },
+    {
+      "groupHeader": "T",
+      "articles": [
+        {
+          "name": "Tmux",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/Tmux.md"
+        },
+        {
+          "name": "Threat Intelligence Tools",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/ThreatIntelligenceTools.md"
+        },
+        {
+          "name": "Tony the Tiger",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/TonyTheTiger.md"
+        }
+      ]
+    },
+    {
+      "groupHeader": "W",
+      "articles": [
+        {
+          "name": "Wifi Hacking 101",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/WifiHacking101.md"
+        },
+        {
+          "name": "Wireshark: Packet Operations",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/WiresharkPacketOperations.md"
+        },
+        {
+          "name": "Wireshark: The Basics",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/WiresharkTheBasics.md"
+        },
+        {
+          "name": "Wreath",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/Wreath.md"
+        }
+      ]
     }
   ]
 }
