@@ -6,7 +6,7 @@ export const MarkdownWrapper = styled.div`
     padding-bottom: 24px;
     
     color: ${Theme.lightForegroundColor};
-    
+
     font-size: 16px;
     
     a {

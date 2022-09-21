@@ -9,7 +9,7 @@ const createDefaultAxios = (): AxiosInstance => {
     })
 }
 
-export const getMarkdown = async (url: URL) => {
+export const getDocument = async (url: URL) => {
     const axiosInstance = createDefaultAxios();
     const result = await axiosInstance.get(url.toString());
     const {data} = result;

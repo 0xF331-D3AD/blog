@@ -50,7 +50,7 @@ export const ContentTypeScrollWrapper = styled.div`
     // 2*24px -this element's padding
     width: calc(100% - 2*24px);
     // 32px - parent's padding
-    height: calc(100vh - ${headerHeight}px - 32px - 2*24px);
+    height: calc(100vh - ${headerHeight}px - 2*24px);
     
     padding: 24px;
     

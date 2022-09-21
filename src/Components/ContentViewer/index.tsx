@@ -1,7 +1,7 @@
 import React from "react";
 import {useLocation, useNavigate} from "react-router-dom";
 import {buildFileUrlFromPathname} from "../../Utils/MarkdownUtils";
-import {getMarkdown} from "../../Service/MarkdownService";
+import {getDocument} from "../../Service/ArticlesService";
 import {ErrorModal} from "../ErrorModal";
 import {ProgressOverlay} from "../ProgressOverlay";
 import {AppContentBaseRoutes, AppRoutes} from "../../Enums/AppRoutes";
@@ -28,14 +28,14 @@ const ContentViewer = ({
         const contentUrl = buildFileUrlFromPathname(location.pathname);
         setLoading(true);
         try {
-            const markdown = await getMarkdown(contentUrl);
+            const markdown = await getDocument(contentUrl);
             setContent(markdown);
         } catch (e) {
             // @ts-ignore
             if (e.name === 'AxiosError' && e.code === "ERR_BAD_REQUEST") {
                 const indexUrl = buildFileUrlFromPathname(baseUrl);
                 try {
-                    const indexMarkdown = await getMarkdown(indexUrl);
+                    const indexMarkdown = await getDocument(indexUrl);
                     setContent(indexMarkdown);
                     navigate(baseUrl);
                 } catch (innerError) {

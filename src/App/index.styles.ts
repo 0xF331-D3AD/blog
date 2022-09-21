@@ -36,7 +36,8 @@ export const ContentPane = styled.div`
 `;
 
 export const ArticleContentWrapper = styled.div`
-    width: calc(100% - ${sideBarSize + 192}px);
+    width: calc(100% - ${sideBarSize}px);
+    height: 100%;
     min-width: 0;
     margin-left: auto;
     padding: 16px 96px;
@@ -44,27 +45,26 @@ export const ArticleContentWrapper = styled.div`
     border: 2px solid ${Theme.darkBackground};
     
     ${Media.desktopMd`
-        width: calc(100% - ${sideBarSize + 128}px);
         padding: 16px 64px;
     `}
     
     ${Media.desktop`
-        width: calc(100% - 128px);
+        width: calc(100%);
         padding: 16px 64px;
     `}
 
     ${Media.tablet`
-        width: calc(100% - 64px);
+        width: calc(100%);
         padding: 16px 32px;
     `}
     
     ${Media.phoneLg`
-        width: calc(100% - 32px);
+        width: calc(100%);
         padding: 16px;
     `}
     
     ${Media.phoneMd`
-        width: calc(100% - 24px);
+        width: calc(100%);
         padding: 12px 12px 16px 12px;
     `}
 `;
