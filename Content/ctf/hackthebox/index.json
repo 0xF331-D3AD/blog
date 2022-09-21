@@ -1,0 +1,17 @@
+{
+  "header": "Hack the Box Writeups",
+  "description": "Wanna see a different way to hack the machine? Curious about alternative tools? No luck with solving the challenge on your own? Here's where you find answers for all your questions!",
+  "platformName": "Hack the Box",
+  "platformURL": "https://app.hackthebox.com/",
+  "content": [
+    {
+      "groupHeader": "R",
+      "articles": [
+        {
+          "name": "Red Panda",
+          "url": "https://0xf331-d3ad.github.io/blog/#/ctf/hackthebox/RedPanda.md"
+        }
+      ]
+    }
+  ]
+}
