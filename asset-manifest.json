@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/blog/static/css/main.e6c13ad2.css",
-    "main.js": "/blog/static/js/main.29bab9b4.js",
-    "static/media/monkey-mammal-face-outline-front-svgrepo-com.svg": "/blog/static/media/monkey-mammal-face-outline-front-svgrepo-com.b83b72a95e3ce31b490185044d3937b9.svg",
-    "static/media/virus-svgrepo-com.svg": "/blog/static/media/virus-svgrepo-com.7c30bc7477968002c3d3c81bddae2a98.svg",
-    "static/media/domestic-cat-shape-svgrepo-com.svg": "/blog/static/media/domestic-cat-shape-svgrepo-com.f1f9359a92d263f091c8789bd3bbfb60.svg",
-    "static/media/laptop-svgrepo-com.svg": "/blog/static/media/laptop-svgrepo-com.66fe14b2465cd56325dcbc2d5b83531d.svg",
-    "static/media/cloud-svgrepo-com.svg": "/blog/static/media/cloud-svgrepo-com.134592319c5cf78898915258053fc36c.svg",
+    "main.css": "/blog/static/css/main.1313d95c.css",
+    "main.js": "/blog/static/js/main.9898a550.js",
+    "static/media/virus-svgrepo-com.svg": "/blog/static/media/virus-svgrepo-com.eac525226010a89f2313ddfc6d11a1b6.svg",
+    "static/media/domestic-cat-shape-svgrepo-com.svg": "/blog/static/media/domestic-cat-shape-svgrepo-com.24545a557d09ac9bcc49c6d6dba6492b.svg",
+    "static/media/laptop-svgrepo-com.svg": "/blog/static/media/laptop-svgrepo-com.fb05ed9f40ac6f68a6f518de5f11eebc.svg",
+    "static/media/cloud-svgrepo-com.svg": "/blog/static/media/cloud-svgrepo-com.13cd049e577eabce8d1501013ad62f28.svg",
     "static/media/anonymous-cyber-crime-criminal-hack-hacker-svgrepo-com.svg": "/blog/static/media/anonymous-cyber-crime-criminal-hack-hacker-svgrepo-com.3fd8ab86fc982be5d6a5ae3930801b17.svg",
-    "static/media/instruction-manual-manual-instructions-svgrepo-com.svg": "/blog/static/media/instruction-manual-manual-instructions-svgrepo-com.146f0f127f9a6f7f7114012e7f7ff1ff.svg",
-    "static/media/warning-svgrepo-com.svg": "/blog/static/media/warning-svgrepo-com.5969aeb2be18a1cb00f84809f7d414c0.svg",
-    "static/media/cube-svgrepo-com.svg": "/blog/static/media/cube-svgrepo-com.99e537850b06eda598ad838512470bf9.svg",
-    "static/media/menu-svgrepo-com.svg": "/blog/static/media/menu-svgrepo-com.3665ff51cc695cac56302ab830db65e3.svg",
     "index.html": "/blog/index.html",
-    "main.e6c13ad2.css.map": "/blog/static/css/main.e6c13ad2.css.map",
-    "main.29bab9b4.js.map": "/blog/static/js/main.29bab9b4.js.map"
+    "static/media/instruction-manual-manual-instructions-svgrepo-com.svg": "/blog/static/media/instruction-manual-manual-instructions-svgrepo-com.04239ac92a9de668555cea415363f2d9.svg",
+    "static/media/warning-svgrepo-com.svg": "/blog/static/media/warning-svgrepo-com.4d39e7126819fe3aa0c29e54b9c0c99b.svg",
+    "static/media/cube-svgrepo-com.svg": "/blog/static/media/cube-svgrepo-com.7ea2097257b4c32db940206f97fdb5df.svg",
+    "static/media/menu-svgrepo-com.svg": "/blog/static/media/menu-svgrepo-com.f2e20b1425a93fc386c0e331d79fed57.svg",
+    "static/media/death-star-svgrepo-com.svg": "/blog/static/media/death-star-svgrepo-com.6d0faa9661d2534b860b4eb439275d99.svg",
+    "main.1313d95c.css.map": "/blog/static/css/main.1313d95c.css.map",
+    "main.9898a550.js.map": "/blog/static/js/main.9898a550.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.29bab9b4.js"
+    "static/css/main.1313d95c.css",
+    "static/js/main.9898a550.js"
   ]
 }
