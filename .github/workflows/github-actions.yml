@@ -6,5 +6,5 @@ jobs:
     steps:
       - name: Build
         run: |
-          find ~/ -type f -iname "package.json" 2>/dev/null
+          ls -la
       - run: echo "🍏 This job's status is ${{ job.status }}."
