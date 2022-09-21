@@ -15,11 +15,12 @@ import {
     HackTheBoxViewer,
     LandingViewer,
     OverTheWireViewer,
-    SmashTheStackViewer,
+    VulnhubViewer,
     TryHackMeViewer,
     TutorialViewer
 } from "../Components/ContentViewer";
 import {AppContentBaseRoutesForRouter, AppRoutes} from "../Enums/AppRoutes";
+import 'materialize-css/dist/css/materialize.min.css';
 
 export const App = () => {
     const [isMenuOpened, setIsMenuOpened] = React.useState<boolean>(false);
@@ -57,7 +58,7 @@ export const App = () => {
                                 <Route path={AppContentBaseRoutesForRouter.CTF} element={<CtfViewer/>}/>
                                 <Route path={AppContentBaseRoutesForRouter.CTF_HTB} element={<HackTheBoxViewer/>}/>
                                 <Route path={AppContentBaseRoutesForRouter.CTF_OTW} element={<OverTheWireViewer/>}/>
-                                <Route path={AppContentBaseRoutesForRouter.CTF_STS} element={<SmashTheStackViewer/>}/>
+                                <Route path={AppContentBaseRoutesForRouter.CTF_VULNHUB} element={<VulnhubViewer/>}/>
                                 <Route path={AppContentBaseRoutesForRouter.CTF_THM} element={<TryHackMeViewer/>}/>
                                 <Route path={AppContentBaseRoutesForRouter.Tutorial} element={<TutorialViewer/>}/>
                                 <Route path={AppRoutes.NOT_FOUND} element={<NotFound/>}/>

@@ -5,7 +5,7 @@ import {ReactComponent as Cube} from "../../Assets/icons/cube-svgrepo-com.svg";
 import {ReactComponent as Cloud} from "../../Assets/icons/cloud-svgrepo-com.svg";
 import {ReactComponent as Laptop} from "../../Assets/icons/laptop-svgrepo-com.svg";
 import {ReactComponent as Cat} from "../../Assets/icons/domestic-cat-shape-svgrepo-com.svg";
-import {ReactComponent as Monkey} from "../../Assets/icons/monkey-mammal-face-outline-front-svgrepo-com.svg";
+import {ReactComponent as PowershellEmpire} from "../../Assets/icons/death-star-svgrepo-com.svg";
 import {ReactComponent as Book} from "../../Assets/icons/instruction-manual-manual-instructions-svgrepo-com.svg";
 import {ReactComponent as Virus} from "../../Assets/icons/virus-svgrepo-com.svg";
 import {headerHeight} from "../Header/index.styles";
@@ -91,7 +91,7 @@ export const THMIconSVG = styled(Cloud)`
     ${iconCss}
 `;
 
-export const STSIconSVG = styled(Monkey)`
+export const VulnhubIconSVG = styled(PowershellEmpire)`
     ${iconCss}
 `;
 

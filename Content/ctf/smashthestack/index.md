@@ -1,1 +1,0 @@
-# Smash the Stack Writeups

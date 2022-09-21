@@ -5,7 +5,7 @@ import {
     SideBarBottom,
     SideBarContent,
     SideBarItem,
-    STSIconSVG,
+    VulnhubIconSVG,
     THMIconSVG,
     TutorialsIconSVG,
     VirusIconSVG,
@@ -45,9 +45,9 @@ const sideBarContent: SideBarContentType[] = [
         icon: THMIconSVG,
     },
     {
-        title: 'CTF STS',
-        path: AppContentBaseRoutes.CTF_STS,
-        icon: STSIconSVG,
+        title: 'CTF VLNH',
+        path: AppContentBaseRoutes.CTF_VULNHUB,
+        icon: VulnhubIconSVG,
     },
     {
         title: 'Tutorials',

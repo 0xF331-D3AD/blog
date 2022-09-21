@@ -82,5 +82,5 @@ export const CtfViewer = () => (<ContentViewer baseUrl={AppContentBaseRoutes.CTF
 export const TryHackMeViewer = () => (<ContentViewer baseUrl={AppContentBaseRoutes.CTF_THM}/>);
 export const HackTheBoxViewer = () => (<ContentViewer baseUrl={AppContentBaseRoutes.CTF_HTB}/>);
 export const OverTheWireViewer = () => (<ContentViewer baseUrl={AppContentBaseRoutes.CTF_OTW}/>);
-export const SmashTheStackViewer = () => (<ContentViewer baseUrl={AppContentBaseRoutes.CTF_STS}/>);
+export const VulnhubViewer = () => (<ContentViewer baseUrl={AppContentBaseRoutes.CTF_VULNHUB}/>);
 export const TutorialViewer = () => (<ContentViewer baseUrl={AppContentBaseRoutes.Tutorial}/>);
