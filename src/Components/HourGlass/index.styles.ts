@@ -177,9 +177,9 @@ export const BondTopTriangle = styled.div`
     border-top-color: ${({glassColor}: { glassColor: string }) => glassColor};;
     width: ${({width}: { width: number }) => width / 8}px;
     border-width: ${({
-                                                                                                                                                                                                                         width,
-                                                                                                                                                                                                                         height
-                                                                                                                                                                                                                     }: { width: number, height: number }) => `${height / 18}px ${width / 16}px 0 ${width / 16}px`};
+         width,
+         height
+    }: { width: number, height: number }) => `${height / 18}px ${width / 16}px 0 ${width / 16}px`};
 `;
 
 export const BondBottomTriangle = styled.div`
@@ -188,7 +188,7 @@ export const BondBottomTriangle = styled.div`
     border-bottom-color: ${({glassColor}: { glassColor: string }) => glassColor};
     margin-top: ${({height}: { height: number }) => -1 * height / 18}px;
     border-width: ${({
-                                                                                                                                                                                                                                             width,
-                                                                                                                                                                                                                                             height
-                                                                                                                                                                                                                                         }: { width: number, height: number }) => `0 ${width / 8}px ${height / 9}px ${width / 8}px`};
+         width,
+         height
+    }: { width: number, height: number }) => `0 ${width / 8}px ${height / 9}px ${width / 8}px`};
 `;
