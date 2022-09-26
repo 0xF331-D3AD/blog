@@ -69,6 +69,7 @@ the most amazing cyber-security platforms - [TryHackMe](https://tryhackme.com)
 - [Madness](https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/Madness.md)
 - [Magician](https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/Magician.md)
 - [MAL: Researching](https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/MalResearching.md)
+- [Marketplace](https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/Marketplace.md)
 - [Mobile Malware Analysis](https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/MobileMalwareAnalysis.md)
 - [Mr. Phisher](https://0xf331-d3ad.github.io/blog/#/ctf/tryhackme/MrPhisher.md)
 
